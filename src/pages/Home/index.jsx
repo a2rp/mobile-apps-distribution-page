@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import AppSearch from "../../components/AppSearch";
+import AppShare from "../../components/AppShare";
 import { Styled } from "./styled";
 
 const ALL_CATEGORY = {
@@ -201,6 +202,9 @@ const Home = () => {
                                             ? `${import.meta.env.BASE_URL}${app.icon}`
                                             : "";
 
+                                        const shareUrl =
+                                            app.releaseUrl || app.apkUrl;
+
                                         return (
                                             <Styled.AppCard key={app.id}>
                                                 <div className="cardTop">
@@ -215,11 +219,18 @@ const Home = () => {
                                                         )}
                                                     </Styled.AppIcon>
 
-                                                    {app.status && (
-                                                        <Styled.Status>
-                                                            {app.status}
-                                                        </Styled.Status>
-                                                    )}
+                                                    <div className="cardTopActions">
+                                                        {app.status && (
+                                                            <Styled.Status>
+                                                                {app.status}
+                                                            </Styled.Status>
+                                                        )}
+
+                                                        <AppShare
+                                                            appName={app.name}
+                                                            shareUrl={shareUrl}
+                                                        />
+                                                    </div>
                                                 </div>
 
                                                 <Styled.AppContent>

@@ -220,6 +220,14 @@ export const Styled = {
             gap: 16px;
         }
 
+        .cardTopActions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
         .appMeta {
             display: flex;
             flex-wrap: wrap;
@@ -303,6 +311,15 @@ export const Styled = {
         }
 
         @media (max-width: 420px) {
+            .cardTop {
+                align-items: flex-start;
+            }
+
+            .cardTopActions {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
             .appActions {
                 grid-template-columns: 1fr;
             }
