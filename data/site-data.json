@@ -1,0 +1,109 @@
+{
+    "author": "Ashish Ranjan",
+    "upiId": "ash.ranjan09-1@okhdfcbank",
+    "links": {
+        "buyMeACoffee": "https://buymeacoffee.com/a2rp",
+        "patreon": "https://patreon.com/a2rp",
+        "paypal": "https://paypal.me/a2rpdev",
+        "portfolio": "https://www.ashishranjan.net",
+        "github": "https://github.com/a2rp",
+        "codepen": "https://codepen.io/ash1198",
+        "linkedin": "https://www.linkedin.com/in/aashishranjan",
+        "facebook": "https://www.facebook.com/theash.ashish/",
+        "youtube": "https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1",
+        "email": "mailto:ash.ranjan09@gmail.com"
+    },
+    "supportCards": [
+        {
+            "id": "buy-me-a-coffee",
+            "label": "One-Time Support",
+            "title": "Buy Me A Coffee",
+            "description": "Make a quick one-time contribution and support my ongoing development work.",
+            "button": "Open Buy Me A Coffee",
+            "link": "https://buymeacoffee.com/a2rp",
+            "icon": "SiBuymeacoffee"
+        },
+        {
+            "id": "patreon",
+            "label": "Membership Support",
+            "title": "Patreon",
+            "description": "Become a supporter and get access to development updates, project progress, AI experiments, and behind-the-scenes content.",
+            "button": "Join Patreon",
+            "link": "https://patreon.com/a2rp",
+            "icon": "FaPatreon"
+        },
+        {
+            "id": "paypal",
+            "label": "International Support",
+            "title": "PayPal",
+            "description": "Support using PayPal if UPI is not available for you.",
+            "button": "Open PayPal",
+            "link": "https://paypal.me/a2rpdev",
+            "icon": "FaPaypal"
+        }
+    ],
+    "socialLinks": [
+        {
+            "id": "portfolio",
+            "label": "Portfolio",
+            "href": "https://www.ashishranjan.net",
+            "icon": "FaGlobe"
+        },
+        {
+            "id": "github",
+            "label": "GitHub",
+            "href": "https://github.com/a2rp",
+            "icon": "FaGithub"
+        },
+        {
+            "id": "codepen",
+            "label": "CodePen",
+            "href": "https://codepen.io/ash1198",
+            "icon": "FaCodepen"
+        },
+        {
+            "id": "linkedin",
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/aashishranjan",
+            "icon": "FaLinkedinIn"
+        },
+        {
+            "id": "facebook",
+            "label": "Facebook",
+            "href": "https://www.facebook.com/theash.ashish/",
+            "icon": "FaFacebookF"
+        },
+        {
+            "id": "youtube",
+            "label": "YouTube",
+            "href": "https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1",
+            "icon": "FaYoutube"
+        },
+        {
+            "id": "buy-me-a-coffee",
+            "label": "Buy Me A Coffee",
+            "href": "https://buymeacoffee.com/a2rp",
+            "icon": "SiBuymeacoffee"
+        },
+        {
+            "id": "patreon",
+            "label": "Patreon",
+            "href": "https://patreon.com/a2rp",
+            "icon": "FaPatreon"
+        },
+        {
+            "id": "email",
+            "label": "Email",
+            "href": "mailto:ash.ranjan09@gmail.com",
+            "icon": "HiOutlineMail"
+        }
+    ],
+    "focusItems": [
+        "Full-stack web apps",
+        "AI-powered tools",
+        "Developer utilities",
+        "Open-source projects",
+        "Creative experiments",
+        "Technical content"
+    ]
+}

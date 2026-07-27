@@ -1,0 +1,34 @@
+{
+    "categories": [
+        {
+            "id": "free",
+            "label": "Free Apps",
+            "description": "Free mobile applications available for everyone."
+        },
+        {
+            "id": "premium",
+            "label": "Premium Apps",
+            "description": "Premium mobile applications with advanced features."
+        },
+        {
+            "id": "experiments",
+            "label": "Experiments",
+            "description": "Mobile prototypes, concepts and technology experiments."
+        }
+    ],
+    "apps": [
+        {
+            "id": "hello-world",
+            "name": "Hello World",
+            "category": "free",
+            "description": "A simple React Native Expo application created to test Android APK building, installation and direct distribution.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.helloworld",
+            "icon": "apps/hello-world/icon.png",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/hello-world-v1.0.0/hello-world-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/hello-world-v1.0.0"
+        }
+    ]
+}
