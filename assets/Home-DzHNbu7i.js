@@ -1,4 +1,4 @@
-import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js";var s=t(a(),1),c={Wrapper:e.div`
+import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./index-B9s47Trl.js";var l=c(n(),1),u={Wrapper:o.div`
         width: min(100%, 460px);
         min-height: 50px;
         display: flex;
@@ -93,7 +93,53 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
         @media (max-width: 600px) {
             width: 100%;
         }
-    `},l=i(),u=({value:e,onChange:t})=>(0,l.jsxs)(c.Wrapper,{children:[(0,l.jsx)(o,{className:`searchIcon`,"aria-hidden":`true`}),(0,l.jsx)(`input`,{type:`search`,value:e,onChange:e=>t(e.target.value),placeholder:`Search mobile apps...`,"aria-label":`Search mobile apps`}),e&&(0,l.jsx)(`button`,{type:`button`,onClick:()=>{t(``)},"aria-label":`Clear search`,title:`Clear search`,children:(0,l.jsx)(r,{"aria-hidden":`true`})})]}),d=n`
+    `},d=e(),f=({value:e,onChange:n})=>(0,d.jsxs)(u.Wrapper,{children:[(0,d.jsx)(r,{className:`searchIcon`,"aria-hidden":`true`}),(0,d.jsx)(`input`,{type:`search`,value:e,onChange:e=>n(e.target.value),placeholder:`Search mobile apps...`,"aria-label":`Search mobile apps`}),e&&(0,d.jsx)(`button`,{type:`button`,onClick:()=>{n(``)},"aria-label":`Clear search`,title:`Clear search`,children:(0,d.jsx)(t,{"aria-hidden":`true`})})]}),p={Wrapper:o.button`
+        min-height: 38px;
+        padding: 0 13px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.68);
+        font-family: inherit;
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+            transform 180ms ease,
+            border-color 180ms ease,
+            background-color 180ms ease,
+            color 180ms ease;
+
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        &:active:not(:disabled) {
+            transform: scale(0.96);
+        }
+
+        &:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+    `},m=({appName:e,shareUrl:t})=>{let[n,r]=(0,l.useState)(!1),i=(0,l.useRef)(null);(0,l.useEffect)(()=>()=>{window.clearTimeout(i.current)},[]);let o=()=>{r(!0),window.clearTimeout(i.current),i.current=window.setTimeout(()=>{r(!1)},2e3)},c=async()=>{await navigator.clipboard.writeText(t),o()};return(0,d.jsx)(p.Wrapper,{type:`button`,onClick:async()=>{if(t)try{if(navigator.share){await navigator.share({title:e,text:`Download ${e} for Android.`,url:t});return}await c()}catch(e){if(e.name===`AbortError`)return;try{await c()}catch{r(!1)}}},disabled:!t,"aria-label":`Share ${e}`,title:n?`Link copied`:`Share app`,children:n?(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(s,{"aria-hidden":`true`}),(0,d.jsx)(`span`,{children:`Copied`})]}):(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(a,{"aria-hidden":`true`}),(0,d.jsx)(`span`,{children:`Share`})]})})},h=i`
     from {
         transform: rotate(0deg);
     }
@@ -101,12 +147,12 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
     to {
         transform: rotate(360deg);
     }
-`,f={Wrapper:e.div`
+`,g={Wrapper:o.div`
         width: 100%;
         min-height: 100%;
         background-color: transparent;
         color: #ffffff;
-    `,Container:e.div`
+    `,Container:o.div`
         width: min(100% - 40px, 1200px);
         margin: 0 auto;
 
@@ -124,7 +170,7 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
                 margin-bottom: 22px;
             }
         }
-    `,Hero:e.section`
+    `,Hero:o.section`
         padding: 110px 0 80px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         background: linear-gradient(
@@ -136,14 +182,14 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
         @media (max-width: 700px) {
             padding: 80px 0 60px;
         }
-    `,Eyebrow:e.p`
+    `,Eyebrow:o.p`
         margin: 0 0 18px;
         color: rgba(255, 255, 255, 0.58);
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 1.8px;
         text-transform: uppercase;
-    `,Title:e.h1`
+    `,Title:o.h1`
         max-width: 820px;
         margin: 0;
         color: #ffffff;
@@ -156,17 +202,17 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
         @media (max-width: 700px) {
             letter-spacing: -2px;
         }
-    `,Description:e.p`
+    `,Description:o.p`
         max-width: 680px;
         margin: 28px 0 0;
         color: rgba(255, 255, 255, 0.68);
         font-size: 17px;
         line-height: 1.75;
-    `,AppsSection:e.section`
+    `,AppsSection:o.section`
         min-height: 520px;
         padding: 56px 0 100px;
         background: rgba(0, 0, 0, 0.08);
-    `,Tabs:e.div`
+    `,Tabs:o.div`
         display: flex;
         align-items: center;
         gap: 10px;
@@ -178,7 +224,7 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
         &::-webkit-scrollbar {
             display: none;
         }
-    `,TabButton:e.button`
+    `,TabButton:o.button`
         flex-shrink: 0;
         min-height: 44px;
         padding: 7px 9px 7px 17px;
@@ -232,13 +278,13 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
             outline: 2px solid #ffffff;
             outline-offset: 3px;
         }
-    `,CategoryDescription:e.p`
+    `,CategoryDescription:o.p`
         max-width: 680px;
         margin: 0 0 36px;
         color: rgba(255, 255, 255, 0.52);
         font-size: 14px;
         line-height: 1.7;
-    `,Grid:e.div`
+    `,Grid:o.div`
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 20px;
@@ -250,7 +296,7 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
         @media (max-width: 640px) {
             grid-template-columns: 1fr;
         }
-    `,AppCard:e.article`
+    `,AppCard:o.article`
         min-height: 340px;
         display: flex;
         flex-direction: column;
@@ -276,6 +322,14 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
             align-items: flex-start;
             justify-content: space-between;
             gap: 16px;
+        }
+
+        .cardTopActions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .appMeta {
@@ -361,11 +415,20 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
         }
 
         @media (max-width: 420px) {
+            .cardTop {
+                align-items: flex-start;
+            }
+
+            .cardTopActions {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
             .appActions {
                 grid-template-columns: 1fr;
             }
         }
-    `,AppIcon:e.div`
+    `,AppIcon:o.div`
         width: 62px;
         height: 62px;
         display: grid;
@@ -384,18 +447,18 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
             height: 100%;
             object-fit: cover;
         }
-    `,AppContent:e.div`
+    `,AppContent:o.div`
         display: flex;
         flex-direction: column;
         gap: 15px;
-    `,AppName:e.h2`
+    `,AppName:o.h2`
         margin: 0;
         color: #ffffff;
         font-size: 22px;
         font-weight: 700;
         line-height: 1.3;
         letter-spacing: -0.4px;
-    `,Status:e.span`
+    `,Status:o.span`
         flex-shrink: 0;
         min-height: 30px;
         padding: 0 10px;
@@ -409,23 +472,23 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
         font-weight: 700;
         letter-spacing: 0.6px;
         text-transform: uppercase;
-    `,AppDescription:e.p`
+    `,AppDescription:o.p`
         margin: 0;
         color: rgba(255, 255, 255, 0.6);
         font-size: 14px;
         line-height: 1.75;
-    `,LoadingState:e.div`
+    `,LoadingState:o.div`
         min-height: 320px;
         display: grid;
         place-items: center;
-    `,Spinner:e.div`
+    `,Spinner:o.div`
         width: 46px;
         height: 46px;
         border: 4px solid rgba(255, 255, 255, 0.12);
         border-top-color: #ffffff;
         border-radius: 50%;
-        animation: ${d} 0.75s linear infinite;
-    `,MessageState:e.div`
+        animation: ${h} 0.75s linear infinite;
+    `,MessageState:o.div`
         min-height: 280px;
         display: flex;
         flex-direction: column;
@@ -441,15 +504,15 @@ import{a as e,c as t,i as n,n as r,r as i,s as a,t as o}from"./index-CVxwsk0a.js
             0 18px 45px rgba(0, 0, 0, 0.24),
             inset 0 1px 0 rgba(255, 255, 255, 0.04);
         text-align: center;
-    `,MessageTitle:e.h2`
+    `,MessageTitle:o.h2`
         margin: 0;
         color: #ffffff;
         font-size: 22px;
         font-weight: 700;
-    `,MessageText:e.p`
+    `,MessageText:o.p`
         max-width: 480px;
         margin: 12px 0 0;
         color: rgba(255, 255, 255, 0.58);
         font-size: 14px;
         line-height: 1.7;
-    `},p={id:`all`,label:`All Apps`,description:`Browse all available mobile applications.`},m=()=>{let[e,t]=(0,s.useState)([]),[n,r]=(0,s.useState)([]),[i,a]=(0,s.useState)(`all`),[o,c]=(0,s.useState)(``),[d,m]=(0,s.useState)(!0),[h,g]=(0,s.useState)(``);(0,s.useEffect)(()=>{let e=new AbortController;return(async()=>{try{m(!0),g(``);let n=await fetch(`/mobile-apps-distribution-page/data/apps.json`,{signal:e.signal});if(!n.ok)throw Error(`Unable to load mobile apps.`);let i=await n.json();t(Array.isArray(i.categories)?i.categories:[]),r(Array.isArray(i.apps)?i.apps:[])}catch(e){e.name!==`AbortError`&&g(e.message)}finally{e.signal.aborted||m(!1)}})(),()=>{e.abort()}},[]);let _=(0,s.useMemo)(()=>[p,...e],[e]),v=(0,s.useMemo)(()=>{let e=o.trim().toLowerCase();return e?n.filter(t=>[t.name,t.description,t.packageName,t.platform,t.version,t.status].filter(Boolean).join(` `).toLowerCase().includes(e)):n},[n,o]),y=(0,s.useMemo)(()=>v.reduce((e,t)=>(t.category&&(e[t.category]=(e[t.category]||0)+1),e),{all:v.length}),[v]),b=(0,s.useMemo)(()=>i===`all`?v:v.filter(e=>e.category===i),[i,v]),x=_.find(e=>e.id===i);return(0,l.jsxs)(f.Wrapper,{children:[(0,l.jsx)(f.Hero,{children:(0,l.jsxs)(f.Container,{children:[(0,l.jsx)(f.Eyebrow,{children:`a2rp Mobile Apps`}),(0,l.jsx)(f.Title,{children:`Mobile apps built for everyday use`}),(0,l.jsx)(f.Description,{children:`Explore free applications, premium tools and experimental mobile projects created by Ashish Ranjan.`})]})}),(0,l.jsx)(f.AppsSection,{children:(0,l.jsxs)(f.Container,{children:[d&&(0,l.jsx)(f.LoadingState,{children:(0,l.jsx)(f.Spinner,{})}),!d&&h&&(0,l.jsxs)(f.MessageState,{children:[(0,l.jsx)(f.MessageTitle,{children:`Apps could not be loaded`}),(0,l.jsx)(f.MessageText,{children:h})]}),!d&&!h&&(0,l.jsxs)(l.Fragment,{children:[(0,l.jsx)(`div`,{className:`searchArea`,children:(0,l.jsx)(u,{value:o,onChange:c})}),(0,l.jsx)(f.Tabs,{role:`tablist`,"aria-label":`Mobile app categories`,children:_.map(e=>(0,l.jsxs)(f.TabButton,{type:`button`,role:`tab`,"aria-selected":i===e.id,$active:i===e.id,onClick:()=>a(e.id),children:[(0,l.jsx)(`span`,{children:e.label}),(0,l.jsx)(`span`,{className:`tabCount`,children:y[e.id]||0})]},e.id))}),x&&(0,l.jsx)(f.CategoryDescription,{children:x.description}),b.length>0?(0,l.jsx)(f.Grid,{children:b.map(e=>{let t=e.icon?`/mobile-apps-distribution-page/${e.icon}`:``;return(0,l.jsxs)(f.AppCard,{children:[(0,l.jsxs)(`div`,{className:`cardTop`,children:[(0,l.jsx)(f.AppIcon,{children:t?(0,l.jsx)(`img`,{src:t,alt:`${e.name} icon`}):`AR`}),e.status&&(0,l.jsx)(f.Status,{children:e.status})]}),(0,l.jsxs)(f.AppContent,{children:[(0,l.jsx)(f.AppName,{children:e.name}),(0,l.jsx)(f.AppDescription,{children:e.description}),(0,l.jsxs)(`div`,{className:`appMeta`,children:[e.version&&(0,l.jsxs)(`span`,{children:[`Version`,` `,e.version]}),e.platform&&(0,l.jsx)(`span`,{children:e.platform})]}),(0,l.jsxs)(`div`,{className:`appActions`,children:[e.apkUrl&&(0,l.jsx)(`a`,{className:`downloadButton`,href:e.apkUrl,target:`_blank`,rel:`noreferrer`,download:!0,children:`Download APK`}),e.releaseUrl&&(0,l.jsx)(`a`,{className:`releaseButton`,href:e.releaseUrl,target:`_blank`,rel:`noreferrer`,children:`Release Notes`})]})]})]},e.id)})}):(0,l.jsxs)(f.MessageState,{children:[(0,l.jsx)(f.MessageTitle,{children:o?`No matching apps found`:`No apps available yet`}),(0,l.jsx)(f.MessageText,{children:o?`Try searching with a different app name or keyword.`:`Applications in this category will be added soon.`})]})]})]})})]})};export{m as default};
+    `},_={id:`all`,label:`All Apps`,description:`Browse all available mobile applications.`},v=()=>{let[e,t]=(0,l.useState)([]),[n,r]=(0,l.useState)([]),[i,a]=(0,l.useState)(`all`),[o,s]=(0,l.useState)(``),[c,u]=(0,l.useState)(!0),[p,h]=(0,l.useState)(``);(0,l.useEffect)(()=>{let e=new AbortController;return(async()=>{try{u(!0),h(``);let n=await fetch(`/mobile-apps-distribution-page/data/apps.json`,{signal:e.signal});if(!n.ok)throw Error(`Unable to load mobile apps.`);let i=await n.json();t(Array.isArray(i.categories)?i.categories:[]),r(Array.isArray(i.apps)?i.apps:[])}catch(e){e.name!==`AbortError`&&h(e.message)}finally{e.signal.aborted||u(!1)}})(),()=>{e.abort()}},[]);let v=(0,l.useMemo)(()=>[_,...e],[e]),y=(0,l.useMemo)(()=>{let e=o.trim().toLowerCase();return e?n.filter(t=>[t.name,t.description,t.packageName,t.platform,t.version,t.status].filter(Boolean).join(` `).toLowerCase().includes(e)):n},[n,o]),b=(0,l.useMemo)(()=>y.reduce((e,t)=>(t.category&&(e[t.category]=(e[t.category]||0)+1),e),{all:y.length}),[y]),x=(0,l.useMemo)(()=>i===`all`?y:y.filter(e=>e.category===i),[i,y]),S=v.find(e=>e.id===i);return(0,d.jsxs)(g.Wrapper,{children:[(0,d.jsx)(g.Hero,{children:(0,d.jsxs)(g.Container,{children:[(0,d.jsx)(g.Eyebrow,{children:`a2rp Mobile Apps`}),(0,d.jsx)(g.Title,{children:`Mobile apps built for everyday use`}),(0,d.jsx)(g.Description,{children:`Explore free applications, premium tools and experimental mobile projects created by Ashish Ranjan.`})]})}),(0,d.jsx)(g.AppsSection,{children:(0,d.jsxs)(g.Container,{children:[c&&(0,d.jsx)(g.LoadingState,{children:(0,d.jsx)(g.Spinner,{})}),!c&&p&&(0,d.jsxs)(g.MessageState,{children:[(0,d.jsx)(g.MessageTitle,{children:`Apps could not be loaded`}),(0,d.jsx)(g.MessageText,{children:p})]}),!c&&!p&&(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(`div`,{className:`searchArea`,children:(0,d.jsx)(f,{value:o,onChange:s})}),(0,d.jsx)(g.Tabs,{role:`tablist`,"aria-label":`Mobile app categories`,children:v.map(e=>(0,d.jsxs)(g.TabButton,{type:`button`,role:`tab`,"aria-selected":i===e.id,$active:i===e.id,onClick:()=>a(e.id),children:[(0,d.jsx)(`span`,{children:e.label}),(0,d.jsx)(`span`,{className:`tabCount`,children:b[e.id]||0})]},e.id))}),S&&(0,d.jsx)(g.CategoryDescription,{children:S.description}),x.length>0?(0,d.jsx)(g.Grid,{children:x.map(e=>{let t=e.icon?`/mobile-apps-distribution-page/${e.icon}`:``,n=e.releaseUrl||e.apkUrl;return(0,d.jsxs)(g.AppCard,{children:[(0,d.jsxs)(`div`,{className:`cardTop`,children:[(0,d.jsx)(g.AppIcon,{children:t?(0,d.jsx)(`img`,{src:t,alt:`${e.name} icon`}):`AR`}),(0,d.jsxs)(`div`,{className:`cardTopActions`,children:[e.status&&(0,d.jsx)(g.Status,{children:e.status}),(0,d.jsx)(m,{appName:e.name,shareUrl:n})]})]}),(0,d.jsxs)(g.AppContent,{children:[(0,d.jsx)(g.AppName,{children:e.name}),(0,d.jsx)(g.AppDescription,{children:e.description}),(0,d.jsxs)(`div`,{className:`appMeta`,children:[e.version&&(0,d.jsxs)(`span`,{children:[`Version`,` `,e.version]}),e.platform&&(0,d.jsx)(`span`,{children:e.platform})]}),(0,d.jsxs)(`div`,{className:`appActions`,children:[e.apkUrl&&(0,d.jsx)(`a`,{className:`downloadButton`,href:e.apkUrl,target:`_blank`,rel:`noreferrer`,download:!0,children:`Download APK`}),e.releaseUrl&&(0,d.jsx)(`a`,{className:`releaseButton`,href:e.releaseUrl,target:`_blank`,rel:`noreferrer`,children:`Release Notes`})]})]})]},e.id)})}):(0,d.jsxs)(g.MessageState,{children:[(0,d.jsx)(g.MessageTitle,{children:o?`No matching apps found`:`No apps available yet`}),(0,d.jsx)(g.MessageText,{children:o?`Try searching with a different app name or keyword.`:`Applications in this category will be added soon.`})]})]})]})})]})};export{v as default};
