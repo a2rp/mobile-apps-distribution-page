@@ -3,6 +3,7 @@ import AppRoutes from "./AppRoutes";
 import { Styled } from "./AppStyled";
 import Footer from "./components/Footer";
 import DeepOceanRays from "./components/DeepOceanRays";
+import GoToTop from "./components/GoToTop";
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
                 </Styled.Main>
 
                 <Footer />
+                <GoToTop />
             </div>
         </Styled.Wrapper>
     );
