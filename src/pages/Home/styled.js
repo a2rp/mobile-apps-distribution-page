@@ -106,7 +106,11 @@ export const Styled = {
 
     TabButton: styled.button`
         flex-shrink: 0;
-        padding: 12px 18px;
+        min-height: 44px;
+        padding: 7px 9px 7px 17px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
         border: 1px solid
             ${({ $active }) =>
                 $active ? "#ffffff" : "rgba(255, 255, 255, 0.12)"};
@@ -126,6 +130,27 @@ export const Styled = {
             border-color 180ms ease,
             color 180ms ease,
             transform 180ms ease;
+
+        .tabCount {
+            min-width: 28px;
+            height: 28px;
+            padding: 0 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid
+                ${({ $active }) =>
+                    $active
+                        ? "rgba(0, 0, 0, 0.12)"
+                        : "rgba(255, 255, 255, 0.1)"};
+            border-radius: 999px;
+            background-color: ${({ $active }) =>
+                $active ? "rgba(0, 0, 0, 0.08)" : "rgba(255, 255, 255, 0.06)"};
+            color: ${({ $active }) =>
+                $active ? "rgba(0, 0, 0, 0.7)" : "rgba(255, 255, 255, 0.58)"};
+            font-size: 11px;
+            font-weight: 800;
+        }
 
         &:hover {
             border-color: ${({ $active }) =>

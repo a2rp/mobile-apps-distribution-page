@@ -62,12 +62,51 @@ const Home = () => {
         };
     }, []);
 
-    const filteredApps = useMemo(() => {
+    // const categoryCounts = useMemo(() => {
+    //     return apps.reduce((counts, app) => {
+    //         if (!app.category) {
+    //             return counts;
+    //         }
+
+    //         return {
+    //             ...counts,
+    //             [app.category]: (counts[app.category] || 0) + 1,
+    //         };
+    //     }, {});
+    // }, [apps]);
+
+    // const filteredApps = useMemo(() => {
+    //     const normalizedQuery = searchQuery.trim().toLowerCase();
+
+    //     return apps.filter((app) => {
+    //         const matchesCategory = app.category === activeTab;
+
+    //         const searchableContent = [
+    //             app.name,
+    //             app.description,
+    //             app.packageName,
+    //             app.platform,
+    //             app.version,
+    //         ]
+    //             .filter(Boolean)
+    //             .join(" ")
+    //             .toLowerCase();
+
+    //         const matchesSearch =
+    //             !normalizedQuery || searchableContent.includes(normalizedQuery);
+
+    //         return matchesCategory && matchesSearch;
+    //     });
+    // }, [activeTab, apps, searchQuery]);
+
+    const searchMatchedApps = useMemo(() => {
         const normalizedQuery = searchQuery.trim().toLowerCase();
 
-        return apps.filter((app) => {
-            const matchesCategory = app.category === activeTab;
+        if (!normalizedQuery) {
+            return apps;
+        }
 
+        return apps.filter((app) => {
             const searchableContent = [
                 app.name,
                 app.description,
@@ -79,12 +118,25 @@ const Home = () => {
                 .join(" ")
                 .toLowerCase();
 
-            const matchesSearch =
-                !normalizedQuery || searchableContent.includes(normalizedQuery);
-
-            return matchesCategory && matchesSearch;
+            return searchableContent.includes(normalizedQuery);
         });
-    }, [activeTab, apps, searchQuery]);
+    }, [apps, searchQuery]);
+
+    const categoryCounts = useMemo(() => {
+        return searchMatchedApps.reduce((counts, app) => {
+            if (!app.category) {
+                return counts;
+            }
+
+            counts[app.category] = (counts[app.category] || 0) + 1;
+
+            return counts;
+        }, {});
+    }, [searchMatchedApps]);
+
+    const filteredApps = useMemo(() => {
+        return searchMatchedApps.filter((app) => app.category === activeTab);
+    }, [activeTab, searchMatchedApps]);
 
     const activeCategory = categories.find(
         (category) => category.id === activeTab,
@@ -151,7 +203,11 @@ const Home = () => {
                                             setActiveTab(category.id)
                                         }
                                     >
-                                        {category.label}
+                                        <span>{category.label}</span>
+
+                                        <span className="tabCount">
+                                            {categoryCounts[category.id] || 0}
+                                        </span>
                                     </Styled.TabButton>
                                 ))}
                             </Styled.Tabs>
