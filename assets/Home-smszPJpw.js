@@ -1,4 +1,4 @@
-import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./index-B9s47Trl.js";var l=c(n(),1),u={Wrapper:o.div`
+import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./index-CjMhKWL_.js";var l=c(n(),1),u={Wrapper:o.div`
         width: min(100%, 460px);
         min-height: 50px;
         display: flex;
@@ -297,7 +297,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
             grid-template-columns: 1fr;
         }
     `,AppCard:o.article`
-        min-height: 340px;
+        min-height: 380px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -358,23 +358,39 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
             margin-top: 6px;
         }
 
-        .appActions a {
+        .appActions a,
+        .appActions button {
             min-height: 46px;
             padding: 0 14px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
+            font-family: inherit;
             font-size: 13px;
             font-weight: 700;
             text-align: center;
             text-decoration: none;
+            cursor: pointer;
             transition:
                 transform 180ms ease,
                 border-color 180ms ease,
                 background-color 180ms ease,
                 color 180ms ease,
                 opacity 180ms ease;
+        }
+
+        .detailsButton {
+            grid-column: 1 / -1;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background-color: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+        }
+
+        .detailsButton:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.38);
+            background-color: rgba(255, 255, 255, 0.13);
         }
 
         .downloadButton {
@@ -401,8 +417,15 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
             color: #ffffff;
         }
 
-        .appActions a:active {
+        .appActions a:active,
+        .appActions button:active {
             transform: scale(0.97);
+        }
+
+        .appActions a:focus-visible,
+        .appActions button:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
         }
 
         &:hover {
@@ -426,6 +449,10 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
 
             .appActions {
                 grid-template-columns: 1fr;
+            }
+
+            .detailsButton {
+                grid-column: auto;
             }
         }
     `,AppIcon:o.div`

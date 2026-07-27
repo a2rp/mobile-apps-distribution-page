@@ -80,7 +80,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
         border-top-color: #ffffff;
         border-radius: 50%;
         animation: ${ao} 0.75s linear infinite;
-    `},so=()=>(0,I.jsx)(oo.Wrapper,{children:(0,I.jsx)(oo.Spinner,{})}),co=(0,_.lazy)(()=>S(()=>import(`./Home-DzHNbu7i.js`),[])),lo=(0,_.lazy)(()=>S(()=>import(`./NotFound-BIZ2wkx_.js`),[])),uo=()=>(0,I.jsx)(_.Suspense,{fallback:(0,I.jsx)(so,{}),children:(0,I.jsxs)(Kt,{children:[(0,I.jsx)(Wt,{path:`/`,element:(0,I.jsx)(Ut,{to:`/home`,replace:!0})}),(0,I.jsx)(Wt,{path:`/home`,element:(0,I.jsx)(co,{})}),(0,I.jsx)(Wt,{path:`*`,element:(0,I.jsx)(lo,{})})]})}),fo={Wrapper:Za.div`
+    `},so=()=>(0,I.jsx)(oo.Wrapper,{children:(0,I.jsx)(oo.Spinner,{})}),co=(0,_.lazy)(()=>S(()=>import(`./Home-smszPJpw.js`),[])),lo=(0,_.lazy)(()=>S(()=>import(`./NotFound-DMWT2hqv.js`),[])),uo=()=>(0,I.jsx)(_.Suspense,{fallback:(0,I.jsx)(so,{}),children:(0,I.jsxs)(Kt,{children:[(0,I.jsx)(Wt,{path:`/`,element:(0,I.jsx)(Ut,{to:`/home`,replace:!0})}),(0,I.jsx)(Wt,{path:`/home`,element:(0,I.jsx)(co,{})}),(0,I.jsx)(Wt,{path:`*`,element:(0,I.jsx)(lo,{})})]})}),fo={Wrapper:Za.div`
         position: relative;
         width: 100%;
         min-height: 100vh;

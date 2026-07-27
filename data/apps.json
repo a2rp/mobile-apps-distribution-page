@@ -29,6 +29,19 @@
             "icon": "apps/hello-world/icon.png",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/hello-world-v1.0.0/hello-world-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/hello-world-v1.0.0"
+        },
+        {
+            "id": "unit-converter",
+            "name": "Unit Converter",
+            "category": "free",
+            "description": "A free and offline Android utility for quick and accurate everyday unit conversions.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.unitconverter",
+            "icon": "apps/unit-converter/icon.png",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/unit-converter-v1.0.0/unit-converter-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/unit-converter-v1.0.0"
         }
     ]
 }
