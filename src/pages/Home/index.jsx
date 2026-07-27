@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
+import AppPreviewModal from "../../components/AppPreviewModal";
 import AppSearch from "../../components/AppSearch";
 import AppShare from "../../components/AppShare";
 import { Styled } from "./styled";
@@ -15,6 +16,7 @@ const Home = () => {
     const [apps, setApps] = useState([]);
     const [activeTab, setActiveTab] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
+    const [selectedPreview, setSelectedPreview] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -119,6 +121,58 @@ const Home = () => {
         (category) => category.id === activeTab,
     );
 
+    const handleOpenPreview = (app) => {
+        if (!app.previewImage) {
+            return;
+        }
+
+        setSelectedPreview(app);
+    };
+
+    const handleClosePreview = useCallback(() => {
+        setSelectedPreview(null);
+    }, []);
+
+    const selectedPreviewImage = selectedPreview?.previewImage
+        ? `${import.meta.env.BASE_URL}${selectedPreview.previewImage}`
+        : "";
+
+    const handleCardPointerMove = (event) => {
+        if (event.pointerType !== "mouse") {
+            return;
+        }
+
+        const card = event.currentTarget;
+        const rect = card.getBoundingClientRect();
+
+        const pointerX = event.clientX - rect.left;
+        const pointerY = event.clientY - rect.top;
+
+        const horizontalPercentage = pointerX / rect.width;
+        const verticalPercentage = pointerY / rect.height;
+
+        const rotateY = (horizontalPercentage - 0.5) * 8;
+
+        const rotateX = (0.5 - verticalPercentage) * 8;
+
+        card.style.setProperty("--rotate-x", `${rotateX.toFixed(2)}deg`);
+
+        card.style.setProperty("--rotate-y", `${rotateY.toFixed(2)}deg`);
+
+        card.style.setProperty("--glow-x", `${horizontalPercentage * 100}%`);
+
+        card.style.setProperty("--glow-y", `${verticalPercentage * 100}%`);
+    };
+
+    const handleCardPointerLeave = (event) => {
+        const card = event.currentTarget;
+
+        card.style.setProperty("--rotate-x", "0deg");
+        card.style.setProperty("--rotate-y", "0deg");
+        card.style.setProperty("--glow-x", "50%");
+        card.style.setProperty("--glow-y", "50%");
+    };
+
     return (
         <Styled.Wrapper>
             <Styled.Hero>
@@ -202,11 +256,23 @@ const Home = () => {
                                             ? `${import.meta.env.BASE_URL}${app.icon}`
                                             : "";
 
+                                        const previewPath = app.previewImage
+                                            ? `${import.meta.env.BASE_URL}${app.previewImage}`
+                                            : "";
+
                                         const shareUrl =
                                             app.releaseUrl || app.apkUrl;
 
                                         return (
-                                            <Styled.AppCard key={app.id}>
+                                            <Styled.AppCard
+                                                key={app.id}
+                                                onPointerMove={
+                                                    handleCardPointerMove
+                                                }
+                                                onPointerLeave={
+                                                    handleCardPointerLeave
+                                                }
+                                            >
                                                 <div className="cardTop">
                                                     <Styled.AppIcon>
                                                         {iconPath ? (
@@ -232,6 +298,32 @@ const Home = () => {
                                                         />
                                                     </div>
                                                 </div>
+
+                                                {previewPath ? (
+                                                    <button
+                                                        className="previewButton"
+                                                        type="button"
+                                                        onClick={() =>
+                                                            handleOpenPreview(
+                                                                app,
+                                                            )
+                                                        }
+                                                        aria-label={`Open ${app.name} preview`}
+                                                    >
+                                                        <img
+                                                            src={previewPath}
+                                                            alt={`${app.name} preview`}
+                                                        />
+
+                                                        <span>
+                                                            View Preview
+                                                        </span>
+                                                    </button>
+                                                ) : (
+                                                    <div className="previewPlaceholder">
+                                                        Preview coming soon
+                                                    </div>
+                                                )}
 
                                                 <Styled.AppContent>
                                                     <Styled.AppName>
@@ -309,6 +401,13 @@ const Home = () => {
                     )}
                 </Styled.Container>
             </Styled.AppsSection>
+
+            <AppPreviewModal
+                appName={selectedPreview?.name || ""}
+                imageUrl={selectedPreviewImage}
+                isOpen={Boolean(selectedPreview)}
+                onClose={handleClosePreview}
+            />
         </Styled.Wrapper>
     );
 };
