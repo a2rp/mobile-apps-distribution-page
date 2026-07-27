@@ -1,4 +1,4 @@
-import{a as e,o as t,r as n}from"./index-ICQVDPCh.js";var r={Wrapper:e.section`
+import{a as e,o as t,r as n}from"./index-CVxwsk0a.js";var r={Wrapper:e.section`
         width: 100%;
         min-height: calc(100vh - 157px);
         display: grid;
