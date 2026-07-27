@@ -40,6 +40,7 @@
             "status": "Available",
             "packageName": "com.a2rp.unitconverter",
             "icon": "apps/unit-converter/icon.png",
+            "previewImage": "apps/unit-converter/preview.jpeg",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/unit-converter-v1.0.0/unit-converter-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/unit-converter-v1.0.0"
         }
