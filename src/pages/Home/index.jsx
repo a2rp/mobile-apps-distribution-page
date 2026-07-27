@@ -3,10 +3,16 @@ import { useEffect, useMemo, useState } from "react";
 import AppSearch from "../../components/AppSearch";
 import { Styled } from "./styled";
 
+const ALL_CATEGORY = {
+    id: "all",
+    label: "All Apps",
+    description: "Browse all available mobile applications.",
+};
+
 const Home = () => {
     const [categories, setCategories] = useState([]);
     const [apps, setApps] = useState([]);
-    const [activeTab, setActiveTab] = useState("");
+    const [activeTab, setActiveTab] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
@@ -32,18 +38,11 @@ const Home = () => {
 
                 const data = await response.json();
 
-                const loadedCategories = Array.isArray(data.categories)
-                    ? data.categories
-                    : [];
+                setCategories(
+                    Array.isArray(data.categories) ? data.categories : [],
+                );
 
-                const loadedApps = Array.isArray(data.apps) ? data.apps : [];
-
-                setCategories(loadedCategories);
-                setApps(loadedApps);
-
-                if (loadedCategories.length > 0) {
-                    setActiveTab(loadedCategories[0].id);
-                }
+                setApps(Array.isArray(data.apps) ? data.apps : []);
             } catch (loadError) {
                 if (loadError.name !== "AbortError") {
                     setError(loadError.message);
@@ -62,42 +61,9 @@ const Home = () => {
         };
     }, []);
 
-    // const categoryCounts = useMemo(() => {
-    //     return apps.reduce((counts, app) => {
-    //         if (!app.category) {
-    //             return counts;
-    //         }
-
-    //         return {
-    //             ...counts,
-    //             [app.category]: (counts[app.category] || 0) + 1,
-    //         };
-    //     }, {});
-    // }, [apps]);
-
-    // const filteredApps = useMemo(() => {
-    //     const normalizedQuery = searchQuery.trim().toLowerCase();
-
-    //     return apps.filter((app) => {
-    //         const matchesCategory = app.category === activeTab;
-
-    //         const searchableContent = [
-    //             app.name,
-    //             app.description,
-    //             app.packageName,
-    //             app.platform,
-    //             app.version,
-    //         ]
-    //             .filter(Boolean)
-    //             .join(" ")
-    //             .toLowerCase();
-
-    //         const matchesSearch =
-    //             !normalizedQuery || searchableContent.includes(normalizedQuery);
-
-    //         return matchesCategory && matchesSearch;
-    //     });
-    // }, [activeTab, apps, searchQuery]);
+    const displayCategories = useMemo(() => {
+        return [ALL_CATEGORY, ...categories];
+    }, [categories]);
 
     const searchMatchedApps = useMemo(() => {
         const normalizedQuery = searchQuery.trim().toLowerCase();
@@ -113,6 +79,7 @@ const Home = () => {
                 app.packageName,
                 app.platform,
                 app.version,
+                app.status,
             ]
                 .filter(Boolean)
                 .join(" ")
@@ -123,22 +90,31 @@ const Home = () => {
     }, [apps, searchQuery]);
 
     const categoryCounts = useMemo(() => {
-        return searchMatchedApps.reduce((counts, app) => {
-            if (!app.category) {
+        return searchMatchedApps.reduce(
+            (counts, app) => {
+                if (!app.category) {
+                    return counts;
+                }
+
+                counts[app.category] = (counts[app.category] || 0) + 1;
+
                 return counts;
-            }
-
-            counts[app.category] = (counts[app.category] || 0) + 1;
-
-            return counts;
-        }, {});
+            },
+            {
+                all: searchMatchedApps.length,
+            },
+        );
     }, [searchMatchedApps]);
 
     const filteredApps = useMemo(() => {
+        if (activeTab === "all") {
+            return searchMatchedApps;
+        }
+
         return searchMatchedApps.filter((app) => app.category === activeTab);
     }, [activeTab, searchMatchedApps]);
 
-    const activeCategory = categories.find(
+    const activeCategory = displayCategories.find(
         (category) => category.id === activeTab,
     );
 
@@ -190,7 +166,7 @@ const Home = () => {
                                 role="tablist"
                                 aria-label="Mobile app categories"
                             >
-                                {categories.map((category) => (
+                                {displayCategories.map((category) => (
                                     <Styled.TabButton
                                         key={category.id}
                                         type="button"

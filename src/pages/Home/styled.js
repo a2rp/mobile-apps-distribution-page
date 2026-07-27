@@ -163,6 +163,11 @@ export const Styled = {
         &:active {
             transform: scale(0.97);
         }
+
+        &:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
+        }
     `,
 
     CategoryDescription: styled.p`
