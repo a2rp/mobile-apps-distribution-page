@@ -1,4 +1,4 @@
-import{i as e,r as t,t as n}from"./index-DgxiNDzc.js";var r={Wrapper:t.section`
+import{i as e,r as t,t as n}from"./index-DcplESpW.js";var r={Wrapper:t.section`
         width: 100%;
         min-height: calc(100vh - 157px);
         display: grid;

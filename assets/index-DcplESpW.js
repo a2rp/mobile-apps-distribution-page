@@ -80,7 +80,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
         border-top-color: #ffffff;
         border-radius: 50%;
         animation: ${ao} 0.75s linear infinite;
-    `},so=()=>(0,I.jsx)(oo.Wrapper,{children:(0,I.jsx)(oo.Spinner,{})}),co=(0,_.lazy)(()=>S(()=>import(`./Home-B_0tX6Kh.js`),[])),lo=(0,_.lazy)(()=>S(()=>import(`./NotFound-DpqfyUjx.js`),[])),uo=()=>(0,I.jsx)(_.Suspense,{fallback:(0,I.jsx)(so,{}),children:(0,I.jsxs)(Kt,{children:[(0,I.jsx)(Wt,{path:`/`,element:(0,I.jsx)(Ut,{to:`/home`,replace:!0})}),(0,I.jsx)(Wt,{path:`/home`,element:(0,I.jsx)(co,{})}),(0,I.jsx)(Wt,{path:`*`,element:(0,I.jsx)(lo,{})})]})}),fo={Wrapper:Za.div`
+    `},so=()=>(0,I.jsx)(oo.Wrapper,{children:(0,I.jsx)(oo.Spinner,{})}),co=(0,_.lazy)(()=>S(()=>import(`./Home-C_PqqjNX.js`),[])),lo=(0,_.lazy)(()=>S(()=>import(`./NotFound-CxHiWDAX.js`),[])),uo=()=>(0,I.jsx)(_.Suspense,{fallback:(0,I.jsx)(so,{}),children:(0,I.jsxs)(Kt,{children:[(0,I.jsx)(Wt,{path:`/`,element:(0,I.jsx)(Ut,{to:`/home`,replace:!0})}),(0,I.jsx)(Wt,{path:`/home`,element:(0,I.jsx)(co,{})}),(0,I.jsx)(Wt,{path:`*`,element:(0,I.jsx)(lo,{})})]})}),fo={Wrapper:Za.div`
         position: relative;
         width: 100%;
         min-height: 100vh;
@@ -302,4 +302,72 @@ void main() {
 
     glFragColor = vec4(color, 1.0);
 }
-`,Lo=(e,t,n)=>{let r=e.createShader(t);return e.shaderSource(r,n),e.compileShader(r),e.getShaderParameter(r,e.COMPILE_STATUS)?r:(console.error(e.getShaderInfoLog(r)),e.deleteShader(r),null)},Ro=()=>{let e=(0,_.useRef)(null);return(0,_.useEffect)(()=>{let t=e.current,n=t.getContext(`webgl2`,{alpha:!1,antialias:!0,powerPreference:`high-performance`});if(!n)return;let r=Lo(n,n.VERTEX_SHADER,Fo),i=Lo(n,n.FRAGMENT_SHADER,Io),a=n.createProgram();if(n.attachShader(a,r),n.attachShader(a,i),n.linkProgram(a),!n.getProgramParameter(a,n.LINK_STATUS)){console.error(n.getProgramInfoLog(a));return}n.useProgram(a);let o=new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),s=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,s),n.bufferData(n.ARRAY_BUFFER,o,n.STATIC_DRAW);let c=n.getAttribLocation(a,`position`);n.enableVertexAttribArray(c),n.vertexAttribPointer(c,2,n.FLOAT,!1,0,0);let l=n.getUniformLocation(a,`u_resolution`),u=n.getUniformLocation(a,`u_time`),d,f=performance.now(),p=()=>{let e=t.getBoundingClientRect(),r=Math.min(window.devicePixelRatio||1,2);t.width=e.width*r,t.height=e.height*r,n.viewport(0,0,t.width,t.height)},m=()=>{p();let e=(performance.now()-f)*.001;n.uniform2f(l,t.width,t.height),n.uniform1f(u,e),n.drawArrays(n.TRIANGLES,0,6),d=requestAnimationFrame(m)};return m(),window.addEventListener(`resize`,p),()=>{cancelAnimationFrame(d),window.removeEventListener(`resize`,p),n.deleteProgram(a),n.deleteBuffer(s),n.deleteShader(r),n.deleteShader(i)}},[]),(0,I.jsx)(Po.Wrapper,{children:(0,I.jsx)(`canvas`,{ref:e})})};(0,v.createRoot)(document.getElementById(`root`)).render((0,I.jsx)(Pn,{basename:`/mobile-apps-distribution-page/`,children:(0,I.jsx)(()=>(0,I.jsxs)(fo.Wrapper,{children:[(0,I.jsx)(`div`,{className:`bgWrapper`,children:(0,I.jsx)(Ro,{})}),(0,I.jsxs)(`div`,{className:`fgWrapper`,children:[(0,I.jsx)(io,{}),(0,I.jsx)(fo.Main,{children:(0,I.jsx)(uo,{})}),(0,I.jsx)(No,{})]})]}),{})}));export{f as a,In as i,eo as n,c as o,Za as r,ro as t};
+`,Lo=(e,t,n)=>{let r=e.createShader(t);return e.shaderSource(r,n),e.compileShader(r),e.getShaderParameter(r,e.COMPILE_STATUS)?r:(console.error(e.getShaderInfoLog(r)),e.deleteShader(r),null)},Ro=()=>{let e=(0,_.useRef)(null);return(0,_.useEffect)(()=>{let t=e.current,n=t.getContext(`webgl2`,{alpha:!1,antialias:!0,powerPreference:`high-performance`});if(!n)return;let r=Lo(n,n.VERTEX_SHADER,Fo),i=Lo(n,n.FRAGMENT_SHADER,Io),a=n.createProgram();if(n.attachShader(a,r),n.attachShader(a,i),n.linkProgram(a),!n.getProgramParameter(a,n.LINK_STATUS)){console.error(n.getProgramInfoLog(a));return}n.useProgram(a);let o=new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),s=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,s),n.bufferData(n.ARRAY_BUFFER,o,n.STATIC_DRAW);let c=n.getAttribLocation(a,`position`);n.enableVertexAttribArray(c),n.vertexAttribPointer(c,2,n.FLOAT,!1,0,0);let l=n.getUniformLocation(a,`u_resolution`),u=n.getUniformLocation(a,`u_time`),d,f=performance.now(),p=()=>{let e=t.getBoundingClientRect(),r=Math.min(window.devicePixelRatio||1,2);t.width=e.width*r,t.height=e.height*r,n.viewport(0,0,t.width,t.height)},m=()=>{p();let e=(performance.now()-f)*.001;n.uniform2f(l,t.width,t.height),n.uniform1f(u,e),n.drawArrays(n.TRIANGLES,0,6),d=requestAnimationFrame(m)};return m(),window.addEventListener(`resize`,p),()=>{cancelAnimationFrame(d),window.removeEventListener(`resize`,p),n.deleteProgram(a),n.deleteBuffer(s),n.deleteShader(r),n.deleteShader(i)}},[]),(0,I.jsx)(Po.Wrapper,{children:(0,I.jsx)(`canvas`,{ref:e})})};function zo(e){return xo({tag:`svg`,attr:{viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`2`,strokeLinecap:`round`,strokeLinejoin:`round`},child:[{tag:`line`,attr:{x1:`12`,y1:`19`,x2:`12`,y2:`5`},child:[]},{tag:`polyline`,attr:{points:`5 12 12 5 19 12`},child:[]}]})(e)}var Bo={Wrapper:Za.button`
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 1000;
+
+        width: 48px;
+        height: 48px;
+
+        display: grid;
+        place-items: center;
+
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 50%;
+
+        background: rgba(10, 10, 12, 0.78);
+        color: #ffffff;
+
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        box-shadow:
+            0 14px 35px rgba(0, 0, 0, 0.38),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+        opacity: ${({$visible:e})=>+!!e};
+        visibility: ${({$visible:e})=>e?`visible`:`hidden`};
+
+        transform: ${({$visible:e})=>e?`translateY(0) scale(1)`:`translateY(14px) scale(0.9)`};
+
+        pointer-events: ${({$visible:e})=>e?`auto`:`none`};
+
+        cursor: pointer;
+
+        transition:
+            opacity 200ms ease,
+            visibility 200ms ease,
+            transform 200ms ease,
+            border-color 200ms ease,
+            background-color 200ms ease;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            transform: translateY(-4px) scale(1);
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(28, 28, 32, 0.92);
+        }
+
+        &:active {
+            transform: translateY(-1px) scale(0.94);
+        }
+
+        &:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 600px) {
+            right: 16px;
+            bottom: 16px;
+
+            width: 44px;
+            height: 44px;
+        }
+    `},Vo=()=>{let[e,t]=(0,_.useState)(!1);return(0,_.useEffect)(()=>{let e=()=>{t(window.scrollY>400)};return e(),window.addEventListener(`scroll`,e,{passive:!0}),()=>{window.removeEventListener(`scroll`,e)}},[]),(0,I.jsx)(Bo.Wrapper,{type:`button`,$visible:e,onClick:()=>{window.scrollTo({top:0,behavior:`smooth`})},"aria-label":`Go to top`,title:`Go to top`,children:(0,I.jsx)(zo,{"aria-hidden":`true`})})};(0,v.createRoot)(document.getElementById(`root`)).render((0,I.jsx)(Pn,{basename:`/mobile-apps-distribution-page/`,children:(0,I.jsx)(()=>(0,I.jsxs)(fo.Wrapper,{children:[(0,I.jsx)(`div`,{className:`bgWrapper`,children:(0,I.jsx)(Ro,{})}),(0,I.jsxs)(`div`,{className:`fgWrapper`,children:[(0,I.jsx)(io,{}),(0,I.jsx)(fo.Main,{children:(0,I.jsx)(uo,{})}),(0,I.jsx)(No,{}),(0,I.jsx)(Vo,{})]})]}),{})}));export{f as a,In as i,eo as n,c as o,Za as r,ro as t};
