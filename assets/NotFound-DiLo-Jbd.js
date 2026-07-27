@@ -1,11 +1,11 @@
-import{i as e,r as t,t as n}from"./index-DcplESpW.js";var r={Wrapper:t.section`
+import{a as e,o as t,r as n}from"./index-Bl-YtfvZ.js";var r={Wrapper:e.section`
         width: 100%;
         min-height: calc(100vh - 157px);
         display: grid;
         place-items: center;
         padding: 80px 20px;
         background-color: transparent;
-    `,Content:t.div`
+    `,Content:e.div`
         width: min(100%, 620px);
         padding: 48px 30px;
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -20,13 +20,13 @@ import{i as e,r as t,t as n}from"./index-DcplESpW.js";var r={Wrapper:t.section`
         @media (max-width: 600px) {
             padding: 40px 20px;
         }
-    `,Code:t.p`
+    `,Code:e.p`
         margin: 0 0 20px;
         color: rgba(255, 255, 255, 0.5);
         font-size: 14px;
         font-weight: 800;
         letter-spacing: 4px;
-    `,Title:t.h1`
+    `,Title:e.h1`
         margin: 0;
         color: #ffffff;
         font-size: clamp(2.6rem, 7vw, 5rem);
@@ -37,13 +37,13 @@ import{i as e,r as t,t as n}from"./index-DcplESpW.js";var r={Wrapper:t.section`
         @media (max-width: 600px) {
             letter-spacing: -2px;
         }
-    `,Description:t.p`
+    `,Description:e.p`
         max-width: 520px;
         margin: 24px auto 0;
         color: rgba(255, 255, 255, 0.62);
         font-size: 16px;
         line-height: 1.7;
-    `,HomeButton:t.a`
+    `,HomeButton:e.a`
         min-height: 48px;
         display: inline-flex;
         align-items: center;
@@ -69,4 +69,4 @@ import{i as e,r as t,t as n}from"./index-DcplESpW.js";var r={Wrapper:t.section`
         &:active {
             transform: scale(0.97);
         }
-    `},i=n(),a=()=>(0,i.jsx)(r.Wrapper,{children:(0,i.jsxs)(r.Content,{children:[(0,i.jsx)(r.Code,{children:`404`}),(0,i.jsx)(r.Title,{children:`Page not found`}),(0,i.jsx)(r.Description,{children:`The page you are looking for does not exist or has been moved.`}),(0,i.jsx)(r.HomeButton,{as:e,to:`/`,children:`Return Home`})]})});export{a as default};
+    `},i=n(),a=()=>(0,i.jsx)(r.Wrapper,{children:(0,i.jsxs)(r.Content,{children:[(0,i.jsx)(r.Code,{children:`404`}),(0,i.jsx)(r.Title,{children:`Page not found`}),(0,i.jsx)(r.Description,{children:`The page you are looking for does not exist or has been moved.`}),(0,i.jsx)(r.HomeButton,{as:t,to:`/`,children:`Return Home`})]})});export{a as default};
