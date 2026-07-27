@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Redirecting...</title>
+
+        <script>
+            const pathSegmentsToKeep = 1;
+            const locationData = window.location;
+
+            const repositoryPath = locationData.pathname
+                .split("/")
+                .slice(0, 1 + pathSegmentsToKeep)
+                .join("/");
+
+            const routePath = locationData.pathname
+                .slice(1)
+                .split("/")
+                .slice(pathSegmentsToKeep)
+                .join("/")
+                .replace(/&/g, "~and~");
+
+            const searchPath = locationData.search
+                ? `&${locationData.search.slice(1).replace(/&/g, "~and~")}`
+                : "";
+
+            locationData.replace(
+                `${locationData.protocol}//${locationData.hostname}${
+                    locationData.port ? `:${locationData.port}` : ""
+                }${repositoryPath}/?/${routePath}${searchPath}${
+                    locationData.hash
+                }`,
+            );
+        </script>
+    </head>
+
+    <body></body>
+</html>
