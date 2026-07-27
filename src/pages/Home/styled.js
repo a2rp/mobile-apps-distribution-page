@@ -193,7 +193,7 @@ export const Styled = {
     `,
 
     AppCard: styled.article`
-        min-height: 340px;
+        min-height: 380px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -254,23 +254,39 @@ export const Styled = {
             margin-top: 6px;
         }
 
-        .appActions a {
+        .appActions a,
+        .appActions button {
             min-height: 46px;
             padding: 0 14px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
+            font-family: inherit;
             font-size: 13px;
             font-weight: 700;
             text-align: center;
             text-decoration: none;
+            cursor: pointer;
             transition:
                 transform 180ms ease,
                 border-color 180ms ease,
                 background-color 180ms ease,
                 color 180ms ease,
                 opacity 180ms ease;
+        }
+
+        .detailsButton {
+            grid-column: 1 / -1;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background-color: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+        }
+
+        .detailsButton:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.38);
+            background-color: rgba(255, 255, 255, 0.13);
         }
 
         .downloadButton {
@@ -297,8 +313,15 @@ export const Styled = {
             color: #ffffff;
         }
 
-        .appActions a:active {
+        .appActions a:active,
+        .appActions button:active {
             transform: scale(0.97);
+        }
+
+        .appActions a:focus-visible,
+        .appActions button:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
         }
 
         &:hover {
@@ -322,6 +345,10 @@ export const Styled = {
 
             .appActions {
                 grid-template-columns: 1fr;
+            }
+
+            .detailsButton {
+                grid-column: auto;
             }
         }
     `,
