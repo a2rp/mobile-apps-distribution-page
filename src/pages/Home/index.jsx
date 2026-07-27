@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 
+import AppSearch from "../../components/AppSearch";
 import { Styled } from "./styled";
 
 const Home = () => {
     const [categories, setCategories] = useState([]);
     const [apps, setApps] = useState([]);
     const [activeTab, setActiveTab] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -61,8 +63,28 @@ const Home = () => {
     }, []);
 
     const filteredApps = useMemo(() => {
-        return apps.filter((app) => app.category === activeTab);
-    }, [activeTab, apps]);
+        const normalizedQuery = searchQuery.trim().toLowerCase();
+
+        return apps.filter((app) => {
+            const matchesCategory = app.category === activeTab;
+
+            const searchableContent = [
+                app.name,
+                app.description,
+                app.packageName,
+                app.platform,
+                app.version,
+            ]
+                .filter(Boolean)
+                .join(" ")
+                .toLowerCase();
+
+            const matchesSearch =
+                !normalizedQuery || searchableContent.includes(normalizedQuery);
+
+            return matchesCategory && matchesSearch;
+        });
+    }, [activeTab, apps, searchQuery]);
 
     const activeCategory = categories.find(
         (category) => category.id === activeTab,
@@ -105,6 +127,13 @@ const Home = () => {
 
                     {!isLoading && !error && (
                         <>
+                            <div className="searchArea">
+                                <AppSearch
+                                    value={searchQuery}
+                                    onChange={setSearchQuery}
+                                />
+                            </div>
+
                             <Styled.Tabs
                                 role="tablist"
                                 aria-label="Mobile app categories"
@@ -221,12 +250,15 @@ const Home = () => {
                             ) : (
                                 <Styled.MessageState>
                                     <Styled.MessageTitle>
-                                        No apps available yet
+                                        {searchQuery
+                                            ? "No matching apps found"
+                                            : "No apps available yet"}
                                     </Styled.MessageTitle>
 
                                     <Styled.MessageText>
-                                        Applications in this category will be
-                                        added soon.
+                                        {searchQuery
+                                            ? "Try searching with a different app name or keyword."
+                                            : "Applications in this category will be added soon."}
                                     </Styled.MessageText>
                                 </Styled.MessageState>
                             )}

@@ -22,8 +22,19 @@ export const Styled = {
         width: min(100% - 40px, 1200px);
         margin: 0 auto;
 
+        .searchArea {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 26px;
+        }
+
         @media (max-width: 600px) {
             width: min(100% - 28px, 1200px);
+
+            .searchArea {
+                justify-content: stretch;
+                margin-bottom: 22px;
+            }
         }
     `,
 
