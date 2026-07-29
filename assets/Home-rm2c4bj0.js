@@ -1,4 +1,4 @@
-import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./index-D6adoEI8.js";var l=c(n(),1),u={Wrapper:o.div`
+import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./index-BdsX-0y3.js";var l=c(n(),1),u={Wrapper:o.div`
         position: fixed;
         inset: 0;
         z-index: 2000;
@@ -357,6 +357,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
     `,Tabs:o.div`
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 10px;
         margin-bottom: 18px;
         padding-bottom: 4px;
