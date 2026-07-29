@@ -93,6 +93,7 @@ export const Styled = {
     Tabs: styled.div`
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 10px;
         margin-bottom: 18px;
         padding-bottom: 4px;
