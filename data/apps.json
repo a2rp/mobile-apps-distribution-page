@@ -71,6 +71,20 @@
             "previewImage": "apps/percentage-calculator/preview.png",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/percentage-calculator-v1.0.0/percentage-calculator-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/percentage-calculator-v1.0.0"
+        },
+        {
+            "id": "age-calculator",
+            "name": "Age Calculator",
+            "category": "free",
+            "description": "A free and offline Android utility for calculating exact age in years, months and days using manual input or date dropdowns.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.agecalculator",
+            "icon": "apps/age-calculator/icon.png",
+            "previewImage": "apps/age-calculator/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/age-calculator-v1.0.0/age-calculator-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/age-calculator-v1.0.0"
         }
     ]
 }
