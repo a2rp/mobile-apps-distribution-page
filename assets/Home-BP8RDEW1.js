@@ -1,4 +1,4 @@
-import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./index-C0QFNOOB.js";var l=c(n(),1),u={Wrapper:o.div`
+import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./index-CAdIqdE8.js";var u=t(l(),1),d={Wrapper:s.div`
         position: fixed;
         inset: 0;
         z-index: 2000;
@@ -140,7 +140,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
                 max-height: calc(100vh - 145px);
             }
         }
-    `},d=e(),f=({appName:e,imageUrl:n,isOpen:r,onClose:i})=>((0,l.useEffect)(()=>{if(!r)return;let e=document.body.style.overflow,t=e=>{e.key===`Escape`&&i()};return document.body.style.overflow=`hidden`,window.addEventListener(`keydown`,t),()=>{document.body.style.overflow=e,window.removeEventListener(`keydown`,t)}},[r,i]),!r||!n?null:(0,d.jsx)(u.Wrapper,{role:`presentation`,onMouseDown:e=>{e.target===e.currentTarget&&i()},children:(0,d.jsxs)(`div`,{className:`modal`,role:`dialog`,"aria-modal":`true`,"aria-label":`${e} preview`,children:[(0,d.jsxs)(`div`,{className:`modalHeader`,children:[(0,d.jsxs)(`div`,{children:[(0,d.jsx)(`span`,{children:`App Preview`}),(0,d.jsx)(`h2`,{children:e})]}),(0,d.jsx)(`button`,{type:`button`,onClick:i,"aria-label":`Close preview`,title:`Close preview`,children:(0,d.jsx)(t,{"aria-hidden":`true`})})]}),(0,d.jsx)(`div`,{className:`imageWrapper`,children:(0,d.jsx)(`img`,{src:n,alt:`${e} application preview`})})]})})),p={Wrapper:o.div`
+    `},f=e(),p=({appName:e,imageUrl:t,isOpen:r,onClose:i})=>((0,u.useEffect)(()=>{if(!r)return;let e=document.body.style.overflow,t=e=>{e.key===`Escape`&&i()};return document.body.style.overflow=`hidden`,window.addEventListener(`keydown`,t),()=>{document.body.style.overflow=e,window.removeEventListener(`keydown`,t)}},[r,i]),!r||!t?null:(0,f.jsx)(d.Wrapper,{role:`presentation`,onMouseDown:e=>{e.target===e.currentTarget&&i()},children:(0,f.jsxs)(`div`,{className:`modal`,role:`dialog`,"aria-modal":`true`,"aria-label":`${e} preview`,children:[(0,f.jsxs)(`div`,{className:`modalHeader`,children:[(0,f.jsxs)(`div`,{children:[(0,f.jsx)(`span`,{children:`App Preview`}),(0,f.jsx)(`h2`,{children:e})]}),(0,f.jsx)(`button`,{type:`button`,onClick:i,"aria-label":`Close preview`,title:`Close preview`,children:(0,f.jsx)(n,{"aria-hidden":`true`})})]}),(0,f.jsx)(`div`,{className:`imageWrapper`,children:(0,f.jsx)(`img`,{src:t,alt:`${e} application preview`})})]})})),m={Wrapper:s.div`
         width: min(100%, 460px);
         min-height: 50px;
         display: flex;
@@ -235,7 +235,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         @media (max-width: 600px) {
             width: 100%;
         }
-    `},m=({value:e,onChange:n})=>(0,d.jsxs)(p.Wrapper,{children:[(0,d.jsx)(r,{className:`searchIcon`,"aria-hidden":`true`}),(0,d.jsx)(`input`,{type:`search`,value:e,onChange:e=>n(e.target.value),placeholder:`Search mobile apps...`,"aria-label":`Search mobile apps`}),e&&(0,d.jsx)(`button`,{type:`button`,onClick:()=>{n(``)},"aria-label":`Clear search`,title:`Clear search`,children:(0,d.jsx)(t,{"aria-hidden":`true`})})]}),h={Wrapper:o.button`
+    `},h=({value:e,onChange:t})=>(0,f.jsxs)(m.Wrapper,{children:[(0,f.jsx)(i,{className:`searchIcon`,"aria-hidden":`true`}),(0,f.jsx)(`input`,{type:`search`,value:e,onChange:e=>t(e.target.value),placeholder:`Search mobile apps...`,"aria-label":`Search mobile apps`}),e&&(0,f.jsx)(`button`,{type:`button`,onClick:()=>{t(``)},"aria-label":`Clear search`,title:`Clear search`,children:(0,f.jsx)(n,{"aria-hidden":`true`})})]}),g={Wrapper:s.button`
         min-height: 38px;
         padding: 0 13px;
         display: inline-flex;
@@ -281,7 +281,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
             opacity: 0.4;
             cursor: not-allowed;
         }
-    `},g=({appName:e,shareUrl:t})=>{let[n,r]=(0,l.useState)(!1),i=(0,l.useRef)(null);(0,l.useEffect)(()=>()=>{window.clearTimeout(i.current)},[]);let o=()=>{r(!0),window.clearTimeout(i.current),i.current=window.setTimeout(()=>{r(!1)},2e3)},c=async()=>{await navigator.clipboard.writeText(t),o()};return(0,d.jsx)(h.Wrapper,{type:`button`,onClick:async()=>{if(t)try{if(navigator.share){await navigator.share({title:e,text:`Download ${e} for Android.`,url:t});return}await c()}catch(e){if(e.name===`AbortError`)return;try{await c()}catch{r(!1)}}},disabled:!t,"aria-label":`Share ${e}`,title:n?`Link copied`:`Share app`,children:n?(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(s,{"aria-hidden":`true`}),(0,d.jsx)(`span`,{children:`Copied`})]}):(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(a,{"aria-hidden":`true`}),(0,d.jsx)(`span`,{children:`Share`})]})})},_=[{id:`essential-everyday-apps`,category:`Essential Everyday Apps`,apps:[{id:`unit-converter`,name:`Unit Converter`,description:`Length, weight, temperature, area, volume, speed aur data conversion.`},{id:`smart-calculator`,name:`Smart Calculator`,description:`Basic, scientific, percentage aur calculation history.`},{id:`percentage-calculator`,name:`Percentage Calculator`,description:`Percentage, increase, decrease, difference aur value calculation.`},{id:`age-calculator`,name:`Age Calculator`,description:`Exact age, next birthday aur total days/months calculation.`},{id:`date-calculator`,name:`Date Calculator`,description:`Do dates ke beech difference aur kisi date mein days add/subtract karna.`},{id:`discount-calculator`,name:`Discount Calculator`,description:`Discount ke baad final price aur total savings.`},{id:`tip-calculator`,name:`Tip Calculator`,description:`Tip calculate karke bill ko multiple people mein split karna.`},{id:`gst-calculator`,name:`GST Calculator`,description:`GST add/remove aur tax breakup calculate karna.`},{id:`emi-calculator`,name:`EMI Calculator`,description:`Loan EMI, total interest aur total payment calculation.`},{id:`fuel-cost-calculator`,name:`Fuel Cost Calculator`,description:`Distance, mileage aur fuel price se trip cost calculate karna.`},{id:`currency-converter`,name:`Currency Converter`,description:`Cached exchange rates ke saath currency conversion.`},{id:`time-zone-converter`,name:`Time Zone Converter`,description:`Different countries aur cities ka time compare karna.`}]},{id:`productivity-apps`,category:`Productivity Apps`,apps:[{id:`notes-app`,name:`Notes App`,description:`Offline notes create, edit, search, pin aur archive karna.`},{id:`to-do-list`,name:`To-Do List`,description:`Tasks, priorities, due dates aur completed task tracking.`},{id:`daily-planner`,name:`Daily Planner`,description:`Din ke tasks aur schedule ko simple timeline mein manage karna.`},{id:`shopping-list`,name:`Shopping List`,description:`Grocery items, quantity, checked items aur reusable lists.`},{id:`habit-tracker`,name:`Habit Tracker`,description:`Daily habits, streaks aur completion history.`},{id:`pomodoro-focus-timer`,name:`Pomodoro Focus Timer`,description:`Focus sessions, short breaks aur daily statistics.`},{id:`stopwatch-and-timer`,name:`Stopwatch and Timer`,description:`Multiple stopwatches, lap timing aur countdown timers.`},{id:`reminder-app`,name:`Reminder App`,description:`Local notifications ke saath one-time aur repeating reminders.`},{id:`routine-checklist`,name:`Routine Checklist`,description:`Morning, evening, travel aur custom reusable checklists.`},{id:`decision-maker`,name:`Decision Maker`,description:`Random choice, yes/no, wheel picker aur list se selection.`}]},{id:`text-and-communication-tools`,category:`Text and Communication Tools`,apps:[{id:`text-toolkit`,name:`Text Toolkit`,description:`Uppercase, lowercase, title case, word count aur duplicate-line removal.`},{id:`password-generator`,name:`Password Generator`,description:`Strong customizable passwords generate aur copy karna.`},{id:`qr-toolkit`,name:`QR Toolkit`,description:`QR code scan, generate, save aur share karna.`},{id:`barcode-scanner`,name:`Barcode Scanner`,description:`Product barcode scan karke number aur format show karna.`},{id:`morse-code-translator`,name:`Morse Code Translator`,description:`Normal text aur Morse code ke beech conversion.`},{id:`number-to-words-converter`,name:`Number to Words Converter`,description:`Numbers ko Indian aur international words format mein convert karna.`},{id:`speech-to-text-notes`,name:`Speech to Text Notes`,description:`Voice se text notes create aur edit karna.`},{id:`text-to-speech-reader`,name:`Text to Speech Reader`,description:`Entered text ko device voice se read karna.`},{id:`offline-mesh-chat`,name:`Offline Mesh Chat`,description:`Nearby Android devices ke beech Bluetooth-based offline messaging, local username, encrypted chat, group channels aur baad mein multi-hop mesh relay.`},{id:`multilingual-voice-translator`,name:`Multilingual Voice Translator`,description:`Text typing, speech-to-text, source and target language selection, translated text, text-to-speech, language swap, copy, share aur recent translations.`}]},{id:`files-images-and-documents`,category:`Files, Images and Documents`,apps:[{id:`image-compressor`,name:`Image Compressor`,description:`Image quality aur file size reduce karna.`},{id:`image-resizer`,name:`Image Resizer`,description:`Width, height aur percentage se image resize karna.`},{id:`image-format-converter`,name:`Image Format Converter`,description:`JPG, PNG aur WebP formats ke beech conversion.`},{id:`document-scanner`,name:`Document Scanner`,description:`Camera se document capture, crop aur PDF export karna.`},{id:`images-to-pdf`,name:`Images to PDF`,description:`Multiple images ko arrange karke single PDF banana.`},{id:`pdf-merger`,name:`PDF Merger`,description:`Multiple PDF files ko combine karna.`},{id:`pdf-splitter`,name:`PDF Splitter`,description:`Selected pages ko separate PDF mein export karna.`},{id:`file-hash-generator`,name:`File Hash Generator`,description:`Files ke MD5, SHA-1 aur SHA-256 checksums generate karna.`},{id:`file-size-converter`,name:`File Size Converter`,description:`Bytes, KB, MB, GB aur TB conversion.`},{id:`document-viewer`,name:`Document Viewer`,description:`Common text aur document files ko simple interface mein read karna.`}]},{id:`money-management-apps`,category:`Money Management Apps`,apps:[{id:`expense-tracker`,name:`Expense Tracker`,description:`Offline income, expenses, categories aur monthly summary.`},{id:`budget-planner`,name:`Budget Planner`,description:`Monthly budget limits aur remaining balance tracking.`},{id:`bill-splitter`,name:`Bill Splitter`,description:`Group expenses ko multiple people mein fairly divide karna.`},{id:`savings-goal-tracker`,name:`Savings Goal Tracker`,description:`Savings target, contributions aur progress tracking.`},{id:`recurring-bills-tracker`,name:`Recurring Bills Tracker`,description:`Rent, electricity, internet aur subscriptions ke due-date reminders.`},{id:`simple-cash-book`,name:`Simple Cash Book`,description:`Daily money-in aur money-out records maintain karna.`},{id:`electricity-cost-estimator`,name:`Electricity Cost Estimator`,description:`Appliance wattage aur usage se estimated electricity cost.`},{id:`salary-calculator`,name:`Salary Calculator`,description:`Monthly, yearly, daily aur hourly salary breakdown.`}]},{id:`health-and-wellness-utilities`,category:`Health and Wellness Utilities`,apps:[{id:`water-reminder`,name:`Water Reminder`,description:`Daily water target aur local reminder notifications.`},{id:`medicine-reminder`,name:`Medicine Reminder`,description:`Medicine name, timing aur taken/missed tracking.`},{id:`bmi-calculator`,name:`BMI Calculator`,description:`Height aur weight se BMI calculation with general category display.`},{id:`calorie-needs-calculator`,name:`Calorie Needs Calculator`,description:`Estimated daily calorie requirement calculate karna.`},{id:`step-counter`,name:`Step Counter`,description:`Device sensor se daily steps aur distance estimate karna.`},{id:`sleep-tracker-journal`,name:`Sleep Tracker Journal`,description:`Sleep aur wake-up time manually record karke duration track karna.`},{id:`mood-tracker`,name:`Mood Tracker`,description:`Daily mood, notes aur simple history chart.`},{id:`breathing-exercise`,name:`Breathing Exercise`,description:`Guided breathing timer with visual animation.`},{id:`workout-interval-timer`,name:`Workout Interval Timer`,description:`Exercise, rest aur round-based workout timer.`},{id:`body-measurements-tracker`,name:`Body Measurements Tracker`,description:`Weight aur body measurements ka offline progress record.`}]},{id:`safety-and-emergency-apps`,category:`Safety and Emergency Apps`,apps:[{id:`emergency-information-card`,name:`Emergency Information Card`,description:`Emergency contacts, allergies aur essential information locally store karna.`},{id:`sos-utility`,name:`SOS Utility`,description:`Emergency message, location share aur quick-call shortcuts.`},{id:`flashlight-utility`,name:`Flashlight Utility`,description:`Flashlight, blinking mode aur screen light.`},{id:`compass`,name:`Compass`,description:`Device sensors ke through direction aur heading show karna.`},{id:`offline-first-aid-guide`,name:`Offline First-Aid Guide`,description:`Basic first-aid reference with clear emergency disclaimers.`},{id:`location-coordinates-tool`,name:`Location Coordinates Tool`,description:`Current latitude, longitude, accuracy aur share option.`}]},{id:`learning-and-student-apps`,category:`Learning and Student Apps`,apps:[{id:`flashcards-app`,name:`Flashcards App`,description:`Custom decks, study mode aur known/unknown tracking.`},{id:`quiz-maker`,name:`Quiz Maker`,description:`Custom multiple-choice quizzes create aur attempt karna.`},{id:`multiplication-tables`,name:`Multiplication Tables`,description:`Tables learn, practise aur timed tests.`},{id:`vocabulary-builder`,name:`Vocabulary Builder`,description:`Daily words, meanings, favourites aur revision.`},{id:`study-timer`,name:`Study Timer`,description:`Subject-wise study sessions aur daily duration tracking.`},{id:`grade-calculator`,name:`Grade Calculator`,description:`Marks, percentage, average aur required-score calculation.`},{id:`attendance-calculator`,name:`Attendance Calculator`,description:`Current attendance aur required future attendance calculation.`},{id:`random-number-generator`,name:`Random Number Generator`,description:`Number range, quantity aur duplicate settings.`}]}],v=i`
+    `},_=({appName:e,shareUrl:t})=>{let[n,r]=(0,u.useState)(!1),i=(0,u.useRef)(null);(0,u.useEffect)(()=>()=>{window.clearTimeout(i.current)},[]);let a=()=>{r(!0),window.clearTimeout(i.current),i.current=window.setTimeout(()=>{r(!1)},2e3)},s=async()=>{await navigator.clipboard.writeText(t),a()};return(0,f.jsx)(g.Wrapper,{type:`button`,onClick:async()=>{if(t)try{if(navigator.share){await navigator.share({title:e,text:`Download ${e} for Android.`,url:t});return}await s()}catch(e){if(e.name===`AbortError`)return;try{await s()}catch{r(!1)}}},disabled:!t,"aria-label":`Share ${e}`,title:n?`Link copied`:`Share app`,children:n?(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(c,{"aria-hidden":`true`}),(0,f.jsx)(`span`,{children:`Copied`})]}):(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(o,{"aria-hidden":`true`}),(0,f.jsx)(`span`,{children:`Share`})]})})},v=[{id:`essential-everyday-apps`,category:`Essential Everyday Apps`,apps:[{id:`unit-converter`,name:`Unit Converter`,description:`Length, weight, temperature, area, volume, speed aur data conversion.`},{id:`smart-calculator`,name:`Smart Calculator`,description:`Basic, scientific, percentage aur calculation history.`},{id:`percentage-calculator`,name:`Percentage Calculator`,description:`Percentage, increase, decrease, difference aur value calculation.`},{id:`age-calculator`,name:`Age Calculator`,description:`Exact age, next birthday aur total days/months calculation.`},{id:`date-calculator`,name:`Date Calculator`,description:`Do dates ke beech difference aur kisi date mein days add/subtract karna.`},{id:`discount-calculator`,name:`Discount Calculator`,description:`Discount ke baad final price aur total savings.`},{id:`tip-calculator`,name:`Tip Calculator`,description:`Tip calculate karke bill ko multiple people mein split karna.`},{id:`gst-calculator`,name:`GST Calculator`,description:`GST add/remove aur tax breakup calculate karna.`},{id:`emi-calculator`,name:`EMI Calculator`,description:`Loan EMI, total interest aur total payment calculation.`},{id:`fuel-cost-calculator`,name:`Fuel Cost Calculator`,description:`Distance, mileage aur fuel price se trip cost calculate karna.`},{id:`currency-converter`,name:`Currency Converter`,description:`Cached exchange rates ke saath currency conversion.`},{id:`time-zone-converter`,name:`Time Zone Converter`,description:`Different countries aur cities ka time compare karna.`}]},{id:`productivity-apps`,category:`Productivity Apps`,apps:[{id:`notes-app`,name:`Notes App`,description:`Offline notes create, edit, search, pin aur archive karna.`},{id:`todo-list`,name:`To-Do List`,description:`Daily tasks create, complete aur manage karna.`},{id:`daily-planner`,name:`Daily Planner`,description:`Din ke tasks aur schedule ko simple timeline mein manage karna.`},{id:`shopping-list`,name:`Shopping List`,description:`Grocery items, quantity, checked items aur reusable lists.`},{id:`habit-tracker`,name:`Habit Tracker`,description:`Daily habits, streaks aur completion history.`},{id:`pomodoro-focus-timer`,name:`Pomodoro Focus Timer`,description:`Focus sessions, short breaks aur daily statistics.`},{id:`stopwatch-and-timer`,name:`Stopwatch and Timer`,description:`Multiple stopwatches, lap timing aur countdown timers.`},{id:`reminder-app`,name:`Reminder App`,description:`Local notifications ke saath one-time aur repeating reminders.`},{id:`routine-checklist`,name:`Routine Checklist`,description:`Morning, evening, travel aur custom reusable checklists.`},{id:`decision-maker`,name:`Decision Maker`,description:`Random choice, yes/no, wheel picker aur list se selection.`}]},{id:`text-and-communication-tools`,category:`Text and Communication Tools`,apps:[{id:`text-toolkit`,name:`Text Toolkit`,description:`Uppercase, lowercase, title case, word count aur duplicate-line removal.`},{id:`password-generator`,name:`Password Generator`,description:`Strong customizable passwords generate aur copy karna.`},{id:`qr-toolkit`,name:`QR Toolkit`,description:`QR code scan, generate, save aur share karna.`},{id:`barcode-scanner`,name:`Barcode Scanner`,description:`Product barcode scan karke number aur format show karna.`},{id:`morse-code-translator`,name:`Morse Code Translator`,description:`Normal text aur Morse code ke beech conversion.`},{id:`number-to-words-converter`,name:`Number to Words Converter`,description:`Numbers ko Indian aur international words format mein convert karna.`},{id:`speech-to-text-notes`,name:`Speech to Text Notes`,description:`Voice se text notes create aur edit karna.`},{id:`text-to-speech-reader`,name:`Text to Speech Reader`,description:`Entered text ko device voice se read karna.`},{id:`offline-mesh-chat`,name:`Offline Mesh Chat`,description:`Nearby Android devices ke beech Bluetooth-based offline messaging, local username, encrypted chat, group channels aur baad mein multi-hop mesh relay.`},{id:`multilingual-voice-translator`,name:`Multilingual Voice Translator`,description:`Text typing, speech-to-text, source and target language selection, translated text, text-to-speech, language swap, copy, share aur recent translations.`}]},{id:`files-images-and-documents`,category:`Files, Images and Documents`,apps:[{id:`image-compressor`,name:`Image Compressor`,description:`Image quality aur file size reduce karna.`},{id:`image-resizer`,name:`Image Resizer`,description:`Width, height aur percentage se image resize karna.`},{id:`image-format-converter`,name:`Image Format Converter`,description:`JPG, PNG aur WebP formats ke beech conversion.`},{id:`document-scanner`,name:`Document Scanner`,description:`Camera se document capture, crop aur PDF export karna.`},{id:`images-to-pdf`,name:`Images to PDF`,description:`Multiple images ko arrange karke single PDF banana.`},{id:`pdf-merger`,name:`PDF Merger`,description:`Multiple PDF files ko combine karna.`},{id:`pdf-splitter`,name:`PDF Splitter`,description:`Selected pages ko separate PDF mein export karna.`},{id:`file-hash-generator`,name:`File Hash Generator`,description:`Files ke MD5, SHA-1 aur SHA-256 checksums generate karna.`},{id:`file-size-converter`,name:`File Size Converter`,description:`Bytes, KB, MB, GB aur TB conversion.`},{id:`document-viewer`,name:`Document Viewer`,description:`Common text aur document files ko simple interface mein read karna.`}]},{id:`money-management-apps`,category:`Money Management Apps`,apps:[{id:`expense-tracker`,name:`Expense Tracker`,description:`Offline income, expenses, categories aur monthly summary.`},{id:`budget-planner`,name:`Budget Planner`,description:`Monthly budget limits aur remaining balance tracking.`},{id:`bill-splitter`,name:`Bill Splitter`,description:`Group expenses ko multiple people mein fairly divide karna.`},{id:`savings-goal-tracker`,name:`Savings Goal Tracker`,description:`Savings target, contributions aur progress tracking.`},{id:`recurring-bills-tracker`,name:`Recurring Bills Tracker`,description:`Rent, electricity, internet aur subscriptions ke due-date reminders.`},{id:`simple-cash-book`,name:`Simple Cash Book`,description:`Daily money-in aur money-out records maintain karna.`},{id:`electricity-cost-estimator`,name:`Electricity Cost Estimator`,description:`Appliance wattage aur usage se estimated electricity cost.`},{id:`salary-calculator`,name:`Salary Calculator`,description:`Monthly, yearly, daily aur hourly salary breakdown.`}]},{id:`health-and-wellness-utilities`,category:`Health and Wellness Utilities`,apps:[{id:`water-reminder`,name:`Water Reminder`,description:`Daily water target aur local reminder notifications.`},{id:`medicine-reminder`,name:`Medicine Reminder`,description:`Medicine name, timing aur taken/missed tracking.`},{id:`bmi-calculator`,name:`BMI Calculator`,description:`Height aur weight se BMI calculation with general category display.`},{id:`calorie-needs-calculator`,name:`Calorie Needs Calculator`,description:`Estimated daily calorie requirement calculate karna.`},{id:`step-counter`,name:`Step Counter`,description:`Device sensor se daily steps aur distance estimate karna.`},{id:`sleep-tracker-journal`,name:`Sleep Tracker Journal`,description:`Sleep aur wake-up time manually record karke duration track karna.`},{id:`mood-tracker`,name:`Mood Tracker`,description:`Daily mood, notes aur simple history chart.`},{id:`breathing-exercise`,name:`Breathing Exercise`,description:`Guided breathing timer with visual animation.`},{id:`workout-interval-timer`,name:`Workout Interval Timer`,description:`Exercise, rest aur round-based workout timer.`},{id:`body-measurements-tracker`,name:`Body Measurements Tracker`,description:`Weight aur body measurements ka offline progress record.`}]},{id:`safety-and-emergency-apps`,category:`Safety and Emergency Apps`,apps:[{id:`emergency-information-card`,name:`Emergency Information Card`,description:`Emergency contacts, allergies aur essential information locally store karna.`},{id:`sos-utility`,name:`SOS Utility`,description:`Emergency message, location share aur quick-call shortcuts.`},{id:`flashlight-utility`,name:`Flashlight Utility`,description:`Flashlight, blinking mode aur screen light.`},{id:`compass`,name:`Compass`,description:`Device sensors ke through direction aur heading show karna.`},{id:`offline-first-aid-guide`,name:`Offline First-Aid Guide`,description:`Basic first-aid reference with clear emergency disclaimers.`},{id:`location-coordinates-tool`,name:`Location Coordinates Tool`,description:`Current latitude, longitude, accuracy aur share option.`}]},{id:`learning-and-student-apps`,category:`Learning and Student Apps`,apps:[{id:`flashcards-app`,name:`Flashcards App`,description:`Custom decks, study mode aur known/unknown tracking.`},{id:`quiz-maker`,name:`Quiz Maker`,description:`Custom multiple-choice quizzes create aur attempt karna.`},{id:`multiplication-tables`,name:`Multiplication Tables`,description:`Tables learn, practise aur timed tests.`},{id:`vocabulary-builder`,name:`Vocabulary Builder`,description:`Daily words, meanings, favourites aur revision.`},{id:`study-timer`,name:`Study Timer`,description:`Subject-wise study sessions aur daily duration tracking.`},{id:`grade-calculator`,name:`Grade Calculator`,description:`Marks, percentage, average aur required-score calculation.`},{id:`attendance-calculator`,name:`Attendance Calculator`,description:`Current attendance aur required future attendance calculation.`},{id:`random-number-generator`,name:`Random Number Generator`,description:`Number range, quantity aur duplicate settings.`}]}],y=a`
     from {
         transform: rotate(0deg);
     }
@@ -289,12 +289,12 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
     to {
         transform: rotate(360deg);
     }
-`,y={Wrapper:o.div`
+`,b={Wrapper:s.div`
         width: 100%;
         min-height: 100%;
         background-color: transparent;
         color: #ffffff;
-    `,Container:o.div`
+    `,Container:s.div`
         width: min(100% - 40px, 1200px);
         margin: 0 auto;
 
@@ -315,7 +315,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
                 margin-bottom: 22px;
             }
         }
-    `,Hero:o.section`
+    `,Hero:s.section`
         padding: 110px 0 80px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         background: linear-gradient(
@@ -327,14 +327,14 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         @media (max-width: 700px) {
             padding: 80px 0 60px;
         }
-    `,Eyebrow:o.p`
+    `,Eyebrow:s.p`
         margin: 0 0 18px;
         color: rgba(255, 255, 255, 0.58);
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 1.8px;
         text-transform: uppercase;
-    `,Title:o.h1`
+    `,Title:s.h1`
         max-width: 820px;
         margin: 0;
         color: #ffffff;
@@ -347,17 +347,17 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         @media (max-width: 700px) {
             letter-spacing: -2px;
         }
-    `,Description:o.p`
+    `,Description:s.p`
         max-width: 680px;
         margin: 28px 0 0;
         color: rgba(255, 255, 255, 0.68);
         font-size: 17px;
         line-height: 1.75;
-    `,AppsSection:o.section`
+    `,AppsSection:s.section`
         min-height: 520px;
         padding: 56px 0 100px;
         background: rgba(0, 0, 0, 0.08);
-    `,Tabs:o.div`
+    `,Tabs:s.div`
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -370,7 +370,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         &::-webkit-scrollbar {
             display: none;
         }
-    `,TabButton:o.button`
+    `,TabButton:s.button`
         flex-shrink: 0;
         min-height: 44px;
         padding: 7px 9px 7px 17px;
@@ -436,13 +436,13 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
             outline: 2px solid #ffffff;
             outline-offset: 3px;
         }
-    `,CategoryDescription:o.p`
+    `,CategoryDescription:s.p`
         max-width: 680px;
         margin: 0 0 36px;
         color: rgba(255, 255, 255, 0.52);
         font-size: 14px;
         line-height: 1.7;
-    `,Grid:o.div`
+    `,Grid:s.div`
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: stretch;
@@ -456,7 +456,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         @media (max-width: 640px) {
             grid-template-columns: 1fr;
         }
-    `,Pagination:o.div`
+    `,Pagination:s.div`
         width: 100%;
         margin-top: 42px;
 
@@ -480,7 +480,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
                 width: 100%;
             }
         }
-    `,PaginationButton:o.button`
+    `,PaginationButton:s.button`
         min-width: 44px;
         min-height: 44px;
         padding: 0 15px;
@@ -530,7 +530,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
             outline: 2px solid #ffffff;
             outline-offset: 3px;
         }
-    `,PaginationInfo:o.span`
+    `,PaginationInfo:s.span`
         width: 100%;
         margin-top: 4px;
 
@@ -538,7 +538,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         font-size: 12px;
         font-weight: 600;
         text-align: center;
-    `,AppCard:o.article`
+    `,AppCard:s.article`
         --rotate-x: 0deg;
         --rotate-y: 0deg;
         --glow-x: 50%;
@@ -854,7 +854,7 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
                 transition: none;
             }
         }
-    `,AppIcon:o.div`
+    `,AppIcon:s.div`
         width: 62px;
         height: 62px;
         flex-shrink: 0;
@@ -881,20 +881,20 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
             display: block;
             object-fit: cover;
         }
-    `,AppContent:o.div`
+    `,AppContent:s.div`
         min-width: 0;
         display: flex;
         flex: 1;
         flex-direction: column;
         gap: 15px;
-    `,AppName:o.h2`
+    `,AppName:s.h2`
         margin: 0;
         color: #ffffff;
         font-size: 22px;
         font-weight: 700;
         line-height: 1.3;
         letter-spacing: -0.4px;
-    `,Status:o.span`
+    `,Status:s.span`
         flex-shrink: 0;
         min-height: 30px;
         padding: 0 10px;
@@ -912,16 +912,16 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         font-weight: 700;
         letter-spacing: 0.6px;
         text-transform: uppercase;
-    `,AppDescription:o.p`
+    `,AppDescription:s.p`
         margin: 0;
         color: rgba(255, 255, 255, 0.6);
         font-size: 14px;
         line-height: 1.75;
-    `,LoadingState:o.div`
+    `,LoadingState:s.div`
         min-height: 320px;
         display: grid;
         place-items: center;
-    `,Spinner:o.div`
+    `,Spinner:s.div`
         width: 46px;
         height: 46px;
 
@@ -929,8 +929,8 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         border-top-color: #ffffff;
         border-radius: 50%;
 
-        animation: ${v} 0.75s linear infinite;
-    `,MessageState:o.div`
+        animation: ${y} 0.75s linear infinite;
+    `,MessageState:s.div`
         min-height: 280px;
         padding: 40px 20px;
 
@@ -948,15 +948,15 @@ import{a as e,i as t,l as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./ind
         -webkit-backdrop-filter: blur(18px);
 
         text-align: center;
-    `,MessageTitle:o.h2`
+    `,MessageTitle:s.h2`
         margin: 0;
         color: #ffffff;
         font-size: 22px;
         font-weight: 700;
-    `,MessageText:o.p`
+    `,MessageText:s.p`
         max-width: 480px;
         margin: 12px 0 0;
         color: rgba(255, 255, 255, 0.58);
         font-size: 14px;
         line-height: 1.7;
-    `},b=6,x=[{id:`all`,label:`All Apps`,description:`Browse all available mobile applications.`},..._.map(e=>({id:e.id,label:e.category,description:`Browse available apps from ${e.category}.`}))],S=new Map([..._.flatMap(e=>e.apps.map(t=>[t.id,e.id])),[`hello-world`,`essential-everyday-apps`]]),C=()=>{let[e,t]=(0,l.useState)([]),[n,r]=(0,l.useState)(`all`),[i,a]=(0,l.useState)(``),[o,s]=(0,l.useState)(1),[c,u]=(0,l.useState)(null),[p,h]=(0,l.useState)(!0),[_,v]=(0,l.useState)(``);(0,l.useEffect)(()=>{let e=new AbortController;return(async()=>{try{h(!0),v(``);let n=await fetch(`/mobile-apps-distribution-page/data/apps.json`,{signal:e.signal});if(!n.ok)throw Error(`Unable to load mobile apps.`);let r=await n.json();t(Array.isArray(r.apps)?r.apps:[])}catch(e){e.name!==`AbortError`&&v(e.message)}finally{e.signal.aborted||h(!1)}})(),()=>{e.abort()}},[]);let C=(0,l.useMemo)(()=>{let t=i.trim().toLowerCase();return t?e.filter(e=>[e.name,e.description,e.packageName,e.platform,e.version,e.status].filter(Boolean).join(` `).toLowerCase().includes(t)):e},[e,i]),w=(0,l.useMemo)(()=>{let e={all:C.length};return C.forEach(t=>{let n=S.get(t.id);n&&(e[n]=(e[n]||0)+1)}),e},[C]),T=(0,l.useMemo)(()=>n===`all`?C:C.filter(e=>S.get(e.id)===n),[n,C]),E=(0,l.useMemo)(()=>n===`all`?Math.max(1,Math.ceil(T.length/b)):1,[n,T.length]),D=Math.min(Math.max(o,1),E),O=(0,l.useMemo)(()=>{if(n!==`all`)return T;let e=(D-1)*b,t=e+b;return T.slice(e,t)},[n,T,D]),k=x.find(e=>e.id===n),A=e=>{r(e),s(1)},j=e=>{a(e),s(1)},M=e=>{s(Math.min(Math.max(e,1),E))},N=e=>{e.previewImage&&u(e)},P=(0,l.useCallback)(()=>{u(null)},[]),F=c?.previewImage?`/mobile-apps-distribution-page/${c.previewImage}`:``,I=e=>{if(e.pointerType!==`mouse`)return;let t=e.currentTarget,n=t.getBoundingClientRect(),r=e.clientX-n.left,i=e.clientY-n.top,a=r/n.width,o=i/n.height,s=(a-.5)*8,c=(.5-o)*8;t.style.setProperty(`--rotate-x`,`${c.toFixed(2)}deg`),t.style.setProperty(`--rotate-y`,`${s.toFixed(2)}deg`),t.style.setProperty(`--glow-x`,`${a*100}%`),t.style.setProperty(`--glow-y`,`${o*100}%`)},L=e=>{let t=e.currentTarget;t.style.setProperty(`--rotate-x`,`0deg`),t.style.setProperty(`--rotate-y`,`0deg`),t.style.setProperty(`--glow-x`,`50%`),t.style.setProperty(`--glow-y`,`50%`)};return(0,d.jsxs)(y.Wrapper,{children:[(0,d.jsx)(y.Hero,{children:(0,d.jsxs)(y.Container,{children:[(0,d.jsx)(y.Eyebrow,{children:`a2rp Mobile Apps`}),(0,d.jsx)(y.Title,{children:`Mobile apps built for everyday use`}),(0,d.jsx)(y.Description,{children:`Explore useful Android applications created by Ashish Ranjan for everyday tasks, productivity, learning, safety and more.`})]})}),(0,d.jsx)(y.AppsSection,{children:(0,d.jsxs)(y.Container,{children:[p&&(0,d.jsx)(y.LoadingState,{children:(0,d.jsx)(y.Spinner,{})}),!p&&_&&(0,d.jsxs)(y.MessageState,{children:[(0,d.jsx)(y.MessageTitle,{children:`Apps could not be loaded`}),(0,d.jsx)(y.MessageText,{children:_})]}),!p&&!_&&(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(`div`,{className:`searchArea`,children:(0,d.jsx)(m,{value:i,onChange:j})}),(0,d.jsx)(y.Tabs,{role:`tablist`,"aria-label":`Mobile app categories`,children:x.map(e=>(0,d.jsxs)(y.TabButton,{type:`button`,role:`tab`,"aria-selected":n===e.id,$active:n===e.id,onClick:()=>A(e.id),children:[(0,d.jsx)(`span`,{children:e.label}),(0,d.jsx)(`span`,{className:`tabCount`,children:w[e.id]||0})]},e.id))}),k&&(0,d.jsx)(y.CategoryDescription,{children:k.description}),O.length>0?(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(y.Grid,{children:O.map(e=>{let t=e.icon?`/mobile-apps-distribution-page/${e.icon}`:``,n=e.previewImage?`/mobile-apps-distribution-page/${e.previewImage}`:``,r=e.releaseUrl||e.apkUrl;return(0,d.jsxs)(y.AppCard,{onPointerMove:I,onPointerLeave:L,children:[(0,d.jsxs)(`div`,{className:`cardTop`,children:[(0,d.jsx)(y.AppIcon,{children:t?(0,d.jsx)(`img`,{src:t,alt:`${e.name} icon`}):`AR`}),(0,d.jsxs)(`div`,{className:`cardTopActions`,children:[e.status&&(0,d.jsx)(y.Status,{children:e.status}),(0,d.jsx)(g,{appName:e.name,shareUrl:r})]})]}),n?(0,d.jsxs)(`button`,{className:`previewButton`,type:`button`,onClick:()=>N(e),"aria-label":`Open ${e.name} preview`,children:[(0,d.jsx)(`img`,{src:n,alt:`${e.name} preview`}),(0,d.jsx)(`span`,{children:`View Preview`})]}):(0,d.jsx)(`div`,{className:`previewPlaceholder`,children:`Preview coming soon`}),(0,d.jsxs)(y.AppContent,{children:[(0,d.jsx)(y.AppName,{children:e.name}),(0,d.jsx)(y.AppDescription,{children:e.description}),(0,d.jsxs)(`div`,{className:`appMeta`,children:[e.version&&(0,d.jsxs)(`span`,{children:[`Version`,` `,e.version]}),e.platform&&(0,d.jsx)(`span`,{children:e.platform})]}),(0,d.jsxs)(`div`,{className:`appActions`,children:[e.apkUrl&&(0,d.jsx)(`a`,{className:`downloadButton`,href:e.apkUrl,target:`_blank`,rel:`noreferrer`,download:!0,children:`Download APK`}),e.releaseUrl&&(0,d.jsx)(`a`,{className:`releaseButton`,href:e.releaseUrl,target:`_blank`,rel:`noreferrer`,children:`Release Notes`})]})]})]},e.id)})}),n===`all`&&E>1&&(0,d.jsxs)(y.Pagination,{children:[(0,d.jsx)(y.PaginationButton,{type:`button`,disabled:D===1,onClick:()=>M(D-1),children:`Previous`}),(0,d.jsx)(`div`,{className:`pageNumbers`,children:Array.from({length:E},(e,t)=>t+1).map(e=>(0,d.jsx)(y.PaginationButton,{type:`button`,$active:o===e,"aria-current":o===e?`page`:void 0,onClick:()=>M(e),children:e},e))}),(0,d.jsx)(y.PaginationButton,{type:`button`,disabled:o===E,onClick:()=>M(o+1),children:`Next`}),(0,d.jsxs)(y.PaginationInfo,{children:[`Page `,o,` of`,` `,E]})]})]}):(0,d.jsxs)(y.MessageState,{children:[(0,d.jsx)(y.MessageTitle,{children:i?`No matching apps found`:`No apps available yet`}),(0,d.jsx)(y.MessageText,{children:i?`Try searching with a different app name or keyword.`:`Applications in this category will be added soon.`})]})]})]})}),(0,d.jsx)(f,{appName:c?.name||``,imageUrl:F,isOpen:!!c,onClose:P})]})};export{C as default};
+    `},x=6,S=[{id:`all`,label:`All Apps`,description:`Browse all available mobile applications.`},...v.map(e=>({id:e.id,label:e.category,description:`Browse available apps from ${e.category}.`}))],C=new Set(S.map(e=>e.id)),w=new Map([...v.flatMap(e=>e.apps.map(t=>[t.id,e.id])),[`hello-world`,`essential-everyday-apps`]]),T=e=>{let t=e.get(`page`);if(!t||!/^\d+$/.test(t))return 1;let n=Number(t);return!Number.isSafeInteger(n)||n<1?1:n},E=()=>{let[e,t]=r(),[n,i]=(0,u.useState)([]),[a,o]=(0,u.useState)(null),[s,c]=(0,u.useState)(!0),[l,d]=(0,u.useState)(``),m=e.get(`category`)||`all`,g=C.has(m)?m:`all`,v=e.get(`search`)||``,y=T(e);(0,u.useEffect)(()=>{let e=new AbortController;return(async()=>{try{c(!0),d(``);let t=await fetch(`/mobile-apps-distribution-page/data/apps.json`,{signal:e.signal});if(!t.ok)throw Error(`Unable to load mobile apps.`);let n=await t.json();i(Array.isArray(n.apps)?n.apps:[])}catch(e){e.name!==`AbortError`&&d(e.message)}finally{e.signal.aborted||c(!1)}})(),()=>{e.abort()}},[]);let E=(0,u.useCallback)(({category:e=`all`,page:n=1,search:r=``},{replace:i=!1}={})=>{let a=C.has(e)?e:`all`,o=a===`all`&&Number.isSafeInteger(n)&&n>0?n:1,s=new URLSearchParams;s.set(`category`,a),s.set(`page`,String(o)),r&&s.set(`search`,r),t(s,{replace:i})},[t]),D=(0,u.useMemo)(()=>{let e=v.trim().toLowerCase();return e?n.filter(t=>[t.name,t.description,t.packageName,t.platform,t.version,t.status].filter(Boolean).join(` `).toLowerCase().includes(e)):n},[n,v]),O=(0,u.useMemo)(()=>{let e={all:D.length};return D.forEach(t=>{let n=w.get(t.id);n&&(e[n]=(e[n]||0)+1)}),e},[D]),k=(0,u.useMemo)(()=>g===`all`?D:D.filter(e=>w.get(e.id)===g),[g,D]),A=(0,u.useMemo)(()=>g===`all`?Math.max(1,Math.ceil(k.length/x)):1,[g,k.length]),j=g===`all`?Math.min(Math.max(y,1),A):1;(0,u.useEffect)(()=>{if(s)return;let n=new URLSearchParams;n.set(`category`,g),n.set(`page`,String(j)),v&&n.set(`search`,v),n.toString()!==e.toString()&&t(n,{replace:!0})},[g,j,s,e,v,t]);let M=(0,u.useMemo)(()=>{if(g!==`all`)return k;let e=(j-1)*x,t=e+x;return k.slice(e,t)},[g,j,k]),N=S.find(e=>e.id===g),P=e=>{E({category:e,page:1,search:v})},F=e=>{E({category:g,page:1,search:e},{replace:!0})},I=e=>{E({category:g,page:Math.min(Math.max(e,1),A),search:v})},L=e=>{e.previewImage&&o(e)},R=(0,u.useCallback)(()=>{o(null)},[]),z=a?.previewImage?`/mobile-apps-distribution-page/${a.previewImage}`:``,B=e=>{if(e.pointerType!==`mouse`)return;let t=e.currentTarget,n=t.getBoundingClientRect(),r=e.clientX-n.left,i=e.clientY-n.top,a=r/n.width,o=i/n.height,s=(a-.5)*8,c=(.5-o)*8;t.style.setProperty(`--rotate-x`,`${c.toFixed(2)}deg`),t.style.setProperty(`--rotate-y`,`${s.toFixed(2)}deg`),t.style.setProperty(`--glow-x`,`${a*100}%`),t.style.setProperty(`--glow-y`,`${o*100}%`)},V=e=>{let t=e.currentTarget;t.style.setProperty(`--rotate-x`,`0deg`),t.style.setProperty(`--rotate-y`,`0deg`),t.style.setProperty(`--glow-x`,`50%`),t.style.setProperty(`--glow-y`,`50%`)};return(0,f.jsxs)(b.Wrapper,{children:[(0,f.jsx)(b.Hero,{children:(0,f.jsxs)(b.Container,{children:[(0,f.jsx)(b.Eyebrow,{children:`a2rp Mobile Apps`}),(0,f.jsx)(b.Title,{children:`Mobile apps built for everyday use`}),(0,f.jsx)(b.Description,{children:`Explore useful Android applications created by Ashish Ranjan for everyday tasks, productivity, learning, safety and more.`})]})}),(0,f.jsx)(b.AppsSection,{children:(0,f.jsxs)(b.Container,{children:[s&&(0,f.jsx)(b.LoadingState,{children:(0,f.jsx)(b.Spinner,{})}),!s&&l&&(0,f.jsxs)(b.MessageState,{children:[(0,f.jsx)(b.MessageTitle,{children:`Apps could not be loaded`}),(0,f.jsx)(b.MessageText,{children:l})]}),!s&&!l&&(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(`div`,{className:`searchArea`,children:(0,f.jsx)(h,{value:v,onChange:F})}),(0,f.jsx)(b.Tabs,{role:`tablist`,"aria-label":`Mobile app categories`,children:S.map(e=>(0,f.jsxs)(b.TabButton,{type:`button`,role:`tab`,"aria-selected":g===e.id,$active:g===e.id,onClick:()=>P(e.id),children:[(0,f.jsx)(`span`,{children:e.label}),(0,f.jsx)(`span`,{className:`tabCount`,children:O[e.id]||0})]},e.id))}),N&&(0,f.jsx)(b.CategoryDescription,{children:N.description}),M.length>0?(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(b.Grid,{children:M.map(e=>{let t=e.icon?`/mobile-apps-distribution-page/${e.icon}`:``,n=e.previewImage?`/mobile-apps-distribution-page/${e.previewImage}`:``,r=e.releaseUrl||e.apkUrl;return(0,f.jsxs)(b.AppCard,{onPointerMove:B,onPointerLeave:V,children:[(0,f.jsxs)(`div`,{className:`cardTop`,children:[(0,f.jsx)(b.AppIcon,{children:t?(0,f.jsx)(`img`,{src:t,alt:`${e.name} icon`}):`AR`}),(0,f.jsxs)(`div`,{className:`cardTopActions`,children:[e.status&&(0,f.jsx)(b.Status,{children:e.status}),(0,f.jsx)(_,{appName:e.name,shareUrl:r})]})]}),n?(0,f.jsxs)(`button`,{className:`previewButton`,type:`button`,onClick:()=>L(e),"aria-label":`Open ${e.name} preview`,children:[(0,f.jsx)(`img`,{src:n,alt:`${e.name} preview`}),(0,f.jsx)(`span`,{children:`View Preview`})]}):(0,f.jsx)(`div`,{className:`previewPlaceholder`,children:`Preview coming soon`}),(0,f.jsxs)(b.AppContent,{children:[(0,f.jsx)(b.AppName,{children:e.name}),(0,f.jsx)(b.AppDescription,{children:e.description}),(0,f.jsxs)(`div`,{className:`appMeta`,children:[e.version&&(0,f.jsxs)(`span`,{children:[`Version`,` `,e.version]}),e.platform&&(0,f.jsx)(`span`,{children:e.platform})]}),(0,f.jsxs)(`div`,{className:`appActions`,children:[e.apkUrl&&(0,f.jsx)(`a`,{className:`downloadButton`,href:e.apkUrl,target:`_blank`,rel:`noreferrer`,download:!0,children:`Download APK`}),e.releaseUrl&&(0,f.jsx)(`a`,{className:`releaseButton`,href:e.releaseUrl,target:`_blank`,rel:`noreferrer`,children:`Release Notes`})]})]})]},e.id)})}),g===`all`&&A>1&&(0,f.jsxs)(b.Pagination,{children:[(0,f.jsx)(b.PaginationButton,{type:`button`,disabled:j===1,onClick:()=>I(j-1),children:`Previous`}),(0,f.jsx)(`div`,{className:`pageNumbers`,children:Array.from({length:A},(e,t)=>t+1).map(e=>(0,f.jsx)(b.PaginationButton,{type:`button`,$active:j===e,"aria-current":j===e?`page`:void 0,onClick:()=>I(e),children:e},e))}),(0,f.jsx)(b.PaginationButton,{type:`button`,disabled:j===A,onClick:()=>I(j+1),children:`Next`}),(0,f.jsxs)(b.PaginationInfo,{children:[`Page `,j,` of`,` `,A]})]})]}):(0,f.jsxs)(b.MessageState,{children:[(0,f.jsx)(b.MessageTitle,{children:v?`No matching apps found`:`No apps available yet`}),(0,f.jsx)(b.MessageText,{children:v?`Try searching with a different app name or keyword.`:`Applications in this category will be added soon.`})]})]})]})}),(0,f.jsx)(p,{appName:a?.name||``,imageUrl:z,isOpen:!!a,onClose:R})]})};export{E as default};
