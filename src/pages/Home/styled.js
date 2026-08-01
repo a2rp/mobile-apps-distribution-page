@@ -23,16 +23,19 @@ export const Styled = {
         margin: 0 auto;
 
         .searchArea {
-            display: flex;
-            justify-content: flex-end;
+            width: 100%;
             margin-bottom: 26px;
+        }
+
+        .searchArea > * {
+            width: 100%;
+            max-width: none;
         }
 
         @media (max-width: 600px) {
             width: min(100% - 28px, 1200px);
 
             .searchArea {
-                justify-content: stretch;
                 margin-bottom: 22px;
             }
         }
@@ -205,6 +208,98 @@ export const Styled = {
         @media (max-width: 640px) {
             grid-template-columns: 1fr;
         }
+    `,
+
+    Pagination: styled.div`
+        width: 100%;
+        margin-top: 42px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .pageNumbers {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 520px) {
+            .pageNumbers {
+                order: 3;
+                width: 100%;
+            }
+        }
+    `,
+
+    PaginationButton: styled.button`
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0 15px;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid
+            ${({ $active }) =>
+                $active ? "#ffffff" : "rgba(255, 255, 255, 0.14)"};
+        border-radius: 12px;
+
+        background-color: ${({ $active }) =>
+            $active ? "#ffffff" : "rgba(255, 255, 255, 0.055)"};
+
+        color: ${({ $active }) =>
+            $active ? "#090909" : "rgba(255, 255, 255, 0.76)"};
+
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition:
+            transform 180ms ease,
+            border-color 180ms ease,
+            background-color 180ms ease,
+            color 180ms ease,
+            opacity 180ms ease;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: #ffffff;
+            background-color: ${({ $active }) =>
+                $active ? "#ffffff" : "rgba(255, 255, 255, 0.1)"};
+            color: ${({ $active }) => ($active ? "#090909" : "#ffffff")};
+        }
+
+        &:active:not(:disabled) {
+            transform: scale(0.97);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.32;
+        }
+
+        &:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
+        }
+    `,
+
+    PaginationInfo: styled.span`
+        width: 100%;
+        margin-top: 4px;
+
+        color: rgba(255, 255, 255, 0.46);
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
     `,
 
     AppCard: styled.article`

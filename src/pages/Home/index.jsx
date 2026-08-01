@@ -3,7 +3,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import AppPreviewModal from "../../components/AppPreviewModal";
 import AppSearch from "../../components/AppSearch";
 import AppShare from "../../components/AppShare";
+import androidAppsRoadmap from "../../data/androidAppsRoadmap";
+
 import { Styled } from "./styled";
+
+const APPS_PER_PAGE = 6;
 
 const ALL_CATEGORY = {
     id: "all",
@@ -11,11 +15,26 @@ const ALL_CATEGORY = {
     description: "Browse all available mobile applications.",
 };
 
+const ROADMAP_CATEGORIES = androidAppsRoadmap.map((category) => ({
+    id: category.id,
+    label: category.category,
+    description: `Browse available apps from ${category.category}.`,
+}));
+
+const DISPLAY_CATEGORIES = [ALL_CATEGORY, ...ROADMAP_CATEGORIES];
+
+const APP_CATEGORY_BY_ID = new Map([
+    ...androidAppsRoadmap.flatMap((category) =>
+        category.apps.map((app) => [app.id, category.id]),
+    ),
+    ["hello-world", "essential-everyday-apps"],
+]);
+
 const Home = () => {
-    const [categories, setCategories] = useState([]);
     const [apps, setApps] = useState([]);
     const [activeTab, setActiveTab] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
+    const [safeCurrentPage, setsafeCurrentPage] = useState(1);
     const [selectedPreview, setSelectedPreview] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
@@ -41,10 +60,6 @@ const Home = () => {
 
                 const data = await response.json();
 
-                setCategories(
-                    Array.isArray(data.categories) ? data.categories : [],
-                );
-
                 setApps(Array.isArray(data.apps) ? data.apps : []);
             } catch (loadError) {
                 if (loadError.name !== "AbortError") {
@@ -63,10 +78,6 @@ const Home = () => {
             controller.abort();
         };
     }, []);
-
-    const displayCategories = useMemo(() => {
-        return [ALL_CATEGORY, ...categories];
-    }, [categories]);
 
     const searchMatchedApps = useMemo(() => {
         const normalizedQuery = searchQuery.trim().toLowerCase();
@@ -93,20 +104,21 @@ const Home = () => {
     }, [apps, searchQuery]);
 
     const categoryCounts = useMemo(() => {
-        return searchMatchedApps.reduce(
-            (counts, app) => {
-                if (!app.category) {
-                    return counts;
-                }
+        const counts = {
+            all: searchMatchedApps.length,
+        };
 
-                counts[app.category] = (counts[app.category] || 0) + 1;
+        searchMatchedApps.forEach((app) => {
+            const categoryId = APP_CATEGORY_BY_ID.get(app.id);
 
-                return counts;
-            },
-            {
-                all: searchMatchedApps.length,
-            },
-        );
+            if (!categoryId) {
+                return;
+            }
+
+            counts[categoryId] = (counts[categoryId] || 0) + 1;
+        });
+
+        return counts;
     }, [searchMatchedApps]);
 
     const filteredApps = useMemo(() => {
@@ -114,12 +126,52 @@ const Home = () => {
             return searchMatchedApps;
         }
 
-        return searchMatchedApps.filter((app) => app.category === activeTab);
+        return searchMatchedApps.filter(
+            (app) => APP_CATEGORY_BY_ID.get(app.id) === activeTab,
+        );
     }, [activeTab, searchMatchedApps]);
 
-    const activeCategory = displayCategories.find(
+    const totalPages = useMemo(() => {
+        if (activeTab !== "all") {
+            return 1;
+        }
+
+        return Math.max(1, Math.ceil(filteredApps.length / APPS_PER_PAGE));
+    }, [activeTab, filteredApps.length]);
+
+    const safesafeCurrentPage = Math.min(
+        Math.max(safeCurrentPage, 1),
+        totalPages,
+    );
+
+    const visibleApps = useMemo(() => {
+        if (activeTab !== "all") {
+            return filteredApps;
+        }
+
+        const startIndex = (safesafeCurrentPage - 1) * APPS_PER_PAGE;
+        const endIndex = startIndex + APPS_PER_PAGE;
+
+        return filteredApps.slice(startIndex, endIndex);
+    }, [activeTab, filteredApps, safesafeCurrentPage]);
+
+    const activeCategory = DISPLAY_CATEGORIES.find(
         (category) => category.id === activeTab,
     );
+
+    const handleTabChange = (categoryId) => {
+        setActiveTab(categoryId);
+        setsafeCurrentPage(1);
+    };
+
+    const handleSearchChange = (value) => {
+        setSearchQuery(value);
+        setsafeCurrentPage(1);
+    };
+
+    const handlePageChange = (page) => {
+        setsafeCurrentPage(Math.min(Math.max(page, 1), totalPages));
+    };
 
     const handleOpenPreview = (app) => {
         if (!app.previewImage) {
@@ -152,15 +204,11 @@ const Home = () => {
         const verticalPercentage = pointerY / rect.height;
 
         const rotateY = (horizontalPercentage - 0.5) * 8;
-
         const rotateX = (0.5 - verticalPercentage) * 8;
 
         card.style.setProperty("--rotate-x", `${rotateX.toFixed(2)}deg`);
-
         card.style.setProperty("--rotate-y", `${rotateY.toFixed(2)}deg`);
-
         card.style.setProperty("--glow-x", `${horizontalPercentage * 100}%`);
-
         card.style.setProperty("--glow-y", `${verticalPercentage * 100}%`);
     };
 
@@ -184,8 +232,9 @@ const Home = () => {
                     </Styled.Title>
 
                     <Styled.Description>
-                        Explore free applications, premium tools and
-                        experimental mobile projects created by Ashish Ranjan.
+                        Explore useful Android applications created by Ashish
+                        Ranjan for everyday tasks, productivity, learning,
+                        safety and more.
                     </Styled.Description>
                 </Styled.Container>
             </Styled.Hero>
@@ -213,7 +262,7 @@ const Home = () => {
                             <div className="searchArea">
                                 <AppSearch
                                     value={searchQuery}
-                                    onChange={setSearchQuery}
+                                    onChange={handleSearchChange}
                                 />
                             </div>
 
@@ -221,7 +270,7 @@ const Home = () => {
                                 role="tablist"
                                 aria-label="Mobile app categories"
                             >
-                                {displayCategories.map((category) => (
+                                {DISPLAY_CATEGORIES.map((category) => (
                                     <Styled.TabButton
                                         key={category.id}
                                         type="button"
@@ -231,7 +280,7 @@ const Home = () => {
                                         }
                                         $active={activeTab === category.id}
                                         onClick={() =>
-                                            setActiveTab(category.id)
+                                            handleTabChange(category.id)
                                         }
                                     >
                                         <span>{category.label}</span>
@@ -249,139 +298,223 @@ const Home = () => {
                                 </Styled.CategoryDescription>
                             )}
 
-                            {filteredApps.length > 0 ? (
-                                <Styled.Grid>
-                                    {filteredApps.map((app) => {
-                                        const iconPath = app.icon
-                                            ? `${import.meta.env.BASE_URL}${app.icon}`
-                                            : "";
+                            {visibleApps.length > 0 ? (
+                                <>
+                                    <Styled.Grid>
+                                        {visibleApps.map((app) => {
+                                            const iconPath = app.icon
+                                                ? `${import.meta.env.BASE_URL}${app.icon}`
+                                                : "";
 
-                                        const previewPath = app.previewImage
-                                            ? `${import.meta.env.BASE_URL}${app.previewImage}`
-                                            : "";
+                                            const previewPath = app.previewImage
+                                                ? `${import.meta.env.BASE_URL}${app.previewImage}`
+                                                : "";
 
-                                        const shareUrl =
-                                            app.releaseUrl || app.apkUrl;
+                                            const shareUrl =
+                                                app.releaseUrl || app.apkUrl;
 
-                                        return (
-                                            <Styled.AppCard
-                                                key={app.id}
-                                                onPointerMove={
-                                                    handleCardPointerMove
+                                            return (
+                                                <Styled.AppCard
+                                                    key={app.id}
+                                                    onPointerMove={
+                                                        handleCardPointerMove
+                                                    }
+                                                    onPointerLeave={
+                                                        handleCardPointerLeave
+                                                    }
+                                                >
+                                                    <div className="cardTop">
+                                                        <Styled.AppIcon>
+                                                            {iconPath ? (
+                                                                <img
+                                                                    src={
+                                                                        iconPath
+                                                                    }
+                                                                    alt={`${app.name} icon`}
+                                                                />
+                                                            ) : (
+                                                                "AR"
+                                                            )}
+                                                        </Styled.AppIcon>
+
+                                                        <div className="cardTopActions">
+                                                            {app.status && (
+                                                                <Styled.Status>
+                                                                    {app.status}
+                                                                </Styled.Status>
+                                                            )}
+
+                                                            <AppShare
+                                                                appName={
+                                                                    app.name
+                                                                }
+                                                                shareUrl={
+                                                                    shareUrl
+                                                                }
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    {previewPath ? (
+                                                        <button
+                                                            className="previewButton"
+                                                            type="button"
+                                                            onClick={() =>
+                                                                handleOpenPreview(
+                                                                    app,
+                                                                )
+                                                            }
+                                                            aria-label={`Open ${app.name} preview`}
+                                                        >
+                                                            <img
+                                                                src={
+                                                                    previewPath
+                                                                }
+                                                                alt={`${app.name} preview`}
+                                                            />
+
+                                                            <span>
+                                                                View Preview
+                                                            </span>
+                                                        </button>
+                                                    ) : (
+                                                        <div className="previewPlaceholder">
+                                                            Preview coming soon
+                                                        </div>
+                                                    )}
+
+                                                    <Styled.AppContent>
+                                                        <Styled.AppName>
+                                                            {app.name}
+                                                        </Styled.AppName>
+
+                                                        <Styled.AppDescription>
+                                                            {app.description}
+                                                        </Styled.AppDescription>
+
+                                                        <div className="appMeta">
+                                                            {app.version && (
+                                                                <span>
+                                                                    Version{" "}
+                                                                    {
+                                                                        app.version
+                                                                    }
+                                                                </span>
+                                                            )}
+
+                                                            {app.platform && (
+                                                                <span>
+                                                                    {
+                                                                        app.platform
+                                                                    }
+                                                                </span>
+                                                            )}
+                                                        </div>
+
+                                                        <div className="appActions">
+                                                            {app.apkUrl && (
+                                                                <a
+                                                                    className="downloadButton"
+                                                                    href={
+                                                                        app.apkUrl
+                                                                    }
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                    download
+                                                                >
+                                                                    Download APK
+                                                                </a>
+                                                            )}
+
+                                                            {app.releaseUrl && (
+                                                                <a
+                                                                    className="releaseButton"
+                                                                    href={
+                                                                        app.releaseUrl
+                                                                    }
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    Release
+                                                                    Notes
+                                                                </a>
+                                                            )}
+                                                        </div>
+                                                    </Styled.AppContent>
+                                                </Styled.AppCard>
+                                            );
+                                        })}
+                                    </Styled.Grid>
+
+                                    {activeTab === "all" && totalPages > 1 && (
+                                        <Styled.Pagination>
+                                            <Styled.PaginationButton
+                                                type="button"
+                                                disabled={
+                                                    safesafeCurrentPage === 1
                                                 }
-                                                onPointerLeave={
-                                                    handleCardPointerLeave
+                                                onClick={() =>
+                                                    handlePageChange(
+                                                        safesafeCurrentPage - 1,
+                                                    )
                                                 }
                                             >
-                                                <div className="cardTop">
-                                                    <Styled.AppIcon>
-                                                        {iconPath ? (
-                                                            <img
-                                                                src={iconPath}
-                                                                alt={`${app.name} icon`}
-                                                            />
-                                                        ) : (
-                                                            "AR"
-                                                        )}
-                                                    </Styled.AppIcon>
+                                                Previous
+                                            </Styled.PaginationButton>
 
-                                                    <div className="cardTopActions">
-                                                        {app.status && (
-                                                            <Styled.Status>
-                                                                {app.status}
-                                                            </Styled.Status>
-                                                        )}
-
-                                                        <AppShare
-                                                            appName={app.name}
-                                                            shareUrl={shareUrl}
-                                                        />
-                                                    </div>
-                                                </div>
-
-                                                {previewPath ? (
-                                                    <button
-                                                        className="previewButton"
+                                            <div className="pageNumbers">
+                                                {Array.from(
+                                                    {
+                                                        length: totalPages,
+                                                    },
+                                                    (_, index) => index + 1,
+                                                ).map((page) => (
+                                                    <Styled.PaginationButton
+                                                        key={page}
                                                         type="button"
+                                                        $active={
+                                                            safeCurrentPage ===
+                                                            page
+                                                        }
+                                                        aria-current={
+                                                            safeCurrentPage ===
+                                                            page
+                                                                ? "page"
+                                                                : undefined
+                                                        }
                                                         onClick={() =>
-                                                            handleOpenPreview(
-                                                                app,
+                                                            handlePageChange(
+                                                                page,
                                                             )
                                                         }
-                                                        aria-label={`Open ${app.name} preview`}
                                                     >
-                                                        <img
-                                                            src={previewPath}
-                                                            alt={`${app.name} preview`}
-                                                        />
+                                                        {page}
+                                                    </Styled.PaginationButton>
+                                                ))}
+                                            </div>
 
-                                                        <span>
-                                                            View Preview
-                                                        </span>
-                                                    </button>
-                                                ) : (
-                                                    <div className="previewPlaceholder">
-                                                        Preview coming soon
-                                                    </div>
-                                                )}
+                                            <Styled.PaginationButton
+                                                type="button"
+                                                disabled={
+                                                    safeCurrentPage ===
+                                                    totalPages
+                                                }
+                                                onClick={() =>
+                                                    handlePageChange(
+                                                        safeCurrentPage + 1,
+                                                    )
+                                                }
+                                            >
+                                                Next
+                                            </Styled.PaginationButton>
 
-                                                <Styled.AppContent>
-                                                    <Styled.AppName>
-                                                        {app.name}
-                                                    </Styled.AppName>
-
-                                                    <Styled.AppDescription>
-                                                        {app.description}
-                                                    </Styled.AppDescription>
-
-                                                    <div className="appMeta">
-                                                        {app.version && (
-                                                            <span>
-                                                                Version{" "}
-                                                                {app.version}
-                                                            </span>
-                                                        )}
-
-                                                        {app.platform && (
-                                                            <span>
-                                                                {app.platform}
-                                                            </span>
-                                                        )}
-                                                    </div>
-
-                                                    <div className="appActions">
-                                                        {app.apkUrl && (
-                                                            <a
-                                                                className="downloadButton"
-                                                                href={
-                                                                    app.apkUrl
-                                                                }
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                                download
-                                                            >
-                                                                Download APK
-                                                            </a>
-                                                        )}
-
-                                                        {app.releaseUrl && (
-                                                            <a
-                                                                className="releaseButton"
-                                                                href={
-                                                                    app.releaseUrl
-                                                                }
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                Release Notes
-                                                            </a>
-                                                        )}
-                                                    </div>
-                                                </Styled.AppContent>
-                                            </Styled.AppCard>
-                                        );
-                                    })}
-                                </Styled.Grid>
+                                            <Styled.PaginationInfo>
+                                                Page {safeCurrentPage} of{" "}
+                                                {totalPages}
+                                            </Styled.PaginationInfo>
+                                        </Styled.Pagination>
+                                    )}
+                                </>
                             ) : (
                                 <Styled.MessageState>
                                     <Styled.MessageTitle>
