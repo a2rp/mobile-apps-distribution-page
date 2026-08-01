@@ -86,10 +86,9 @@ export const androidAppsRoadmap = [
                     "Offline notes create, edit, search, pin aur archive karna.",
             },
             {
-                id: "to-do-list",
+                id: "todo-list",
                 name: "To-Do List",
-                description:
-                    "Tasks, priorities, due dates aur completed task tracking.",
+                description: "Daily tasks create, complete aur manage karna.",
             },
             {
                 id: "daily-planner",

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import AppPreviewModal from "../../components/AppPreviewModal";
 import AppSearch from "../../components/AppSearch";
@@ -23,6 +24,8 @@ const ROADMAP_CATEGORIES = androidAppsRoadmap.map((category) => ({
 
 const DISPLAY_CATEGORIES = [ALL_CATEGORY, ...ROADMAP_CATEGORIES];
 
+const CATEGORY_IDS = new Set(DISPLAY_CATEGORIES.map((category) => category.id));
+
 const APP_CATEGORY_BY_ID = new Map([
     ...androidAppsRoadmap.flatMap((category) =>
         category.apps.map((app) => [app.id, category.id]),
@@ -30,14 +33,39 @@ const APP_CATEGORY_BY_ID = new Map([
     ["hello-world", "essential-everyday-apps"],
 ]);
 
+const getPageFromSearchParams = (searchParams) => {
+    const pageValue = searchParams.get("page");
+
+    if (!pageValue || !/^\d+$/.test(pageValue)) {
+        return 1;
+    }
+
+    const parsedPage = Number(pageValue);
+
+    if (!Number.isSafeInteger(parsedPage) || parsedPage < 1) {
+        return 1;
+    }
+
+    return parsedPage;
+};
+
 const Home = () => {
+    const [searchParams, setSearchParams] = useSearchParams();
+
     const [apps, setApps] = useState([]);
-    const [activeTab, setActiveTab] = useState("all");
-    const [searchQuery, setSearchQuery] = useState("");
-    const [safeCurrentPage, setsafeCurrentPage] = useState(1);
     const [selectedPreview, setSelectedPreview] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
+
+    const categoryFromUrl = searchParams.get("category") || "all";
+
+    const activeTab = CATEGORY_IDS.has(categoryFromUrl)
+        ? categoryFromUrl
+        : "all";
+
+    const searchQuery = searchParams.get("search") || "";
+
+    const requestedPage = getPageFromSearchParams(searchParams);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -78,6 +106,34 @@ const Home = () => {
             controller.abort();
         };
     }, []);
+
+    const updateUrl = useCallback(
+        (
+            { category = "all", page = 1, search = "" },
+            { replace = false } = {},
+        ) => {
+            const nextCategory = CATEGORY_IDS.has(category) ? category : "all";
+
+            const validPage = Number.isSafeInteger(page) && page > 0 ? page : 1;
+
+            const nextPage = nextCategory === "all" ? validPage : 1;
+
+            const nextParams = new URLSearchParams();
+
+            nextParams.set("category", nextCategory);
+
+            nextParams.set("page", String(nextPage));
+
+            if (search) {
+                nextParams.set("search", search);
+            }
+
+            setSearchParams(nextParams, {
+                replace,
+            });
+        },
+        [setSearchParams],
+    );
 
     const searchMatchedApps = useMemo(() => {
         const normalizedQuery = searchQuery.trim().toLowerCase();
@@ -139,38 +195,85 @@ const Home = () => {
         return Math.max(1, Math.ceil(filteredApps.length / APPS_PER_PAGE));
     }, [activeTab, filteredApps.length]);
 
-    const safesafeCurrentPage = Math.min(
-        Math.max(safeCurrentPage, 1),
-        totalPages,
-    );
+    const currentPage =
+        activeTab === "all"
+            ? Math.min(Math.max(requestedPage, 1), totalPages)
+            : 1;
+
+    useEffect(() => {
+        if (isLoading) {
+            return;
+        }
+
+        const normalizedParams = new URLSearchParams();
+
+        normalizedParams.set("category", activeTab);
+
+        normalizedParams.set("page", String(currentPage));
+
+        if (searchQuery) {
+            normalizedParams.set("search", searchQuery);
+        }
+
+        if (normalizedParams.toString() !== searchParams.toString()) {
+            setSearchParams(normalizedParams, {
+                replace: true,
+            });
+        }
+    }, [
+        activeTab,
+        currentPage,
+        isLoading,
+        searchParams,
+        searchQuery,
+        setSearchParams,
+    ]);
 
     const visibleApps = useMemo(() => {
         if (activeTab !== "all") {
             return filteredApps;
         }
 
-        const startIndex = (safesafeCurrentPage - 1) * APPS_PER_PAGE;
+        const startIndex = (currentPage - 1) * APPS_PER_PAGE;
+
         const endIndex = startIndex + APPS_PER_PAGE;
 
         return filteredApps.slice(startIndex, endIndex);
-    }, [activeTab, filteredApps, safesafeCurrentPage]);
+    }, [activeTab, currentPage, filteredApps]);
 
     const activeCategory = DISPLAY_CATEGORIES.find(
         (category) => category.id === activeTab,
     );
 
     const handleTabChange = (categoryId) => {
-        setActiveTab(categoryId);
-        setsafeCurrentPage(1);
+        updateUrl({
+            category: categoryId,
+            page: 1,
+            search: searchQuery,
+        });
     };
 
     const handleSearchChange = (value) => {
-        setSearchQuery(value);
-        setsafeCurrentPage(1);
+        updateUrl(
+            {
+                category: activeTab,
+                page: 1,
+                search: value,
+            },
+            {
+                replace: true,
+            },
+        );
     };
 
     const handlePageChange = (page) => {
-        setsafeCurrentPage(Math.min(Math.max(page, 1), totalPages));
+        const nextPage = Math.min(Math.max(page, 1), totalPages);
+
+        updateUrl({
+            category: activeTab,
+            page: nextPage,
+            search: searchQuery,
+        });
     };
 
     const handleOpenPreview = (app) => {
@@ -198,17 +301,23 @@ const Home = () => {
         const rect = card.getBoundingClientRect();
 
         const pointerX = event.clientX - rect.left;
+
         const pointerY = event.clientY - rect.top;
 
         const horizontalPercentage = pointerX / rect.width;
+
         const verticalPercentage = pointerY / rect.height;
 
         const rotateY = (horizontalPercentage - 0.5) * 8;
+
         const rotateX = (0.5 - verticalPercentage) * 8;
 
         card.style.setProperty("--rotate-x", `${rotateX.toFixed(2)}deg`);
+
         card.style.setProperty("--rotate-y", `${rotateY.toFixed(2)}deg`);
+
         card.style.setProperty("--glow-x", `${horizontalPercentage * 100}%`);
+
         card.style.setProperty("--glow-y", `${verticalPercentage * 100}%`);
     };
 
@@ -216,8 +325,11 @@ const Home = () => {
         const card = event.currentTarget;
 
         card.style.setProperty("--rotate-x", "0deg");
+
         card.style.setProperty("--rotate-y", "0deg");
+
         card.style.setProperty("--glow-x", "50%");
+
         card.style.setProperty("--glow-y", "50%");
     };
 
@@ -450,12 +562,10 @@ const Home = () => {
                                         <Styled.Pagination>
                                             <Styled.PaginationButton
                                                 type="button"
-                                                disabled={
-                                                    safesafeCurrentPage === 1
-                                                }
+                                                disabled={currentPage === 1}
                                                 onClick={() =>
                                                     handlePageChange(
-                                                        safesafeCurrentPage - 1,
+                                                        currentPage - 1,
                                                     )
                                                 }
                                             >
@@ -473,12 +583,10 @@ const Home = () => {
                                                         key={page}
                                                         type="button"
                                                         $active={
-                                                            safeCurrentPage ===
-                                                            page
+                                                            currentPage === page
                                                         }
                                                         aria-current={
-                                                            safeCurrentPage ===
-                                                            page
+                                                            currentPage === page
                                                                 ? "page"
                                                                 : undefined
                                                         }
@@ -496,12 +604,11 @@ const Home = () => {
                                             <Styled.PaginationButton
                                                 type="button"
                                                 disabled={
-                                                    safeCurrentPage ===
-                                                    totalPages
+                                                    currentPage === totalPages
                                                 }
                                                 onClick={() =>
                                                     handlePageChange(
-                                                        safeCurrentPage + 1,
+                                                        currentPage + 1,
                                                     )
                                                 }
                                             >
@@ -509,7 +616,7 @@ const Home = () => {
                                             </Styled.PaginationButton>
 
                                             <Styled.PaginationInfo>
-                                                Page {safeCurrentPage} of{" "}
+                                                Page {currentPage} of{" "}
                                                 {totalPages}
                                             </Styled.PaginationInfo>
                                         </Styled.Pagination>
