@@ -155,6 +155,20 @@
             "previewImage": "apps/fuel-cost-calculator/preview.png",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/fuel-cost-calculator-v1.0.0/fuel-cost-calculator-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/fuel-cost-calculator-v1.0.0"
+        },
+        {
+            "id": "currency-converter",
+            "name": "Currency Converter",
+            "category": "free",
+            "description": "A free Android utility for converting between worldwide currencies using live, cached and bundled offline exchange rates.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.currencyconverter",
+            "icon": "apps/currency-converter/icon.png",
+            "previewImage": "apps/currency-converter/preview.png",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/currency-converter-v1.0.0/currency-converter-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/currency-converter-v1.0.0"
         }
     ]
 }
