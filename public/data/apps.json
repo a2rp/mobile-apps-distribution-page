@@ -225,6 +225,20 @@
             "previewImage": "apps/daily-planner/preview.jpg",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/daily-planner-v1.0.0/Daily-Planner-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/daily-planner-v1.0.0"
+        },
+        {
+            "id": "shopping-list",
+            "name": "Shopping List",
+            "category": "free",
+            "description": "A free offline Android app for creating reusable shopping lists and managing items with quantities.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.shoppinglist",
+            "icon": "apps/shopping-list/icon.png",
+            "previewImage": "apps/shopping-list/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/shopping-list-v1.0.0/Shopping-List-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/shopping-list-v1.0.0"
         }
     ]
 }
