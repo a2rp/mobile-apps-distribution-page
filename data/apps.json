@@ -267,6 +267,20 @@
             "previewImage": "apps/stopwatch-and-timer/preview.jpg",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/stopwatch-and-timer-v1.0.0/stopwatch-and-timer-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/stopwatch-and-timer-v1.0.0"
+        },
+        {
+            "id": "text-toolkit",
+            "name": "Text Toolkit",
+            "category": "free",
+            "description": "An offline Android toolkit to transform, clean, organize and analyze text.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.texttoolkit",
+            "icon": "apps/text-toolkit/icon.png",
+            "previewImage": "apps/text-toolkit/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/text-toolkit-v1.0.0/text-toolkit-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/text-toolkit-v1.0.0"
         }
     ]
 }
