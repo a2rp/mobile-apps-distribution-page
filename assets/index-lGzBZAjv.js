@@ -80,7 +80,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
         border-top-color: #ffffff;
         border-radius: 50%;
         animation: ${oo} 0.75s linear infinite;
-    `},co=()=>(0,R.jsx)(so.Wrapper,{children:(0,R.jsx)(so.Spinner,{})}),lo=(0,_.lazy)(()=>S(()=>import(`./Home-DlYOD_mH.js`),[])),uo=(0,_.lazy)(()=>S(()=>import(`./NotFound-BRcxH-SN.js`),[])),z=()=>(0,R.jsx)(_.Suspense,{fallback:(0,R.jsx)(co,{}),children:(0,R.jsxs)(Kt,{children:[(0,R.jsx)(Wt,{path:`/`,element:(0,R.jsx)(Ut,{to:`/home`,replace:!0})}),(0,R.jsx)(Wt,{path:`/home`,element:(0,R.jsx)(lo,{})}),(0,R.jsx)(Wt,{path:`*`,element:(0,R.jsx)(uo,{})})]})}),fo={Wrapper:Qa.div`
+    `},co=()=>(0,R.jsx)(so.Wrapper,{children:(0,R.jsx)(so.Spinner,{})}),lo=(0,_.lazy)(()=>S(()=>import(`./Home-DDtL6wWN.js`),[])),uo=(0,_.lazy)(()=>S(()=>import(`./NotFound-CxafQx-Z.js`),[])),z=()=>(0,R.jsx)(_.Suspense,{fallback:(0,R.jsx)(co,{}),children:(0,R.jsxs)(Kt,{children:[(0,R.jsx)(Wt,{path:`/`,element:(0,R.jsx)(Ut,{to:`/home`,replace:!0})}),(0,R.jsx)(Wt,{path:`/home`,element:(0,R.jsx)(lo,{})}),(0,R.jsx)(Wt,{path:`*`,element:(0,R.jsx)(uo,{})})]})}),fo={Wrapper:Qa.div`
         position: relative;
         width: 100%;
         min-height: 100vh;

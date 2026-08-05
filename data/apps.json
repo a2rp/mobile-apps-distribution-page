@@ -309,6 +309,20 @@
             "previewImage": "apps/qr-barcode-toolkit/preview.jpg",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/qr-barcode-toolkit-v1.0.0/qr-barcode-toolkit-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/qr-barcode-toolkit-v1.0.0"
+        },
+        {
+            "id": "image-toolkit",
+            "name": "Image Toolkit",
+            "category": "free",
+            "description": "An offline Android toolkit to resize, rotate, flip, compress, convert, save and share images.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.imagetoolkit",
+            "icon": "apps/image-toolkit/icon.png",
+            "previewImage": "apps/image-toolkit/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/image-toolkit-v1.0.0/image-toolkit-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/image-toolkit-v1.0.0"
         }
     ]
 }
