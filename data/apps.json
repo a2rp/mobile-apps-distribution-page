@@ -323,6 +323,20 @@
             "previewImage": "apps/image-toolkit/preview.jpg",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/image-toolkit-v1.0.0/image-toolkit-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/image-toolkit-v1.0.0"
+        },
+        {
+            "id": "document-scanner",
+            "name": "Document Scanner",
+            "category": "free",
+            "description": "An offline Android app to scan documents, import images and create multi-page PDF files.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.documentscanner",
+            "icon": "apps/document-scanner/icon.png",
+            "previewImage": "apps/document-scanner/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/document-scanner-v1.0.0/document-scanner-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/document-scanner-v1.0.0"
         }
     ]
 }
