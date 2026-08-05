@@ -138,30 +138,6 @@ export const androidAppsRoadmap = [
                 description:
                     "Text, links, contacts aur Wi-Fi ke QR codes generate karna, barcode scan karna, save, copy aur share karna.",
             },
-            {
-                id: "voice-notes-transcription",
-                name: "Voice Notes and Transcription",
-                description:
-                    "Voice recording, speech-to-text notes, playback, editing aur search.",
-            },
-            {
-                id: "text-to-speech-reader",
-                name: "Text to Speech Reader",
-                description:
-                    "Entered ya pasted text ko device voice se read, pause aur resume karna.",
-            },
-            {
-                id: "multilingual-voice-translator",
-                name: "Multilingual Voice Translator",
-                description:
-                    "Voice input, text translation, language swap, speech output aur history.",
-            },
-            {
-                id: "offline-mesh-chat",
-                name: "Offline Mesh Chat",
-                description:
-                    "Nearby Android devices ke beech Bluetooth-based offline private messaging.",
-            },
         ],
     },
     {
