@@ -4,16 +4,18 @@ A React website for browsing and downloading Android APK applications created by
 
 ## Live Website
 
-https://a2rp.github.io/mobile-apps-distribution-page/
+The Vercel deployment URL will be added after deployment.
 
 ## Features
 
-- Browse apps by category
+- Browse Android apps by category
+- Search applications
+- View app details and preview images
 - Direct APK downloads
-- Release notes links
+- GitHub release links
 - Responsive design
-- GitHub Pages deployment
 - Refresh-safe React routes
+- Automatic Vercel deployment
 
 ## Tech Stack
 
@@ -22,6 +24,7 @@ https://a2rp.github.io/mobile-apps-distribution-page/
 - React Router
 - Styled Components
 - React Icons
+- Vercel
 
 ## Getting Started
 
@@ -39,7 +42,6 @@ npm run dev
 npm run lint
 npm run build
 npm run preview
-npm run deploy
 ```
 
 ## App Data
@@ -50,7 +52,7 @@ Application details are stored in:
 public/data/apps.json
 ```
 
-Application icons are stored in:
+Application icons and preview images are stored in:
 
 ```text
 public/apps/
@@ -58,22 +60,30 @@ public/apps/
 
 ## APK Releases
 
-APK files are available from:
+APK files and release details are available from:
 
 https://github.com/a2rp/mobile-apps-releases
+
+## Deployment
+
+The website is deployed on Vercel.
+
+Every push to the `main` branch automatically creates a new production deployment.
 
 ## Developer
 
 **Ashish Ranjan**
 
-- Website: https://www.ashishranjan.net
+- Portfolio: https://www.ashishranjan.net
 - GitHub: https://github.com/a2rp
+- CodePen: https://codepen.io/ash1198
 - LinkedIn: https://www.linkedin.com/in/aashishranjan
+- Facebook: https://www.facebook.com/theash.ashish/
+- YouTube: https://www.youtube.com/@ashishranjan-ashz
+- Email: ash.ranjan09@gmail.com
 
 ## Support
 
-https://a2rp-donation-page.netlify.app/
-
-## License
-
-Copyright © Ashish Ranjan. All rights reserved.
+- Donation Page: https://a2rp-donation-page.netlify.app/
+- Buy Me A Coffee: https://buymeacoffee.com/a2rp
+- Patreon: https://patreon.com/a2rp
