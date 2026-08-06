@@ -355,7 +355,7 @@
         {
             "id": "step-counter",
             "name": "Step Counter",
-            "category": "Free",
+            "category": "free",
             "description": "Track daily steps, estimated distance, custom goals and recent history.",
             "version": "1.0.0",
             "platform": "Android",
@@ -365,6 +365,20 @@
             "previewImage": "apps/step-counter/preview.jpg",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/step-counter-v1.0.0/step-counter-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/step-counter-v1.0.0"
+        },
+        {
+            "id": "compass-coordinates",
+            "name": "Compass and Coordinates",
+            "category": "free",
+            "description": "View live compass direction, exact current address, coordinates, GPS accuracy and altitude.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.compasscoordinates",
+            "icon": "apps/compass-coordinates/icon.png",
+            "previewImage": "apps/compass-coordinates/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/compass-coordinates-v1.0.0/compass-coordinates-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/compass-coordinates-v1.0.0"
         }
     ]
 }
