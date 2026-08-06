@@ -157,34 +157,10 @@ export const androidAppsRoadmap = [
                     "Camera se documents capture, crop, enhance aur PDF mein export karna.",
             },
             {
-                id: "pdf-toolkit",
-                name: "PDF Toolkit",
-                description:
-                    "Images to PDF, PDF merge, split, reorder, rotate aur page extraction.",
-            },
-            {
                 id: "private-file-vault",
                 name: "Private File Vault",
                 description:
                     "PIN-protected offline vault mein private images aur documents secure rakhna.",
-            },
-            {
-                id: "file-integrity-checker",
-                name: "File Integrity Checker",
-                description:
-                    "SHA-256 checksums generate, copy, compare aur files verify karna.",
-            },
-            {
-                id: "photo-metadata-cleaner",
-                name: "Photo Metadata Cleaner",
-                description:
-                    "Photos se location, device aur other metadata inspect aur remove karna.",
-            },
-            {
-                id: "storage-analyzer",
-                name: "Storage Analyzer",
-                description:
-                    "Files ko size aur type ke hisaab se analyze karke large files identify karna.",
             },
         ],
     },
@@ -210,12 +186,7 @@ export const androidAppsRoadmap = [
                 description:
                     "Microphone input se approximate surrounding sound level monitor karna.",
             },
-            {
-                id: "device-sensor-monitor",
-                name: "Device Sensor Monitor",
-                description:
-                    "Accelerometer, gyroscope, magnetometer aur available sensors ka live data.",
-            },
+
             {
                 id: "network-information-tool",
                 name: "Network Information Tool",
@@ -233,13 +204,6 @@ export const androidAppsRoadmap = [
                 name: "Local File Share",
                 description:
                     "Same Wi-Fi network par devices ke beech files locally transfer karna.",
-            },
-
-            {
-                id: "offline-clipboard",
-                name: "Offline Clipboard",
-                description:
-                    "Important copied text, links aur reusable snippets locally organize karna.",
             },
         ],
     },
