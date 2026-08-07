@@ -407,6 +407,20 @@
             "previewImage": "apps/network-information-tool/preview.jpg",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/network-information-tool-v1.0.0/network-information-tool-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/network-information-tool-v1.0.0"
+        },
+        {
+            "id": "local-file-share",
+            "name": "Local File Share",
+            "category": "free",
+            "description": "Share files directly with nearby phones and computers over the same Wi-Fi network without cloud uploads.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.localfileshare",
+            "icon": "apps/local-file-share/icon.png",
+            "previewImage": "apps/local-file-share/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/local-file-share-v1.0.0/local-file-share-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/local-file-share-v1.0.0"
         }
     ]
 }
