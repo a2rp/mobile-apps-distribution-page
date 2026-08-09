@@ -9,6 +9,12 @@ export const androidAppsRoadmap = [
                 description:
                     "React Native basics se advanced development, Q&A aur practical code examples.",
             },
+            {
+                id: "html-tutorial",
+                name: "HTML Tutorial",
+                description:
+                    "Learn HTML with structured lessons, Q&A, code examples and interactive live previews.",
+            },
         ],
     },
 
