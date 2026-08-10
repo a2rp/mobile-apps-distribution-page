@@ -7,13 +7,19 @@ export const androidAppsRoadmap = [
                 id: "react-native-tutorial",
                 name: "React Native Tutorial",
                 description:
-                    "React Native basics se advanced development, Q&A aur practical code examples.",
+                    "Learn React Native from fundamentals to advanced development with structured lessons, Q&A and practical code examples.",
             },
             {
                 id: "html-tutorial",
                 name: "HTML Tutorial",
                 description:
                     "Learn HTML with structured lessons, Q&A, code examples and interactive live previews.",
+            },
+            {
+                id: "css-tutorial",
+                name: "CSS Tutorial",
+                description:
+                    "Learn CSS from fundamentals to modern layouts with structured lessons, Q&A, code examples and interactive live previews.",
             },
         ],
     },
@@ -26,71 +32,73 @@ export const androidAppsRoadmap = [
                 id: "unit-converter",
                 name: "Unit Converter",
                 description:
-                    "Length, weight, temperature, area, volume, speed aur data conversion.",
+                    "Convert length, weight, temperature, area, volume, speed and data units.",
             },
             {
                 id: "smart-calculator",
                 name: "Smart Calculator",
                 description:
-                    "Basic, scientific, percentage aur calculation history.",
+                    "Perform basic, scientific and percentage calculations with calculation history.",
             },
             {
                 id: "percentage-calculator",
                 name: "Percentage Calculator",
                 description:
-                    "Percentage, increase, decrease, difference aur value calculation.",
+                    "Calculate percentages, increases, decreases, differences and values.",
             },
             {
                 id: "age-calculator",
                 name: "Age Calculator",
                 description:
-                    "Exact age, next birthday aur total days/months calculation.",
+                    "Calculate exact age, next birthday and total days or months.",
             },
             {
                 id: "date-calculator",
                 name: "Date Calculator",
                 description:
-                    "Do dates ke beech difference aur kisi date mein days add/subtract karna.",
+                    "Calculate the difference between two dates and add or subtract days from a date.",
             },
             {
                 id: "discount-calculator",
                 name: "Discount Calculator",
-                description: "Discount ke baad final price aur total savings.",
+                description:
+                    "Calculate the final price after a discount and view total savings.",
             },
             {
                 id: "tip-calculator",
                 name: "Tip Calculator",
                 description:
-                    "Tip calculate karke bill ko multiple people mein split karna.",
+                    "Calculate tips, total bill amount and split the bill between multiple people.",
             },
             {
                 id: "gst-calculator",
                 name: "GST Calculator",
-                description: "GST add/remove aur tax breakup calculate karna.",
+                description:
+                    "Add or remove GST and calculate the complete tax breakdown.",
             },
             {
                 id: "emi-calculator",
                 name: "EMI Calculator",
                 description:
-                    "Loan EMI, total interest aur total payment calculation.",
+                    "Calculate loan EMI, total interest and total repayment amount.",
             },
             {
                 id: "fuel-cost-calculator",
                 name: "Fuel Cost Calculator",
                 description:
-                    "Distance, mileage aur fuel price se trip cost calculate karna.",
+                    "Calculate trip fuel cost using distance, mileage and fuel price.",
             },
             {
                 id: "currency-converter",
                 name: "Currency Converter",
                 description:
-                    "Cached exchange rates ke saath currency conversion.",
+                    "Convert currencies using live, cached and bundled exchange rates.",
             },
             {
                 id: "time-zone-converter",
                 name: "Time Zone Converter",
                 description:
-                    "Different countries aur cities ka time compare karna.",
+                    "Convert and compare date and time across different countries and cities.",
             },
         ],
     },
@@ -103,36 +111,36 @@ export const androidAppsRoadmap = [
                 id: "notes-app",
                 name: "Notes App",
                 description:
-                    "Offline notes create, edit, search, pin aur archive karna.",
+                    "Create, edit, search, pin and archive notes offline.",
             },
             {
                 id: "todo-list",
                 name: "To-Do List",
-                description: "Daily tasks create, complete aur manage karna.",
+                description: "Create, complete and manage daily tasks.",
             },
             {
                 id: "daily-planner",
                 name: "Daily Planner",
                 description:
-                    "Din ke tasks aur schedule ko simple timeline mein manage karna.",
+                    "Organize daily tasks and schedules using a simple timeline.",
             },
             {
                 id: "shopping-list",
                 name: "Shopping List",
                 description:
-                    "Grocery items, quantity, checked items aur reusable lists.",
+                    "Create reusable shopping lists with quantities and completed items.",
             },
             {
                 id: "reminder-app",
                 name: "Reminder App",
                 description:
-                    "Local notifications ke saath one-time aur repeating reminders.",
+                    "Create one-time and repeating reminders with local notifications.",
             },
             {
                 id: "stopwatch-and-timer",
                 name: "Stopwatch and Timer",
                 description:
-                    "Multiple countdown timers, stopwatches, lap timing aur saved presets.",
+                    "Use countdown timers, stopwatches, lap timing and saved presets.",
             },
         ],
     },
@@ -145,19 +153,19 @@ export const androidAppsRoadmap = [
                 id: "text-toolkit",
                 name: "Text Toolkit",
                 description:
-                    "Text case conversion, word count, cleanup, sorting aur duplicate removal.",
+                    "Convert text case, count words, clean text, sort content and remove duplicates.",
             },
             {
                 id: "password-generator",
                 name: "Password Generator",
                 description:
-                    "Strong passwords aur passphrases generate, customize aur securely copy karna.",
+                    "Generate strong passwords and passphrases, customize options and securely copy results.",
             },
             {
                 id: "qr-barcode-toolkit",
                 name: "QR and Barcode Toolkit",
                 description:
-                    "Text, links, contacts aur Wi-Fi ke QR codes generate karna, barcode scan karna, save, copy aur share karna.",
+                    "Generate QR codes for text, links, contacts and Wi-Fi, and scan, copy, save or share QR codes and barcodes.",
             },
         ],
     },
@@ -170,19 +178,19 @@ export const androidAppsRoadmap = [
                 id: "image-toolkit",
                 name: "Image Toolkit",
                 description:
-                    "Images compress, resize, crop, rotate aur JPG, PNG, WebP mein convert karna.",
+                    "Compress, resize, crop, rotate and convert images between JPG, PNG and WebP formats.",
             },
             {
                 id: "document-scanner",
                 name: "Document Scanner",
                 description:
-                    "Camera se documents capture, crop, enhance aur PDF mein export karna.",
+                    "Capture, crop and enhance documents, then export them as PDF files.",
             },
             {
                 id: "private-file-vault",
                 name: "Private File Vault",
                 description:
-                    "PIN-protected offline vault mein private images aur documents secure rakhna.",
+                    "Protect private images and documents inside a secure offline PIN-protected vault.",
             },
         ],
     },
@@ -195,26 +203,25 @@ export const androidAppsRoadmap = [
                 id: "step-counter",
                 name: "Step Counter",
                 description:
-                    "Device sensor se daily steps, estimated distance, goals aur history track karna.",
+                    "Track daily steps, estimated distance, custom goals and recent activity using device sensors.",
             },
             {
                 id: "compass-coordinates",
                 name: "Compass and Coordinates",
                 description:
-                    "Direction, heading, latitude, longitude, accuracy aur location sharing.",
+                    "View direction, heading, latitude, longitude, GPS accuracy, altitude and location details.",
             },
             {
                 id: "sound-level-meter",
                 name: "Sound Level Meter",
                 description:
-                    "Microphone input se approximate surrounding sound level monitor karna.",
+                    "Monitor approximate surrounding sound levels using microphone input.",
             },
-
             {
                 id: "network-information-tool",
                 name: "Network Information Tool",
                 description:
-                    "Current connection, local IP, network type aur basic connectivity details.",
+                    "View current connection status, local IP address, network type and basic connectivity details.",
             },
         ],
     },
@@ -227,7 +234,7 @@ export const androidAppsRoadmap = [
                 id: "local-file-share",
                 name: "Local File Share",
                 description:
-                    "Same Wi-Fi network par devices ke beech files locally transfer karna.",
+                    "Transfer files directly between devices connected to the same Wi-Fi network.",
             },
         ],
     },

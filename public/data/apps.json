@@ -18,6 +18,49 @@
     ],
     "apps": [
         {
+            "id": "react-native-tutorial",
+            "name": "React Native Tutorial",
+            "category": "free",
+            "description": "Complete offline React Native tutorial with lessons, Q&A, and practical code examples.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.reactnativetutorial",
+            "icon": "apps/react-native-tutorial/icon.png",
+            "previewImage": "apps/react-native-tutorial/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/react-native-tutorial-v1.0.0/react-native-tutorial-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/react-native-tutorial-v1.0.0"
+        },
+        {
+            "id": "html-tutorial",
+            "name": "HTML Tutorial",
+            "category": "free",
+            "description": "Learn HTML with structured lessons, Q&A, code examples and interactive live previews.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.htmltutorial",
+            "icon": "apps/html-tutorial/icon.png",
+            "previewImage": "apps/html-tutorial/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/html-tutorial-v1.0.0/html-tutorial-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/html-tutorial-v1.0.0"
+        },
+        {
+            "id": "css-tutorial",
+            "name": "CSS Tutorial",
+            "category": "free",
+            "description": "Learn CSS from fundamentals to modern layouts with structured lessons, Q&A, practical code examples and interactive live previews.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "packageName": "com.a2rp.csstutorial",
+            "icon": "apps/css-tutorial/icon.png",
+            "previewImage": "apps/css-tutorial/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/css-tutorial-v1.0.0/css-tutorial-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/css-tutorial-v1.0.0"
+        },
+
+        {
             "id": "hello-world",
             "name": "Hello World",
             "category": "free",
@@ -184,6 +227,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/time-zone-converter-v1.0.0/time-zone-converter-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/time-zone-converter-v1.0.0"
         },
+
         {
             "id": "notes-app",
             "name": "Notes App",
@@ -198,6 +242,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/notes-app-v1.0.0/notes-app-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/notes-app-v1.0.0"
         },
+
         {
             "id": "todo-list",
             "name": "To-Do List",
@@ -212,6 +257,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/todo-list-v1.0.0/todo-list-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/todo-list-v1.0.0"
         },
+
         {
             "id": "daily-planner",
             "name": "Daily Planner",
@@ -226,6 +272,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/daily-planner-v1.0.0/Daily-Planner-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/daily-planner-v1.0.0"
         },
+
         {
             "id": "shopping-list",
             "name": "Shopping List",
@@ -240,6 +287,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/shopping-list-v1.0.0/Shopping-List-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/shopping-list-v1.0.0"
         },
+
         {
             "id": "reminder-app",
             "name": "Reminder App",
@@ -254,6 +302,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/reminder-app-v1.0.0/reminder-app-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/reminder-app-v1.0.0"
         },
+
         {
             "id": "stopwatch-and-timer",
             "name": "Stopwatch and Timer",
@@ -268,6 +317,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/stopwatch-and-timer-v1.0.0/stopwatch-and-timer-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/stopwatch-and-timer-v1.0.0"
         },
+
         {
             "id": "text-toolkit",
             "name": "Text Toolkit",
@@ -282,6 +332,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/text-toolkit-v1.0.0/text-toolkit-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/text-toolkit-v1.0.0"
         },
+
         {
             "id": "password-generator",
             "name": "Password Generator",
@@ -296,6 +347,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/password-generator-v1.0.0/password-generator-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/password-generator-v1.0.0"
         },
+
         {
             "id": "qr-barcode-toolkit",
             "name": "QR and Barcode Toolkit",
@@ -310,6 +362,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/qr-barcode-toolkit-v1.0.0/qr-barcode-toolkit-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/qr-barcode-toolkit-v1.0.0"
         },
+
         {
             "id": "image-toolkit",
             "name": "Image Toolkit",
@@ -324,6 +377,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/image-toolkit-v1.0.0/image-toolkit-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/image-toolkit-v1.0.0"
         },
+
         {
             "id": "document-scanner",
             "name": "Document Scanner",
@@ -338,6 +392,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/document-scanner-v1.0.0/document-scanner-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/document-scanner-v1.0.0"
         },
+
         {
             "id": "private-file-vault",
             "name": "Private File Vault",
@@ -352,6 +407,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/private-file-vault-v1.0.0/private-file-vault-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/private-file-vault-v1.0.0"
         },
+
         {
             "id": "step-counter",
             "name": "Step Counter",
@@ -366,6 +422,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/step-counter-v1.0.0/step-counter-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/step-counter-v1.0.0"
         },
+
         {
             "id": "compass-coordinates",
             "name": "Compass and Coordinates",
@@ -380,6 +437,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/compass-coordinates-v1.0.0/compass-coordinates-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/compass-coordinates-v1.0.0"
         },
+
         {
             "id": "sound-level-meter",
             "name": "Sound Level Meter",
@@ -394,6 +452,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/sound-level-meter-v1.0.0/sound-level-meter-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/sound-level-meter-v1.0.0"
         },
+
         {
             "id": "network-information-tool",
             "name": "Network Information Tool",
@@ -408,6 +467,7 @@
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/network-information-tool-v1.0.0/network-information-tool-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/network-information-tool-v1.0.0"
         },
+
         {
             "id": "local-file-share",
             "name": "Local File Share",
@@ -421,34 +481,6 @@
             "previewImage": "apps/local-file-share/preview.jpg",
             "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/local-file-share-v1.0.0/local-file-share-v1.0.0.apk",
             "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/local-file-share-v1.0.0"
-        },
-        {
-            "id": "react-native-tutorial",
-            "name": "React Native Tutorial",
-            "category": "free",
-            "description": "Complete offline React Native tutorial with lessons, Q&A, and practical code examples.",
-            "version": "1.0.0",
-            "platform": "Android",
-            "status": "Available",
-            "packageName": "com.a2rp.reactnativetutorial",
-            "icon": "apps/react-native-tutorial/icon.png",
-            "previewImage": "apps/react-native-tutorial/preview.jpg",
-            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/react-native-tutorial-v1.0.0/react-native-tutorial-v1.0.0.apk",
-            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/react-native-tutorial-v1.0.0"
-        },
-        {
-            "id": "html-tutorial",
-            "name": "HTML Tutorial",
-            "category": "free",
-            "description": "Learn HTML with structured lessons, Q&A, code examples and interactive live previews.",
-            "version": "1.0.0",
-            "platform": "Android",
-            "status": "Available",
-            "packageName": "com.a2rp.htmltutorial",
-            "icon": "apps/html-tutorial/icon.png",
-            "previewImage": "apps/html-tutorial/preview.jpg",
-            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/html-tutorial-v1.0.0/html-tutorial-v1.0.0.apk",
-            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/html-tutorial-v1.0.0"
         }
     ]
 }
