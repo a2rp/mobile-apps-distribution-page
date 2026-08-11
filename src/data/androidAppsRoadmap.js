@@ -21,6 +21,12 @@ export const androidAppsRoadmap = [
                 description:
                     "Learn CSS from fundamentals to modern layouts with structured lessons, Q&A, code examples and interactive live previews.",
             },
+            {
+                id: "javascript-tutorial",
+                name: "JavaScript Tutorial",
+                description:
+                    "Learn JavaScript from fundamentals to advanced concepts with structured lessons, Q&A, practical code examples and interactive live previews.",
+            },
         ],
     },
 
