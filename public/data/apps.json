@@ -80,6 +80,22 @@
         },
 
         {
+            "id": "web-playground",
+            "name": "Web Playground",
+            "category": "free",
+            "description": "An offline Android coding playground for writing, running and practicing HTML, CSS and JavaScript with live previews, console output, examples, mini projects, templates, snippets, challenges and saved projects.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "createdAt": "12 Aug 2026 01:57:59 hrs",
+            "packageName": "com.a2rp.webplayground",
+            "icon": "apps/web-playground/icon.png",
+            "previewImage": "apps/web-playground/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/web-playground-v1.0.0/web-playground-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/web-playground-v1.0.0"
+        },
+
+        {
             "id": "hello-world",
             "name": "Hello World",
             "category": "free",

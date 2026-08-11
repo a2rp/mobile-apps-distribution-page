@@ -27,6 +27,12 @@ export const androidAppsRoadmap = [
                 description:
                     "Learn JavaScript from fundamentals to advanced concepts with structured lessons, Q&A, practical code examples and interactive live previews.",
             },
+            {
+                id: "web-playground",
+                name: "Web Playground",
+                description:
+                    "Practice HTML, CSS and JavaScript with a live coding playground, examples, mini projects, templates, snippets, challenges and saved projects.",
+            },
         ],
     },
 
