@@ -80,6 +80,22 @@
         },
 
         {
+            "id": "react-tutorial",
+            "name": "React Tutorial",
+            "category": "free",
+            "description": "Learn React from beginner to advanced with structured lessons, Q&A, practical code examples and interactive live previews.",
+            "version": "1.0.0",
+            "platform": "Android",
+            "status": "Available",
+            "createdAt": "12 Aug 2026 23:48:00 hrs",
+            "packageName": "com.a2rp.reacttutorial",
+            "icon": "apps/react-tutorial/icon.png",
+            "previewImage": "apps/react-tutorial/preview.jpg",
+            "apkUrl": "https://github.com/a2rp/mobile-apps-releases/releases/download/react-tutorial-v1.0.0/react-tutorial-v1.0.0.apk",
+            "releaseUrl": "https://github.com/a2rp/mobile-apps-releases/releases/tag/react-tutorial-v1.0.0"
+        },
+
+        {
             "id": "web-playground",
             "name": "Web Playground",
             "category": "free",

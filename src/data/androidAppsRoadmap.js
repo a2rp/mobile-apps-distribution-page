@@ -28,6 +28,12 @@ export const androidAppsRoadmap = [
                     "Learn JavaScript from fundamentals to advanced concepts with structured lessons, Q&A, practical code examples and interactive live previews.",
             },
             {
+                id: "react-tutorial",
+                name: "React Tutorial",
+                description:
+                    "Learn React from beginner to advanced with structured lessons, Q&A, practical code examples and interactive live previews.",
+            },
+            {
                 id: "web-playground",
                 name: "Web Playground",
                 description:
