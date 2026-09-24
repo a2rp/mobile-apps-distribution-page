@@ -1,4 +1,4 @@
-import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./index-GzfGNzhJ.js";var u=t(l(),1),d={Wrapper:s.div`
+import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./index-Dg7x49Kb.js";var u=t(l(),1),d={Wrapper:o.div`
         position: fixed;
         inset: 0;
         z-index: 2000;
@@ -140,7 +140,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
                 max-height: calc(100vh - 145px);
             }
         }
-    `},f=e(),p=({appName:e,imageUrl:t,isOpen:r,onClose:i})=>((0,u.useEffect)(()=>{if(!r)return;let e=document.body.style.overflow,t=e=>{e.key===`Escape`&&i()};return document.body.style.overflow=`hidden`,window.addEventListener(`keydown`,t),()=>{document.body.style.overflow=e,window.removeEventListener(`keydown`,t)}},[r,i]),!r||!t?null:(0,f.jsx)(d.Wrapper,{role:`presentation`,onMouseDown:e=>{e.target===e.currentTarget&&i()},children:(0,f.jsxs)(`div`,{className:`modal`,role:`dialog`,"aria-modal":`true`,"aria-label":`${e} preview`,children:[(0,f.jsxs)(`div`,{className:`modalHeader`,children:[(0,f.jsxs)(`div`,{children:[(0,f.jsx)(`span`,{children:`App Preview`}),(0,f.jsx)(`h2`,{children:e})]}),(0,f.jsx)(`button`,{type:`button`,onClick:i,"aria-label":`Close preview`,title:`Close preview`,children:(0,f.jsx)(n,{"aria-hidden":`true`})})]}),(0,f.jsx)(`div`,{className:`imageWrapper`,children:(0,f.jsx)(`img`,{src:t,alt:`${e} application preview`})})]})})),m={Wrapper:s.div`
+    `},f=c(),p=({appName:e,imageUrl:t,isOpen:n,onClose:r})=>((0,u.useEffect)(()=>{if(!n)return;let e=document.body.style.overflow,t=e=>{e.key===`Escape`&&r()};return document.body.style.overflow=`hidden`,window.addEventListener(`keydown`,t),()=>{document.body.style.overflow=e,window.removeEventListener(`keydown`,t)}},[n,r]),!n||!t?null:(0,f.jsx)(d.Wrapper,{role:`presentation`,onMouseDown:e=>{e.target===e.currentTarget&&r()},children:(0,f.jsxs)(`div`,{className:`modal`,role:`dialog`,"aria-modal":`true`,"aria-label":`${e} preview`,children:[(0,f.jsxs)(`div`,{className:`modalHeader`,children:[(0,f.jsxs)(`div`,{children:[(0,f.jsx)(`span`,{children:`App Preview`}),(0,f.jsx)(`h2`,{children:e})]}),(0,f.jsx)(`button`,{type:`button`,onClick:r,"aria-label":`Close preview`,title:`Close preview`,children:(0,f.jsx)(s,{"aria-hidden":`true`})})]}),(0,f.jsx)(`div`,{className:`imageWrapper`,children:(0,f.jsx)(`img`,{src:t,alt:`${e} application preview`})})]})})),m={Wrapper:o.div`
         width: min(100%, 460px);
         min-height: 50px;
         display: flex;
@@ -235,7 +235,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         @media (max-width: 600px) {
             width: 100%;
         }
-    `},h=({value:e,onChange:t})=>(0,f.jsxs)(m.Wrapper,{children:[(0,f.jsx)(i,{className:`searchIcon`,"aria-hidden":`true`}),(0,f.jsx)(`input`,{type:`search`,value:e,onChange:e=>t(e.target.value),placeholder:`Search mobile apps...`,"aria-label":`Search mobile apps`}),e&&(0,f.jsx)(`button`,{type:`button`,onClick:()=>{t(``)},"aria-label":`Clear search`,title:`Clear search`,children:(0,f.jsx)(n,{"aria-hidden":`true`})})]}),g={Wrapper:s.button`
+    `},h=({value:t,onChange:n})=>(0,f.jsxs)(m.Wrapper,{children:[(0,f.jsx)(e,{className:`searchIcon`,"aria-hidden":`true`}),(0,f.jsx)(`input`,{type:`search`,value:t,onChange:e=>n(e.target.value),placeholder:`Search mobile apps...`,"aria-label":`Search mobile apps`}),t&&(0,f.jsx)(`button`,{type:`button`,onClick:()=>{n(``)},"aria-label":`Clear search`,title:`Clear search`,children:(0,f.jsx)(s,{"aria-hidden":`true`})})]}),g={Wrapper:o.button`
         min-height: 38px;
         padding: 0 13px;
         display: inline-flex;
@@ -281,7 +281,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
             opacity: 0.4;
             cursor: not-allowed;
         }
-    `},_=({appName:e,shareUrl:t})=>{let[n,r]=(0,u.useState)(!1),i=(0,u.useRef)(null);(0,u.useEffect)(()=>()=>{window.clearTimeout(i.current)},[]);let a=()=>{r(!0),window.clearTimeout(i.current),i.current=window.setTimeout(()=>{r(!1)},2e3)},s=async()=>{await navigator.clipboard.writeText(t),a()};return(0,f.jsx)(g.Wrapper,{type:`button`,onClick:async()=>{if(t)try{if(navigator.share){await navigator.share({title:e,text:`Download ${e} for Android.`,url:t});return}await s()}catch(e){if(e.name===`AbortError`)return;try{await s()}catch{r(!1)}}},disabled:!t,"aria-label":`Share ${e}`,title:n?`Link copied`:`Share app`,children:n?(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(c,{"aria-hidden":`true`}),(0,f.jsx)(`span`,{children:`Copied`})]}):(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(o,{"aria-hidden":`true`}),(0,f.jsx)(`span`,{children:`Share`})]})})},v=[{id:`tutorial-apps`,category:`Tutorial Apps`,apps:[{id:`react-native-tutorial`,name:`React Native Tutorial`,description:`Learn React Native from fundamentals to advanced development with structured lessons, Q&A and practical code examples.`},{id:`html-tutorial`,name:`HTML Tutorial`,description:`Learn HTML with structured lessons, Q&A, code examples and interactive live previews.`},{id:`css-tutorial`,name:`CSS Tutorial`,description:`Learn CSS from fundamentals to modern layouts with structured lessons, Q&A, code examples and interactive live previews.`},{id:`javascript-tutorial`,name:`JavaScript Tutorial`,description:`Learn JavaScript from fundamentals to advanced concepts with structured lessons, Q&A, practical code examples and interactive live previews.`},{id:`react-tutorial`,name:`React Tutorial`,description:`Learn React from beginner to advanced with structured lessons, Q&A, practical code examples and interactive live previews.`},{id:`web-playground`,name:`Web Playground`,description:`Practice HTML, CSS and JavaScript with a live coding playground, examples, mini projects, templates, snippets, challenges and saved projects.`}]},{id:`essential-everyday-apps`,category:`Essential Everyday Apps`,apps:[{id:`unit-converter`,name:`Unit Converter`,description:`Convert length, weight, temperature, area, volume, speed and data units.`},{id:`smart-calculator`,name:`Smart Calculator`,description:`Perform basic, scientific and percentage calculations with calculation history.`},{id:`percentage-calculator`,name:`Percentage Calculator`,description:`Calculate percentages, increases, decreases, differences and values.`},{id:`age-calculator`,name:`Age Calculator`,description:`Calculate exact age, next birthday and total days or months.`},{id:`date-calculator`,name:`Date Calculator`,description:`Calculate the difference between two dates and add or subtract days from a date.`},{id:`discount-calculator`,name:`Discount Calculator`,description:`Calculate the final price after a discount and view total savings.`},{id:`tip-calculator`,name:`Tip Calculator`,description:`Calculate tips, total bill amount and split the bill between multiple people.`},{id:`gst-calculator`,name:`GST Calculator`,description:`Add or remove GST and calculate the complete tax breakdown.`},{id:`emi-calculator`,name:`EMI Calculator`,description:`Calculate loan EMI, total interest and total repayment amount.`},{id:`fuel-cost-calculator`,name:`Fuel Cost Calculator`,description:`Calculate trip fuel cost using distance, mileage and fuel price.`},{id:`currency-converter`,name:`Currency Converter`,description:`Convert currencies using live, cached and bundled exchange rates.`},{id:`time-zone-converter`,name:`Time Zone Converter`,description:`Convert and compare date and time across different countries and cities.`}]},{id:`productivity-apps`,category:`Productivity Apps`,apps:[{id:`notes-app`,name:`Notes App`,description:`Create, edit, search, pin and archive notes offline.`},{id:`todo-list`,name:`To-Do List`,description:`Create, complete and manage daily tasks.`},{id:`daily-planner`,name:`Daily Planner`,description:`Organize daily tasks and schedules using a simple timeline.`},{id:`shopping-list`,name:`Shopping List`,description:`Create reusable shopping lists with quantities and completed items.`},{id:`reminder-app`,name:`Reminder App`,description:`Create one-time and repeating reminders with local notifications.`},{id:`stopwatch-and-timer`,name:`Stopwatch and Timer`,description:`Use countdown timers, stopwatches, lap timing and saved presets.`}]},{id:`text-and-communication-tools`,category:`Text and Communication Tools`,apps:[{id:`text-toolkit`,name:`Text Toolkit`,description:`Convert text case, count words, clean text, sort content and remove duplicates.`},{id:`password-generator`,name:`Password Generator`,description:`Generate strong passwords and passphrases, customize options and securely copy results.`},{id:`qr-barcode-toolkit`,name:`QR and Barcode Toolkit`,description:`Generate QR codes for text, links, contacts and Wi-Fi, and scan, copy, save or share QR codes and barcodes.`}]},{id:`files-images-and-documents`,category:`Files, Images and Documents`,apps:[{id:`image-toolkit`,name:`Image Toolkit`,description:`Compress, resize, crop, rotate and convert images between JPG, PNG and WebP formats.`},{id:`document-scanner`,name:`Document Scanner`,description:`Capture, crop and enhance documents, then export them as PDF files.`},{id:`private-file-vault`,name:`Private File Vault`,description:`Protect private images and documents inside a secure offline PIN-protected vault.`}]},{id:`device-and-sensor-utilities`,category:`Device and Sensor Utilities`,apps:[{id:`step-counter`,name:`Step Counter`,description:`Track daily steps, estimated distance, custom goals and recent activity using device sensors.`},{id:`compass-coordinates`,name:`Compass and Coordinates`,description:`View direction, heading, latitude, longitude, GPS accuracy, altitude and location details.`},{id:`sound-level-meter`,name:`Sound Level Meter`,description:`Monitor approximate surrounding sound levels using microphone input.`},{id:`network-information-tool`,name:`Network Information Tool`,description:`View current connection status, local IP address, network type and basic connectivity details.`}]},{id:`sharing-and-offline-tools`,category:`Sharing and Offline Tools`,apps:[{id:`local-file-share`,name:`Local File Share`,description:`Transfer files directly between devices connected to the same Wi-Fi network.`}]}],y=a`
+    `},_=({appName:e,shareUrl:t})=>{let[r,i]=(0,u.useState)(!1),o=(0,u.useRef)(null);(0,u.useEffect)(()=>()=>{window.clearTimeout(o.current)},[]);let s=()=>{i(!0),window.clearTimeout(o.current),o.current=window.setTimeout(()=>{i(!1)},2e3)},c=async()=>{await navigator.clipboard.writeText(t),s()};return(0,f.jsx)(g.Wrapper,{type:`button`,onClick:async()=>{if(t)try{if(navigator.share){await navigator.share({title:e,text:`Download ${e} for Android.`,url:t});return}await c()}catch(e){if(e.name===`AbortError`)return;try{await c()}catch{i(!1)}}},disabled:!t,"aria-label":`Share ${e}`,title:r?`Link copied`:`Share app`,children:r?(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(n,{"aria-hidden":`true`}),(0,f.jsx)(`span`,{children:`Copied`})]}):(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(a,{"aria-hidden":`true`}),(0,f.jsx)(`span`,{children:`Share`})]})})},v=[{id:`tutorial-apps`,category:`Tutorial Apps`,apps:[{id:`react-native-tutorial`,name:`React Native Tutorial`,description:`Learn React Native from fundamentals to advanced development with structured lessons, Q&A and practical code examples.`},{id:`html-tutorial`,name:`HTML Tutorial`,description:`Learn HTML with structured lessons, Q&A, code examples and interactive live previews.`},{id:`css-tutorial`,name:`CSS Tutorial`,description:`Learn CSS from fundamentals to modern layouts with structured lessons, Q&A, code examples and interactive live previews.`},{id:`javascript-tutorial`,name:`JavaScript Tutorial`,description:`Learn JavaScript from fundamentals to advanced concepts with structured lessons, Q&A, practical code examples and interactive live previews.`},{id:`react-tutorial`,name:`React Tutorial`,description:`Learn React from beginner to advanced with structured lessons, Q&A, practical code examples and interactive live previews.`},{id:`web-playground`,name:`Web Playground`,description:`Practice HTML, CSS and JavaScript with a live coding playground, examples, mini projects, templates, snippets, challenges and saved projects.`}]},{id:`essential-everyday-apps`,category:`Essential Everyday Apps`,apps:[{id:`unit-converter`,name:`Unit Converter`,description:`Convert length, weight, temperature, area, volume, speed and data units.`},{id:`smart-calculator`,name:`Smart Calculator`,description:`Perform basic, scientific and percentage calculations with calculation history.`},{id:`percentage-calculator`,name:`Percentage Calculator`,description:`Calculate percentages, increases, decreases, differences and values.`},{id:`age-calculator`,name:`Age Calculator`,description:`Calculate exact age, next birthday and total days or months.`},{id:`date-calculator`,name:`Date Calculator`,description:`Calculate the difference between two dates and add or subtract days from a date.`},{id:`discount-calculator`,name:`Discount Calculator`,description:`Calculate the final price after a discount and view total savings.`},{id:`tip-calculator`,name:`Tip Calculator`,description:`Calculate tips, total bill amount and split the bill between multiple people.`},{id:`gst-calculator`,name:`GST Calculator`,description:`Add or remove GST and calculate the complete tax breakdown.`},{id:`emi-calculator`,name:`EMI Calculator`,description:`Calculate loan EMI, total interest and total repayment amount.`},{id:`fuel-cost-calculator`,name:`Fuel Cost Calculator`,description:`Calculate trip fuel cost using distance, mileage and fuel price.`},{id:`currency-converter`,name:`Currency Converter`,description:`Convert currencies using live, cached and bundled exchange rates.`},{id:`time-zone-converter`,name:`Time Zone Converter`,description:`Convert and compare date and time across different countries and cities.`}]},{id:`productivity-apps`,category:`Productivity Apps`,apps:[{id:`notes-app`,name:`Notes App`,description:`Create, edit, search, pin and archive notes offline.`},{id:`todo-list`,name:`To-Do List`,description:`Create, complete and manage daily tasks.`},{id:`daily-planner`,name:`Daily Planner`,description:`Organize daily tasks and schedules using a simple timeline.`},{id:`shopping-list`,name:`Shopping List`,description:`Create reusable shopping lists with quantities and completed items.`},{id:`reminder-app`,name:`Reminder App`,description:`Create one-time and repeating reminders with local notifications.`},{id:`stopwatch-and-timer`,name:`Stopwatch and Timer`,description:`Use countdown timers, stopwatches, lap timing and saved presets.`}]},{id:`text-and-communication-tools`,category:`Text and Communication Tools`,apps:[{id:`text-toolkit`,name:`Text Toolkit`,description:`Convert text case, count words, clean text, sort content and remove duplicates.`},{id:`password-generator`,name:`Password Generator`,description:`Generate strong passwords and passphrases, customize options and securely copy results.`},{id:`qr-barcode-toolkit`,name:`QR and Barcode Toolkit`,description:`Generate QR codes for text, links, contacts and Wi-Fi, and scan, copy, save or share QR codes and barcodes.`}]},{id:`files-images-and-documents`,category:`Files, Images and Documents`,apps:[{id:`image-toolkit`,name:`Image Toolkit`,description:`Compress, resize, crop, rotate and convert images between JPG, PNG and WebP formats.`},{id:`document-scanner`,name:`Document Scanner`,description:`Capture, crop and enhance documents, then export them as PDF files.`},{id:`private-file-vault`,name:`Private File Vault`,description:`Protect private images and documents inside a secure offline PIN-protected vault.`}]},{id:`device-and-sensor-utilities`,category:`Device and Sensor Utilities`,apps:[{id:`step-counter`,name:`Step Counter`,description:`Track daily steps, estimated distance, custom goals and recent activity using device sensors.`},{id:`compass-coordinates`,name:`Compass and Coordinates`,description:`View direction, heading, latitude, longitude, GPS accuracy, altitude and location details.`},{id:`sound-level-meter`,name:`Sound Level Meter`,description:`Monitor approximate surrounding sound levels using microphone input.`},{id:`network-information-tool`,name:`Network Information Tool`,description:`View current connection status, local IP address, network type and basic connectivity details.`}]},{id:`sharing-and-offline-tools`,category:`Sharing and Offline Tools`,apps:[{id:`local-file-share`,name:`Local File Share`,description:`Transfer files directly between devices connected to the same Wi-Fi network.`}]}],y=i`
     from {
         transform: rotate(0deg);
     }
@@ -289,12 +289,12 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
     to {
         transform: rotate(360deg);
     }
-`,b={Wrapper:s.div`
+`,b={Wrapper:o.div`
         width: 100%;
         min-height: 100%;
         background-color: transparent;
         color: #ffffff;
-    `,Container:s.div`
+    `,Container:o.div`
         width: min(100% - 40px, 1200px);
         margin: 0 auto;
 
@@ -315,7 +315,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
                 margin-bottom: 22px;
             }
         }
-    `,Hero:s.section`
+    `,Hero:o.section`
         padding: 110px 0 80px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         background: linear-gradient(
@@ -327,14 +327,14 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         @media (max-width: 700px) {
             padding: 80px 0 60px;
         }
-    `,Eyebrow:s.p`
+    `,Eyebrow:o.p`
         margin: 0 0 18px;
         color: rgba(255, 255, 255, 0.58);
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 1.8px;
         text-transform: uppercase;
-    `,Title:s.h1`
+    `,Title:o.h1`
         max-width: 820px;
         margin: 0;
         color: #ffffff;
@@ -347,17 +347,17 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         @media (max-width: 700px) {
             letter-spacing: -2px;
         }
-    `,Description:s.p`
+    `,Description:o.p`
         max-width: 680px;
         margin: 28px 0 0;
         color: rgba(255, 255, 255, 0.68);
         font-size: 17px;
         line-height: 1.75;
-    `,AppsSection:s.section`
+    `,AppsSection:o.section`
         min-height: 520px;
         padding: 56px 0 100px;
         background: rgba(0, 0, 0, 0.08);
-    `,Tabs:s.div`
+    `,Tabs:o.div`
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -370,7 +370,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         &::-webkit-scrollbar {
             display: none;
         }
-    `,TabButton:s.button`
+    `,TabButton:o.button`
         flex-shrink: 0;
         min-height: 44px;
         padding: 7px 9px 7px 17px;
@@ -436,13 +436,13 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
             outline: 2px solid #ffffff;
             outline-offset: 3px;
         }
-    `,CategoryDescription:s.p`
+    `,CategoryDescription:o.p`
         max-width: 680px;
         margin: 0 0 36px;
         color: rgba(255, 255, 255, 0.52);
         font-size: 14px;
         line-height: 1.7;
-    `,Grid:s.div`
+    `,Grid:o.div`
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: stretch;
@@ -456,7 +456,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         @media (max-width: 640px) {
             grid-template-columns: 1fr;
         }
-    `,Pagination:s.div`
+    `,Pagination:o.div`
         width: 100%;
         margin-top: 42px;
 
@@ -480,7 +480,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
                 width: 100%;
             }
         }
-    `,PaginationButton:s.button`
+    `,PaginationButton:o.button`
         min-width: 44px;
         min-height: 44px;
         padding: 0 15px;
@@ -530,7 +530,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
             outline: 2px solid #ffffff;
             outline-offset: 3px;
         }
-    `,PaginationInfo:s.span`
+    `,PaginationInfo:o.span`
         width: 100%;
         margin-top: 4px;
 
@@ -538,7 +538,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         font-size: 12px;
         font-weight: 600;
         text-align: center;
-    `,AppCard:s.article`
+    `,AppCard:o.article`
         --rotate-x: 0deg;
         --rotate-y: 0deg;
         --glow-x: 50%;
@@ -854,7 +854,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
                 transition: none;
             }
         }
-    `,AppIcon:s.div`
+    `,AppIcon:o.div`
         width: 62px;
         height: 62px;
         flex-shrink: 0;
@@ -881,20 +881,20 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
             display: block;
             object-fit: cover;
         }
-    `,AppContent:s.div`
+    `,AppContent:o.div`
         min-width: 0;
         display: flex;
         flex: 1;
         flex-direction: column;
         gap: 15px;
-    `,AppName:s.h2`
+    `,AppName:o.h2`
         margin: 0;
         color: #ffffff;
         font-size: 22px;
         font-weight: 700;
         line-height: 1.3;
         letter-spacing: -0.4px;
-    `,Status:s.span`
+    `,Status:o.span`
         flex-shrink: 0;
         min-height: 30px;
         padding: 0 10px;
@@ -912,16 +912,16 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         font-weight: 700;
         letter-spacing: 0.6px;
         text-transform: uppercase;
-    `,AppDescription:s.p`
+    `,AppDescription:o.p`
         margin: 0;
         color: rgba(255, 255, 255, 0.6);
         font-size: 14px;
         line-height: 1.75;
-    `,LoadingState:s.div`
+    `,LoadingState:o.div`
         min-height: 320px;
         display: grid;
         place-items: center;
-    `,Spinner:s.div`
+    `,Spinner:o.div`
         width: 46px;
         height: 46px;
 
@@ -930,7 +930,7 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         border-radius: 50%;
 
         animation: ${y} 0.75s linear infinite;
-    `,MessageState:s.div`
+    `,MessageState:o.div`
         min-height: 280px;
         padding: 40px 20px;
 
@@ -948,15 +948,15 @@ import{a as e,d as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"./i
         -webkit-backdrop-filter: blur(18px);
 
         text-align: center;
-    `,MessageTitle:s.h2`
+    `,MessageTitle:o.h2`
         margin: 0;
         color: #ffffff;
         font-size: 22px;
         font-weight: 700;
-    `,MessageText:s.p`
+    `,MessageText:o.p`
         max-width: 480px;
         margin: 12px 0 0;
         color: rgba(255, 255, 255, 0.58);
         font-size: 14px;
         line-height: 1.7;
-    `},x=6,S=[{id:`all`,label:`All Apps`,description:`Browse all available mobile applications.`},...v.map(e=>({id:e.id,label:e.category,description:`Browse available apps from ${e.category}.`}))],C=new Set(S.map(e=>e.id)),w=new Map([...v.flatMap(e=>e.apps.map(t=>[t.id,e.id])),[`hello-world`,`essential-everyday-apps`]]),T=e=>{let t=e.get(`page`);if(!t||!/^\d+$/.test(t))return 1;let n=Number(t);return!Number.isSafeInteger(n)||n<1?1:n},E=()=>{let[e,t]=r(),[n,i]=(0,u.useState)([]),[a,o]=(0,u.useState)(null),[s,c]=(0,u.useState)(!0),[l,d]=(0,u.useState)(``),m=e.get(`category`)||`all`,g=C.has(m)?m:`all`,v=e.get(`search`)||``,y=T(e);(0,u.useEffect)(()=>{let e=new AbortController;return(async()=>{try{c(!0),d(``);let t=await fetch(`/data/apps.json`,{signal:e.signal});if(!t.ok)throw Error(`Unable to load mobile apps.`);let n=await t.json();i(Array.isArray(n.apps)?n.apps:[])}catch(e){e.name!==`AbortError`&&d(e.message)}finally{e.signal.aborted||c(!1)}})(),()=>{e.abort()}},[]);let E=(0,u.useCallback)(({category:e=`all`,page:n=1,search:r=``},{replace:i=!1}={})=>{let a=C.has(e)?e:`all`,o=a===`all`&&Number.isSafeInteger(n)&&n>0?n:1,s=new URLSearchParams;s.set(`category`,a),s.set(`page`,String(o)),r&&s.set(`search`,r),t(s,{replace:i})},[t]),D=(0,u.useMemo)(()=>{let e=v.trim().toLowerCase();return e?n.filter(t=>[t.name,t.description,t.packageName,t.platform,t.version,t.status].filter(Boolean).join(` `).toLowerCase().includes(e)):n},[n,v]),O=(0,u.useMemo)(()=>{let e={all:D.length};return D.forEach(t=>{let n=w.get(t.id);n&&(e[n]=(e[n]||0)+1)}),e},[D]),k=(0,u.useMemo)(()=>g===`all`?D:D.filter(e=>w.get(e.id)===g),[g,D]),A=(0,u.useMemo)(()=>g===`all`?Math.max(1,Math.ceil(k.length/x)):1,[g,k.length]),j=g===`all`?Math.min(Math.max(y,1),A):1;(0,u.useEffect)(()=>{if(s)return;let n=new URLSearchParams;n.set(`category`,g),n.set(`page`,String(j)),v&&n.set(`search`,v),n.toString()!==e.toString()&&t(n,{replace:!0})},[g,j,s,e,v,t]);let M=(0,u.useMemo)(()=>{if(g!==`all`)return k;let e=(j-1)*x,t=e+x;return k.slice(e,t)},[g,j,k]),N=S.find(e=>e.id===g),P=e=>{E({category:e,page:1,search:v})},F=e=>{E({category:g,page:1,search:e},{replace:!0})},I=e=>{E({category:g,page:Math.min(Math.max(e,1),A),search:v})},L=e=>{e.previewImage&&o(e)},R=(0,u.useCallback)(()=>{o(null)},[]),z=a?.previewImage?`/${a.previewImage}`:``,B=e=>{if(e.pointerType!==`mouse`)return;let t=e.currentTarget,n=t.getBoundingClientRect(),r=e.clientX-n.left,i=e.clientY-n.top,a=r/n.width,o=i/n.height,s=(a-.5)*8,c=(.5-o)*8;t.style.setProperty(`--rotate-x`,`${c.toFixed(2)}deg`),t.style.setProperty(`--rotate-y`,`${s.toFixed(2)}deg`),t.style.setProperty(`--glow-x`,`${a*100}%`),t.style.setProperty(`--glow-y`,`${o*100}%`)},V=e=>{let t=e.currentTarget;t.style.setProperty(`--rotate-x`,`0deg`),t.style.setProperty(`--rotate-y`,`0deg`),t.style.setProperty(`--glow-x`,`50%`),t.style.setProperty(`--glow-y`,`50%`)};return(0,f.jsxs)(b.Wrapper,{children:[(0,f.jsx)(b.Hero,{children:(0,f.jsxs)(b.Container,{children:[(0,f.jsx)(b.Eyebrow,{children:`a2rp Mobile Apps`}),(0,f.jsx)(b.Title,{children:`Mobile apps built for everyday use`}),(0,f.jsx)(b.Description,{children:`Explore useful Android applications created by Ashish Ranjan for everyday tasks, productivity, learning, safety and more.`})]})}),(0,f.jsx)(b.AppsSection,{children:(0,f.jsxs)(b.Container,{children:[s&&(0,f.jsx)(b.LoadingState,{children:(0,f.jsx)(b.Spinner,{})}),!s&&l&&(0,f.jsxs)(b.MessageState,{children:[(0,f.jsx)(b.MessageTitle,{children:`Apps could not be loaded`}),(0,f.jsx)(b.MessageText,{children:l})]}),!s&&!l&&(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(`div`,{className:`searchArea`,children:(0,f.jsx)(h,{value:v,onChange:F})}),(0,f.jsx)(b.Tabs,{role:`tablist`,"aria-label":`Mobile app categories`,children:S.map(e=>(0,f.jsxs)(b.TabButton,{type:`button`,role:`tab`,"aria-selected":g===e.id,$active:g===e.id,onClick:()=>P(e.id),children:[(0,f.jsx)(`span`,{children:e.label}),(0,f.jsx)(`span`,{className:`tabCount`,children:O[e.id]||0})]},e.id))}),N&&(0,f.jsx)(b.CategoryDescription,{children:N.description}),M.length>0?(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(b.Grid,{children:M.map(e=>{let t=e.icon?`/${e.icon}`:``,n=e.previewImage?`/${e.previewImage}`:``,r=e.releaseUrl||e.apkUrl;return(0,f.jsxs)(b.AppCard,{onPointerMove:B,onPointerLeave:V,children:[(0,f.jsxs)(`div`,{className:`cardTop`,children:[(0,f.jsx)(b.AppIcon,{children:t?(0,f.jsx)(`img`,{src:t,alt:`${e.name} icon`}):`AR`}),(0,f.jsxs)(`div`,{className:`cardTopActions`,children:[e.status&&(0,f.jsx)(b.Status,{children:e.status}),(0,f.jsx)(_,{appName:e.name,shareUrl:r})]})]}),n?(0,f.jsxs)(`button`,{className:`previewButton`,type:`button`,onClick:()=>L(e),"aria-label":`Open ${e.name} preview`,children:[(0,f.jsx)(`img`,{src:n,alt:`${e.name} preview`}),(0,f.jsx)(`span`,{children:`View Preview`})]}):(0,f.jsx)(`div`,{className:`previewPlaceholder`,children:`Preview coming soon`}),(0,f.jsxs)(b.AppContent,{children:[(0,f.jsx)(b.AppName,{children:e.name}),(0,f.jsx)(b.AppDescription,{children:e.description}),(0,f.jsxs)(`div`,{className:`appMeta`,children:[e.version&&(0,f.jsxs)(`span`,{children:[`Version`,` `,e.version]}),e.platform&&(0,f.jsx)(`span`,{children:e.platform})]}),(0,f.jsxs)(`div`,{className:`appActions`,children:[e.apkUrl&&(0,f.jsx)(`a`,{className:`downloadButton`,href:e.apkUrl,target:`_blank`,rel:`noreferrer`,download:!0,children:`Download APK`}),e.releaseUrl&&(0,f.jsx)(`a`,{className:`releaseButton`,href:e.releaseUrl,target:`_blank`,rel:`noreferrer`,children:`Release Notes`})]})]})]},e.id)})}),g===`all`&&A>1&&(0,f.jsxs)(b.Pagination,{children:[(0,f.jsx)(b.PaginationButton,{type:`button`,disabled:j===1,onClick:()=>I(j-1),children:`Previous`}),(0,f.jsx)(`div`,{className:`pageNumbers`,children:Array.from({length:A},(e,t)=>t+1).map(e=>(0,f.jsx)(b.PaginationButton,{type:`button`,$active:j===e,"aria-current":j===e?`page`:void 0,onClick:()=>I(e),children:e},e))}),(0,f.jsx)(b.PaginationButton,{type:`button`,disabled:j===A,onClick:()=>I(j+1),children:`Next`}),(0,f.jsxs)(b.PaginationInfo,{children:[`Page `,j,` of`,` `,A]})]})]}):(0,f.jsxs)(b.MessageState,{children:[(0,f.jsx)(b.MessageTitle,{children:v?`No matching apps found`:`No apps available yet`}),(0,f.jsx)(b.MessageText,{children:v?`Try searching with a different app name or keyword.`:`Applications in this category will be added soon.`})]})]})]})}),(0,f.jsx)(p,{appName:a?.name||``,imageUrl:z,isOpen:!!a,onClose:R})]})};export{E as default};
+    `},x=6,S=[{id:`all`,label:`All Apps`,description:`Browse all available mobile applications.`},...v.map(e=>({id:e.id,label:e.category,description:`Browse available apps from ${e.category}.`}))],C=new Set(S.map(e=>e.id)),w=new Map([...v.flatMap(e=>e.apps.map(t=>[t.id,e.id])),[`hello-world`,`essential-everyday-apps`]]),T=e=>{let t=e.get(`page`);if(!t||!/^\d+$/.test(t))return 1;let n=Number(t);return!Number.isSafeInteger(n)||n<1?1:n},E=()=>{let[e,t]=r(),[n,i]=(0,u.useState)([]),[a,o]=(0,u.useState)(null),[s,c]=(0,u.useState)(!0),[l,d]=(0,u.useState)(``),m=e.get(`category`)||`all`,g=C.has(m)?m:`all`,v=e.get(`search`)||``,y=T(e);(0,u.useEffect)(()=>{let e=new AbortController;return(async()=>{try{c(!0),d(``);let t=await fetch(`/mobile-apps-distribution-page/data/apps.json`,{signal:e.signal});if(!t.ok)throw Error(`Unable to load mobile apps.`);let n=await t.json();i(Array.isArray(n.apps)?n.apps:[])}catch(e){e.name!==`AbortError`&&d(e.message)}finally{e.signal.aborted||c(!1)}})(),()=>{e.abort()}},[]);let E=(0,u.useCallback)(({category:e=`all`,page:n=1,search:r=``},{replace:i=!1}={})=>{let a=C.has(e)?e:`all`,o=a===`all`&&Number.isSafeInteger(n)&&n>0?n:1,s=new URLSearchParams;s.set(`category`,a),s.set(`page`,String(o)),r&&s.set(`search`,r),t(s,{replace:i})},[t]),D=(0,u.useMemo)(()=>{let e=v.trim().toLowerCase();return e?n.filter(t=>[t.name,t.description,t.packageName,t.platform,t.version,t.status].filter(Boolean).join(` `).toLowerCase().includes(e)):n},[n,v]),O=(0,u.useMemo)(()=>{let e={all:D.length};return D.forEach(t=>{let n=w.get(t.id);n&&(e[n]=(e[n]||0)+1)}),e},[D]),k=(0,u.useMemo)(()=>g===`all`?D:D.filter(e=>w.get(e.id)===g),[g,D]),A=(0,u.useMemo)(()=>g===`all`?Math.max(1,Math.ceil(k.length/x)):1,[g,k.length]),j=g===`all`?Math.min(Math.max(y,1),A):1;(0,u.useEffect)(()=>{if(s)return;let n=new URLSearchParams;n.set(`category`,g),n.set(`page`,String(j)),v&&n.set(`search`,v),n.toString()!==e.toString()&&t(n,{replace:!0})},[g,j,s,e,v,t]);let M=(0,u.useMemo)(()=>{if(g!==`all`)return k;let e=(j-1)*x,t=e+x;return k.slice(e,t)},[g,j,k]),N=S.find(e=>e.id===g),P=e=>{E({category:e,page:1,search:v})},F=e=>{E({category:g,page:1,search:e},{replace:!0})},I=e=>{E({category:g,page:Math.min(Math.max(e,1),A),search:v})},L=e=>{e.previewImage&&o(e)},R=(0,u.useCallback)(()=>{o(null)},[]),z=a?.previewImage?`/mobile-apps-distribution-page/${a.previewImage}`:``,B=e=>{if(e.pointerType!==`mouse`)return;let t=e.currentTarget,n=t.getBoundingClientRect(),r=e.clientX-n.left,i=e.clientY-n.top,a=r/n.width,o=i/n.height,s=(a-.5)*8,c=(.5-o)*8;t.style.setProperty(`--rotate-x`,`${c.toFixed(2)}deg`),t.style.setProperty(`--rotate-y`,`${s.toFixed(2)}deg`),t.style.setProperty(`--glow-x`,`${a*100}%`),t.style.setProperty(`--glow-y`,`${o*100}%`)},V=e=>{let t=e.currentTarget;t.style.setProperty(`--rotate-x`,`0deg`),t.style.setProperty(`--rotate-y`,`0deg`),t.style.setProperty(`--glow-x`,`50%`),t.style.setProperty(`--glow-y`,`50%`)};return(0,f.jsxs)(b.Wrapper,{children:[(0,f.jsx)(b.Hero,{children:(0,f.jsxs)(b.Container,{children:[(0,f.jsx)(b.Eyebrow,{children:`a2rp Mobile Apps`}),(0,f.jsx)(b.Title,{children:`Mobile apps built for everyday use`}),(0,f.jsx)(b.Description,{children:`Explore useful Android applications created by Ashish Ranjan for everyday tasks, productivity, learning, safety and more.`})]})}),(0,f.jsx)(b.AppsSection,{children:(0,f.jsxs)(b.Container,{children:[s&&(0,f.jsx)(b.LoadingState,{children:(0,f.jsx)(b.Spinner,{})}),!s&&l&&(0,f.jsxs)(b.MessageState,{children:[(0,f.jsx)(b.MessageTitle,{children:`Apps could not be loaded`}),(0,f.jsx)(b.MessageText,{children:l})]}),!s&&!l&&(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(`div`,{className:`searchArea`,children:(0,f.jsx)(h,{value:v,onChange:F})}),(0,f.jsx)(b.Tabs,{role:`tablist`,"aria-label":`Mobile app categories`,children:S.map(e=>(0,f.jsxs)(b.TabButton,{type:`button`,role:`tab`,"aria-selected":g===e.id,$active:g===e.id,onClick:()=>P(e.id),children:[(0,f.jsx)(`span`,{children:e.label}),(0,f.jsx)(`span`,{className:`tabCount`,children:O[e.id]||0})]},e.id))}),N&&(0,f.jsx)(b.CategoryDescription,{children:N.description}),M.length>0?(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(b.Grid,{children:M.map(e=>{let t=e.icon?`/mobile-apps-distribution-page/${e.icon}`:``,n=e.previewImage?`/mobile-apps-distribution-page/${e.previewImage}`:``,r=e.releaseUrl||e.apkUrl;return(0,f.jsxs)(b.AppCard,{onPointerMove:B,onPointerLeave:V,children:[(0,f.jsxs)(`div`,{className:`cardTop`,children:[(0,f.jsx)(b.AppIcon,{children:t?(0,f.jsx)(`img`,{src:t,alt:`${e.name} icon`}):`AR`}),(0,f.jsxs)(`div`,{className:`cardTopActions`,children:[e.status&&(0,f.jsx)(b.Status,{children:e.status}),(0,f.jsx)(_,{appName:e.name,shareUrl:r})]})]}),n?(0,f.jsxs)(`button`,{className:`previewButton`,type:`button`,onClick:()=>L(e),"aria-label":`Open ${e.name} preview`,children:[(0,f.jsx)(`img`,{src:n,alt:`${e.name} preview`}),(0,f.jsx)(`span`,{children:`View Preview`})]}):(0,f.jsx)(`div`,{className:`previewPlaceholder`,children:`Preview coming soon`}),(0,f.jsxs)(b.AppContent,{children:[(0,f.jsx)(b.AppName,{children:e.name}),(0,f.jsx)(b.AppDescription,{children:e.description}),(0,f.jsxs)(`div`,{className:`appMeta`,children:[e.version&&(0,f.jsxs)(`span`,{children:[`Version`,` `,e.version]}),e.platform&&(0,f.jsx)(`span`,{children:e.platform})]}),(0,f.jsxs)(`div`,{className:`appActions`,children:[e.apkUrl&&(0,f.jsx)(`a`,{className:`downloadButton`,href:e.apkUrl,target:`_blank`,rel:`noreferrer`,download:!0,children:`Download APK`}),e.releaseUrl&&(0,f.jsx)(`a`,{className:`releaseButton`,href:e.releaseUrl,target:`_blank`,rel:`noreferrer`,children:`Release Notes`})]})]})]},e.id)})}),g===`all`&&A>1&&(0,f.jsxs)(b.Pagination,{children:[(0,f.jsx)(b.PaginationButton,{type:`button`,disabled:j===1,onClick:()=>I(j-1),children:`Previous`}),(0,f.jsx)(`div`,{className:`pageNumbers`,children:Array.from({length:A},(e,t)=>t+1).map(e=>(0,f.jsx)(b.PaginationButton,{type:`button`,$active:j===e,"aria-current":j===e?`page`:void 0,onClick:()=>I(e),children:e},e))}),(0,f.jsx)(b.PaginationButton,{type:`button`,disabled:j===A,onClick:()=>I(j+1),children:`Next`}),(0,f.jsxs)(b.PaginationInfo,{children:[`Page `,j,` of`,` `,A]})]})]}):(0,f.jsxs)(b.MessageState,{children:[(0,f.jsx)(b.MessageTitle,{children:v?`No matching apps found`:`No apps available yet`}),(0,f.jsx)(b.MessageText,{children:v?`Try searching with a different app name or keyword.`:`Applications in this category will be added soon.`})]})]})]})}),(0,f.jsx)(p,{appName:a?.name||``,imageUrl:z,isOpen:!!a,onClose:R})]})};export{E as default};
