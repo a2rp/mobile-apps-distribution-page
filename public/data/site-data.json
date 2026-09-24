@@ -6,6 +6,7 @@
         "patreon": "https://patreon.com/a2rp",
         "paypal": "https://paypal.me/a2rpdev",
         "portfolio": "https://www.ashishranjan.net",
+        "support": "https://a2rp-donation-page.netlify.app/",
         "github": "https://github.com/a2rp",
         "codepen": "https://codepen.io/ash1198",
         "linkedin": "https://www.linkedin.com/in/aashishranjan",
@@ -27,7 +28,7 @@
             "id": "patreon",
             "label": "Membership Support",
             "title": "Patreon",
-            "description": "Become a supporter and get access to development updates, project progress, AI experiments, and behind-the-scenes content.",
+            "description": "Become a supporter and get access to development updates, project progress, Technical experiments, and behind-the-scenes content.",
             "button": "Join Patreon",
             "link": "https://patreon.com/a2rp",
             "icon": "FaPatreon"
@@ -100,7 +101,7 @@
     ],
     "focusItems": [
         "Full-stack web apps",
-        "AI-powered tools",
+        "Productivity tools",
         "Developer utilities",
         "Open-source projects",
         "Creative experiments",
