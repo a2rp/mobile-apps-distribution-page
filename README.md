@@ -31,6 +31,8 @@ npm run deploy
 
 App data is stored in `public/data/apps.json`. App icons and previews are stored in `public/apps/`.
 
+Routes use URL fragments so GitHub Pages can reload nested views. Vite uses the repository path for GitHub Pages builds and the root path for local development and Vercel deployments.
+
 ## Screenshot
 
 ![Mobile Apps catalog home screen](screenshot.png)

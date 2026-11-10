@@ -68,7 +68,7 @@ void main() {
     rays *= rayMask;
 
     float vignette = distance(uv, vec2(0.5));
-    vignette = smoothstep(0.82, 0.18, vignette);
+    vignette = 1.0 - smoothstep(0.18, 0.82, vignette);
 
     vec3 color = base + rays;
     color *= vignette;
@@ -80,11 +80,15 @@ void main() {
 const createShader = (gl, type, source) => {
     const shader = gl.createShader(type);
 
+    if (!shader) {
+        return null;
+    }
+
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
 
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        console.error(gl.getShaderInfoLog(shader));
+        console.error("Background shader could not be compiled:", gl.getShaderInfoLog(shader));
         gl.deleteShader(shader);
         return null;
     }
@@ -100,10 +104,10 @@ const DeepOceanRays = () => {
         const gl = canvas.getContext("webgl2", {
             alpha: false,
             antialias: true,
-            powerPreference: "high-performance",
+            powerPreference: "low-power",
         });
 
-        if (!gl) return;
+        if (!gl) return undefined;
 
         const vertexShader = createShader(
             gl,
@@ -116,14 +120,28 @@ const DeepOceanRays = () => {
             fragmentShaderSource,
         );
 
+        if (!vertexShader || !fragmentShader) {
+            if (vertexShader) gl.deleteShader(vertexShader);
+            if (fragmentShader) gl.deleteShader(fragmentShader);
+            return undefined;
+        }
+
         const program = gl.createProgram();
+        if (!program) {
+            gl.deleteShader(vertexShader);
+            gl.deleteShader(fragmentShader);
+            return undefined;
+        }
         gl.attachShader(program, vertexShader);
         gl.attachShader(program, fragmentShader);
         gl.linkProgram(program);
 
         if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-            console.error(gl.getProgramInfoLog(program));
-            return;
+            console.error("Background shader program could not be linked:", gl.getProgramInfoLog(program));
+            gl.deleteProgram(program);
+            gl.deleteShader(vertexShader);
+            gl.deleteShader(fragmentShader);
+            return undefined;
         }
 
         gl.useProgram(program);
@@ -133,6 +151,12 @@ const DeepOceanRays = () => {
         ]);
 
         const buffer = gl.createBuffer();
+        if (!buffer) {
+            gl.deleteProgram(program);
+            gl.deleteShader(vertexShader);
+            gl.deleteShader(fragmentShader);
+            return undefined;
+        }
         gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
         gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
 
@@ -146,39 +170,93 @@ const DeepOceanRays = () => {
         );
         const timeLocation = gl.getUniformLocation(program, "u_time");
 
-        let animationFrameId;
+        let animationFrameId = null;
         const startTime = performance.now();
+        const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 
         const resize = () => {
             const rect = canvas.getBoundingClientRect();
-            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            const width = Math.max(1, Math.round(rect.width * dpr));
+            const height = Math.max(1, Math.round(rect.height * dpr));
 
-            canvas.width = rect.width * dpr;
-            canvas.height = rect.height * dpr;
+            if (canvas.width === width && canvas.height === height) {
+                return false;
+            }
+
+            canvas.width = width;
+            canvas.height = height;
 
             gl.viewport(0, 0, canvas.width, canvas.height);
+            return true;
         };
 
-        const render = () => {
-            resize();
-
+        const draw = () => {
+            if (!canvas.width || !canvas.height) return;
             const time = (performance.now() - startTime) * 0.001;
 
             gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
             gl.uniform1f(timeLocation, time);
 
             gl.drawArrays(gl.TRIANGLES, 0, 6);
-
-            animationFrameId = requestAnimationFrame(render);
         };
 
-        render();
+        const render = () => {
+            animationFrameId = null;
+            if (document.hidden) return;
 
-        window.addEventListener("resize", resize);
+            draw();
+            if (!motionPreference.matches) {
+                animationFrameId = requestAnimationFrame(render);
+            }
+        };
+
+        const handleResize = () => {
+            if (resize()) draw();
+        };
+
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                if (animationFrameId !== null) cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+                return;
+            }
+
+            resize();
+            draw();
+            if (!motionPreference.matches && animationFrameId === null) {
+                animationFrameId = requestAnimationFrame(render);
+            }
+        };
+
+        const handleMotionChange = () => {
+            if (motionPreference.matches) {
+                if (animationFrameId !== null) cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+                draw();
+                return;
+            }
+
+            if (!document.hidden && animationFrameId === null) {
+                animationFrameId = requestAnimationFrame(render);
+            }
+        };
+
+        resize();
+        draw();
+        if (!motionPreference.matches) {
+            animationFrameId = requestAnimationFrame(render);
+        }
+
+        window.addEventListener("resize", handleResize, { passive: true });
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+        motionPreference.addEventListener("change", handleMotionChange);
 
         return () => {
-            cancelAnimationFrame(animationFrameId);
-            window.removeEventListener("resize", resize);
+            if (animationFrameId !== null) cancelAnimationFrame(animationFrameId);
+            window.removeEventListener("resize", handleResize);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
+            motionPreference.removeEventListener("change", handleMotionChange);
             gl.deleteProgram(program);
             gl.deleteBuffer(buffer);
             gl.deleteShader(vertexShader);
